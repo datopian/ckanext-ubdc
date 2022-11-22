@@ -58,6 +58,12 @@ dataset_fields:
   display_snippet: email.html
   display_email_name_field: author
 
+- field_name: publishing_status
+  label: Publishing Status
+  form_snippet: null
+  display_snippet: null
+  validators: ignore_missing publishing_status_validator
+
 - field_name: maintainer
   label: Maintainer
   form_placeholder: Joe Bloggs
@@ -89,6 +95,11 @@ resource_fields:
 - field_name: format
   label: Format
   preset: resource_format_autocomplete
+
+- field_name: pkg_publishing_status
+  label: Publishing Status
+  form_snippet: null
+  display_snippet: null
 
 - field_name: restricted
   label: Access Restriction
