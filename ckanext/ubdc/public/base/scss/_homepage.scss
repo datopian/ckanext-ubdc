@@ -1,6 +1,36 @@
 .homepage {
+    .hero {
+        min-height: 505px;
+        background: url("#{$imagePath}/hero.png");
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        .wrap {
+            display: flex;
+            justify-content: center;
+            .search-form {
+                width: 60%;
+                button {
+                    background-color: #05011f;
+                    top: 0;
+                    right: 0;
+                    margin-top: 0;
+                    padding: 28px 15px;
+                    display: flex;
+                    align-items: center;
+                }
+                border: 0;
+            }
+        }
+    }
+
     .newsletter {
-        background: #05011F;
+        background: #05011f;
         color: #fff;
         padding: 78px 0px;
         .wrap {
