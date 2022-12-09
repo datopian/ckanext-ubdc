@@ -7,8 +7,8 @@
 #     preload:
 #       - base/main
 
-# ubdc-css:
-#   filter: cssrewrite
-#   output: ckanext-ubdc/%(version)s-ubdc.css
-#   contents:
-#     - css/ubdc.css
+ubdc-css:
+  filter: cssrewrite
+  output: ckanext-ubdc/%(version)s-ubdc.css
+  contents:
+    - css/style.css
