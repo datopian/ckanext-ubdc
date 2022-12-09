@@ -28,7 +28,10 @@
 body {
     // Using the masthead/footer gradient prevents the color from changing
     // at the bottom of the window on pages with little content.
-    background: $mastheadBackgroundColor;
+    background: #fff;
+    font-size: $font-size-medium;
+    font-weight: 400;
+    color: #7c878d;
 }
 
 [hidden] {

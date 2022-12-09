@@ -3,12 +3,28 @@ $imagePath: "../../../base/images";
 $spritePath: "#{$imagePath}/sprite-ckan-icons.png";
 $bgPath: "#{$imagePath}/bg.png";
 $FontAwesomePath: "../../../base/vendor/font-awesome/font";
+@import url('https://fonts.googleapis.com/css?family=Open+SansOpen+Sans:300,200,400,600,600,700');
+
+// Branding colors
+$brandPrimary: #F37021;
+$black: #000000;
+
+// Font Variables
+$font-size-xxlarge : 1.2em;
+$font-size-xlarge : 1.2em;
+$font-size-large : 1.375em;
+$font-size-medium : 16px;
+$font-size-small : 0.8em;
+$font-size-xsmall : 0.6em;
+$font-size-xxsmall : 0.4em;
+$font-size-xxxsmall : 0.2em;
+
 
 // Layout Variables
-$layoutFontFamily: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$layoutFontFamily: 'Open Sans', sans-serif;
 $layoutTextColor: #444;
 $layoutBoldColor: #000;
-$layoutLinkColor: #187794;
+$layoutLinkColor: $brandPrimary;
 $layoutBackgroundColor: #eee;
 $layoutTrimBackgroundColor: #fff;
 $layoutTrimBorderColor: #ccc;
@@ -39,7 +55,7 @@ $breadcrumbTextColor: #505050;
 
 $mastheadTextColor: #fff;
 $mastheadLinkColor: $mastheadTextColor;
-$mastheadBackgroundColor: #005d7a;
+$mastheadBackgroundColor: $black;
 $mastheadBackgroundColorStart: #005d7a;
 $mastheadBackgroundColorEnd: #00536b;
 
@@ -109,8 +125,8 @@ $chunkyTableStripeBackgroundColor: #f2f2f2;
 $bodyBackground: $layoutBackgroundColor;
 $btnBackground: #ffffff;
 $btnBackgroundHighlight: #eaeaea;
-$btnPrimaryBackground: #30778d;
-$btnPrimaryBackgroundHighlight: #085871;
+$btnPrimaryBackground: $brandPrimary;
+$btnPrimaryBackgroundHighlight: $brandPrimary;
 $baseFontFamily: $layoutFontFamily;
 $textColor: $layoutTextColor;
 $linkColor: $layoutLinkColor;
