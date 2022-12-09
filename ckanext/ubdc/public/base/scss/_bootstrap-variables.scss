@@ -14,7 +14,7 @@ $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$brand-primary:         #206b82;
+$brand-primary:         #F37021;
 $brand-success:         #3A833A;
 $brand-info:            #5bc0de;
 $brand-warning:         #f0ad4e;
@@ -42,7 +42,7 @@ $link-hover-decoration: underline;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:   'Open Sans', sans-serif;
+$font-family-sans-serif:  'Open Sans', sans-serif;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -347,7 +347,7 @@ $container-desktop:            (940px + $grid-gutter-width);
 $container-md:                 $container-desktop;
 
 // Large screen / wide desktop
-$container-large-desktop:      (1260px + $grid-gutter-width);
+$container-large-desktop:      (1140px + $grid-gutter-width);
 //** For `$screen-lg-min` and up.
 $container-lg:                 $container-large-desktop;
 

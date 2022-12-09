@@ -80,6 +80,23 @@ blockquote p {
 iframe {
     border: none;
 }
+.btn {
+    border-radius: 5px;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 0.5px;
+    border: 2px solid $brandPrimary;
+    outline: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.btn-primary {
+    color: #fff;
+    transition: all 0.2s ease-in-out 0s;
+}
 
 .embedded-content h1 {
     font-size: 1.8em;
