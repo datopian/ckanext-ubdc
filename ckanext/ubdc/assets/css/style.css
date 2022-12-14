@@ -8937,6 +8937,10 @@ td.diff_header {
   margin-bottom: 30px;
 }
 
+#dataset-search-form button {
+  padding: 10.6px;
+}
+
 .tertiary .control-order-by {
   float: none;
   margin: 0;
@@ -11416,4 +11420,8 @@ iframe {
 
 .reduced-padding {
   padding: 3px 5px;
+}
+
+.input-group-btn {
+  font-size: unset !important;
 }
