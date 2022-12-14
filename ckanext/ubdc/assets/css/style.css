@@ -9959,6 +9959,9 @@ h4 small {
   margin-top: 20px;
 }
 
+.homepage .btn {
+  padding: 15px 30px;
+}
 .homepage .hero {
   min-height: 505px;
   background: url("../../../base/images/hero.png");
@@ -10207,7 +10210,11 @@ h4 small {
   text-align: center;
 }
 .homepage .providers .logo-grid__item img {
+  filter: grayscale(100%) contrast(0.3);
   max-width: 100%;
+}
+.homepage .providers .logo-grid__item img:hover {
+  filter: grayscale(0%) contrast(1);
 }
 .homepage .providers .more {
   text-align: center;
@@ -10418,6 +10425,16 @@ h4 small {
 }
 .masthead .logo-container .logo img {
   max-height: 130px;
+}
+.masthead .small-logo {
+  min-width: 230px;
+  min-height: 230px;
+}
+.masthead .small-logo .logo {
+  margin-top: 80px !important;
+}
+.masthead .small-logo .logo img {
+  max-height: 85px !important;
 }
 .masthead .navbar-collapse {
   padding: 10px 0;
@@ -10699,6 +10716,11 @@ h4 small {
 .site-footer__bottom ul li:last-child::after {
   content: "";
   margin: 0;
+}
+.site-footer__bottom .attribution {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (max-width: 768px) {
@@ -11350,7 +11372,6 @@ iframe {
 
 .btn {
   border-radius: 5px;
-  padding: 15px 30px;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;

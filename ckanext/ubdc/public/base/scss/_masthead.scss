@@ -132,6 +132,16 @@ $notificationsBg: #c9403a;
             }
         }
     }
+    .small-logo {
+        min-width: 230px;
+        min-height: 230px;
+        .logo {
+            margin-top: 80px !important;
+            img {
+                max-height: 85px !important;
+            }
+        }
+    }
 
     .navbar-collapse {
         padding: math.div($grid-gutter-width, 3) 0;
