@@ -10046,6 +10046,24 @@ h4 small {
   background-position: 0 30px;
   background-color: #edeced;
 }
+.homepage .popular-dataset .col-md-4:nth-child(1) .icon {
+  background: #bfd22b;
+}
+.homepage .popular-dataset .col-md-4:nth-child(1) .item {
+  border-color: #bfd22b;
+}
+.homepage .popular-dataset .col-md-4:nth-child(2) .icon {
+  background: #8869ae;
+}
+.homepage .popular-dataset .col-md-4:nth-child(2) .item {
+  border-color: #8869ae;
+}
+.homepage .popular-dataset .col-md-4:nth-child(3) .icon {
+  background: #00b3dc;
+}
+.homepage .popular-dataset .col-md-4:nth-child(3) .item {
+  border-color: #00b3dc;
+}
 .homepage .popular-dataset .title {
   display: flex;
   justify-content: center;

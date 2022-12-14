@@ -12,7 +12,13 @@
                 {% for dataset in h.popular_datasets(3) %}
                 <div class="col-md-4">
                     <div class="icon"> 
+                        {% if loop.index == 1 %}
+                        <img src="/base/images/svg/unlocked.svg" alt="">
+                        {% elif loop.index == 2 %}
                         <img src="/base/images/svg/checked.svg" alt="">
+                        {% elif loop.index == 3 %}
+                        <img src="/base/images/svg/unlocked.svg" alt="">
+                        {% endif %}
                     </div>
                     <div class="item">
                         <a href="{{ h.url_for('dataset.read', id=dataset.name) }}">

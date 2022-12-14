@@ -92,6 +92,32 @@
         background-repeat: no-repeat;
         background-position: 0 30px;
         background-color: #edeced;
+        .col-md-4 {
+            &:nth-child(1) {
+                .icon {
+                    background: #bfd22b;
+                }
+                .item {
+                    border-color: #bfd22b;
+                }
+            }
+            &:nth-child(2) {
+                .icon {
+                    background: #8869ae;
+                }
+                .item {
+                    border-color: #8869ae;
+                }
+            }
+            &:nth-child(3) {
+                .icon {
+                    background: #00b3dc;
+                }
+                .item {
+                    border-color: #00b3dc;
+                }
+            }
+        }
         .title {
             display: flex;
             justify-content: center;
@@ -168,7 +194,6 @@
                 padding: 20px 20px 20px 0;
                 background: #edeced;
                 .media {
-                
                     .btn-primary {
                         border: 2px solid #f37021;
                         box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.2);
