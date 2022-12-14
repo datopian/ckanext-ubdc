@@ -16,4 +16,6 @@ class UbdcPlugin(plugins.SingletonPlugin):
     def get_helpers(self):
         return {
             'popular_datasets': helpers.popular_datasets,
+            'resources_count': helpers.resources_count,
+            'tags_count': helpers.tags_count,
         }

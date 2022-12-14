@@ -25,10 +25,9 @@
                 <div class="col-md-2">
                     <div class="stat">
                         <div class="stat-number">
-                            {{ h.get_site_statistics().resource_count or 0 }}
+                            {{ h.resources_count() or 0 }}
                         </div>
-                        <div class="stat-label
-                                {% if h.get_site_statistics().resource_count == 1 %}stat-label-singular{% endif %}">
+                        <div class="stat-label">
                             {% block stats_resources %}{{ _('Resources') }}{% endblock %}
                         </div>
                     </div>
@@ -49,10 +48,9 @@
                 <div class="col-md-2">
                     <div class="stat">
                         <div class="stat-number">
-                            {{ h.get_site_statistics().group_count }}
+                            {{ h.tags_count().count or 0 }}
                         </div>
-                        <div class="stat-label
-                                {% if h.get_site_statistics().group_count == 1 %}stat-label-singular{% endif %}">
+                        <div class="stat-label">
                             {{ _('Tags') }}
                         </div>
                     </div>
@@ -61,10 +59,10 @@
                 <div class="col-md-2">
                     <div class="stat">
                         <div class="stat-number">
-                            {{ h.get_site_statistics().group_count }}
+                            {{ h.get_site_statistics().organization_count }}
                         </div>
                         <div class="stat-label
-                                {% if h.get_site_statistics().group_count == 1 %}stat-label-singular{% endif %}">
+                                {% if h.get_site_statistics().organization_count == 1 %}stat-label-singular{% endif %}">
                             {{ _('Data Providers') }}
                         </div>
                     </div>
