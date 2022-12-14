@@ -1,0 +1,74 @@
+<section class="stats">
+    <div class="container">
+        <div class="wrap">
+            <div class="row">
+                
+                <div class="col-md-4">
+                    <div class="title">
+                        <h4>UBDC DATATA PROTAL</h3>
+                            <h4>IN NUMBERS</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="stat">
+                        <div class="stat-number">
+                            {{ h.get_site_statistics().dataset_count }}
+                        </div>
+                        <div class="stat-label
+                                {% if h.get_site_statistics().dataset_count == 1 %}stat-label-singular{% endif %}">
+                            {% block stats_datasets %}{{ _('Datasets') }}{% endblock %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="stat">
+                        <div class="stat-number">
+                            {{ h.resources_count() or 0 }}
+                        </div>
+                        <div class="stat-label">
+                            {% block stats_resources %}{{ _('Resources') }}{% endblock %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="stat">
+                        <div class="stat-number">
+                            {{ h.get_site_statistics().group_count }}
+                        </div>
+                        <div class="stat-label
+                                {% if h.get_site_statistics().group_count == 1 %}stat-label-singular{% endif %}">
+                            {% block stats_groups %}{{ _('Themes') }}{% endblock %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="stat">
+                        <div class="stat-number">
+                            {{ h.tags_count().count or 0 }}
+                        </div>
+                        <div class="stat-label">
+                            {{ _('Tags') }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="stat">
+                        <div class="stat-number">
+                            {{ h.get_site_statistics().organization_count }}
+                        </div>
+                        <div class="stat-label
+                                {% if h.get_site_statistics().organization_count == 1 %}stat-label-singular{% endif %}">
+                            {{ _('Data Providers') }}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

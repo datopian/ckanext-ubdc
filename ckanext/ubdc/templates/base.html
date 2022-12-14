@@ -1,0 +1,10 @@
+{% ckan_extends %}
+
+{% block styles %}
+    {% asset 'ubdc/ubdc-css' %}
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    {% asset 'ubdc/ubdc-js' %}
+{% endblock %}

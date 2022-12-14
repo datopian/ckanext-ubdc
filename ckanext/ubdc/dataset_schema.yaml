@@ -11,6 +11,10 @@ dataset_fields:
   preset: title
   form_placeholder: eg. A descriptive title
 
+- field_name: alternative_title
+  label: Alternative title
+  form_placeholder: eg. An alternative dataset title
+
 - field_name: name
   label: URL
   preset: dataset_slug
@@ -21,42 +25,166 @@ dataset_fields:
   form_snippet: markdown.html
   form_placeholder: eg. Some useful notes about the data
 
+- field_name: content
+  label: Content
+  form_snippet: markdown.html
+  form_placeholder: eg. Some useful content about what does the dataset consists of (more tables, some specifics etc…)
+
+- field_name: subject
+  label: Subject
+  form_snippet: markdown.html
+  form_placeholder: eg. Subject of the dataset ie housing/transport
+
 - field_name: tag_string
-  label: Tags
+  label: Topics
   preset: tag_string_autocomplete
   form_placeholder: eg. economy, mental health, government
 
+- field_name: dataset_citation
+  label: Dataset Citation
+
+- field_name: time_period_coverage
+  label: Time Period Coverage
+
+- field_name: geographical_coverage
+  label: Geographical Coverage
+
+- field_name: spatial_units
+  label: Subject
+
+- field_name: observation_units
+  label: Observation Units
+  
+- field_name: resource_type
+  label: Resource Type
+
+- field_name: data_format
+  label: Data Format
+
+- field_name: weighting
+  label: Weighting
+
+- field_name: method_of_collection
+  label: Method of Collection
+  
+- field_name: collection_status
+  label: Collection Status
+
+- field_name: dataset_fields
+  label: Dataset Fields
+
+- field_name: dataset_aggregation
+  label: Dataset Aggregation
+
+- field_name: data_owner
+  label: Data Owner
+
+- field_name: data_owner_url
+  label: Data Owner Url
+
 - field_name: license_id
-  label: License
-  form_snippet: license.html
-  help_text: License definitions and additional information can be found at http://opendefinition.org/
+  label: Licence Name
+
+- field_name: license_specifics
+  label: Licence Specifics
+  form_snippet: markdown.html
+  form_placeholder: eg. Some useful notes about the licence
 
 - field_name: owner_org
   label: Organization
   preset: dataset_organization
 
-- field_name: url
-  label: Source
-  form_placeholder: http://example.com/dataset.json
-  display_property: foaf:homepage
-  display_snippet: link.html
 
 - field_name: version
   label: Version
   validators: ignore_missing unicode_safe package_version_validator
   form_placeholder: '1.0'
 
-- field_name: author
-  label: Author
-  form_placeholder: Joe Bloggs
-  display_property: dc:creator
+- field_name: dataset_available
+  label: Dataset Available
+  reset: date
+  form_placeholder: eg. 2011-01-01
 
-- field_name: author_email
-  label: Author Email
-  form_placeholder: joe@example.com
-  display_property: dc:creator
-  display_snippet: email.html
-  display_email_name_field: author
+- field_name: dataset_closed
+  label: Dataset Closed
+  preset: date
+  form_placeholder: eg. 2011-01-01
+
+- field_name: dataset_valid
+  label: Dataset Valid
+  preset: date
+  form_placeholder: eg. 2011-01-01
+
+- field_name: dataset_updating_frequency
+  label: Dataset Updating Frequency
+  form_placeholder: eg. Every monthy
+
+- field_name: dataset_next_version_due
+  label: Dataset Next Version Due
+  preset: date
+  form_placeholder: eg. 2011-01-01
+
+- field_name: date_published
+  label: Date Published
+  preset: date
+  form_placeholder: eg. 2022-01-01
+
+- field_name: date_of_fieldwork
+  label: Date of Fieldwork
+  form_placeholder: eg. 2022-01-01 to 2022-02-29
+
+- field_name: dataset_file_type
+  label: Dataset File Type
+  form_placeholder: eg. CSV
+
+- field_name: dataset_file_size
+  label: Dataset File Size
+  form_placeholder: eg. 1.5MB
+
+- field_name: dataset_creation_date
+  label: Dataset Creation Date
+  preset: date
+  form_placeholder: eg. 2011-01-01
+
+- field_name: dataset_access_restrictions
+  label: Dataset Access Restrictions
+  form_placeholder: eg. Open, Safeguarded or Controlled Dataset
+
+- field_name: metadata_created_date
+  label: Metadata Created Date
+  preset: date
+  form_placeholder: eg. 2022-01-01
+
+- field_name: metadata_created_institution
+  label: Metadata Created Institution
+  form_placeholder: eg. Urban Big Data Centre
+
+# - field_name: dataset_fields
+#   label: Dataset Fields
+#   repeating_label: Dataset Field
+#   repeating_subfields:
+
+#   - field_name: name
+#     label: Field Name
+
+#   - field_name: description
+#     label: Description
+
+#   - field_name: type
+#     label: Type
+#     preset: select
+#     choices:
+#       - value: text
+#         label: Text
+#       - value: number
+#         label: Number
+#       - value: date
+#         label: Date
+#       - value: boolean
+#         label: Boolean
+#       - value: other
+#         label: Other
+
 
 - field_name: publishing_status
   label: Publishing Status
@@ -64,17 +192,6 @@ dataset_fields:
   display_snippet: null
   validators: ignore_missing publishing_status_validator
 
-- field_name: maintainer
-  label: Maintainer
-  form_placeholder: Joe Bloggs
-  display_property: dc:contributor
-
-- field_name: maintainer_email
-  label: Maintainer Email
-  form_placeholder: joe@example.com
-  display_property: dc:contributor
-  display_snippet: email.html
-  display_email_name_field: maintainer
 
 
 resource_fields:
