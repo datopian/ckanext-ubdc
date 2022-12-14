@@ -1,0 +1,29 @@
+<section class="popular-dataset">
+    <div class="container">
+        <div class="wrap">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h3>- {{ _('Most Popular Datasets') }} - </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for dataset in h.popular_datasets(3) %}
+                <div class="col-md-4">
+                    <div class="icon"> 
+                        <img src="/base/images/svg/checked.svg" alt="">
+                    </div>
+                    <div class="item">
+                        <a href="{{ h.url_for('dataset.read', id=dataset.name) }}">
+                            {{ dataset.title }}
+                        </a>
+                        <p> {{ dataset.notes | truncate(180) }} </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <p class="more"><a href="/dataset/">See more →</a> </p>
+        </div>
+    </div>
+</section>

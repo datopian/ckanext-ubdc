@@ -1,0 +1,21 @@
+<section class="providers">
+    <div class="container">
+        <h2>- DATA PROVIDERS -</h2>
+        <div class="wrap">
+            {% set providers = h.get_featured_organizations(6) %}
+            <div class="logo-grid">
+                {% for provider in providers %}
+                {% set url = h.url_for('organization' ~ '.read', id=provider.name) %}
+                    {% if provider.image_display_url %}
+                    <div class="logo-grid__item">
+                        <a href="{{ url }}">
+                            <img src="{{ provider.image_display_url }}" alt="ACT Government">
+                        </a>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <p class="more"><a href="/organization">See more →</a> </p>
+        </div>
+    </div>
+</section>

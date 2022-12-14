@@ -1,0 +1,58 @@
+<section class="themes">
+    <div class="container">
+        <div class="wrap">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h3>- {{ _('Themes') }} - </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% set themes = h.get_featured_groups(6) %}
+                {% for theme in themes %}
+                {% set url = h.url_for('group' ~ '.read', id=theme.name) %}
+
+                <div class="col-md-4 col">
+                    <div class="item">
+                        {% if loop.index < 4 %} <div class="media">
+                            <div class="count">0 Dataset</div>
+                            <div class="media-body media-right">
+                                <h4 class="media-heading">{{ theme.title }}</h4>
+                                <p>
+                                    {{ theme.description | truncate(80) }}
+                                </p>
+                                <a href="{{url}}" class="btn btn-primary">SEE DATASETS</a>
+                            </div>
+                            <div class="media-right media-middle">
+                                <img class="ml-3"
+                                    src="{{theme.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}"
+                                    alt="Generic placeholder image">
+                            </div>
+                    </div>
+                    {% else %}
+                    <div class="media">
+                        <div class="count">{{theme.package_count}} Datasets</div>
+                        <div class="media-left media-middle">
+                            <img class="ml-3"
+                                src="{{theme.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}"
+                                alt="Generic placeholder image">
+                        </div>
+                        <div class="media-body media-left">
+                            <h4 class="media-heading">{{ theme.title }}</h4>
+                            <p>
+                                {{ theme.description | truncate(80) }}
+                            </p>
+                            <a href="{{ url }}" class="btn btn-primary">SEE DATASETS</a>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <p class="more"><a href="/groups">See more →</a> </p>
+    </div>
+    </div>
+</section>
