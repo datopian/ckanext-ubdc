@@ -1,11 +1,11 @@
-# ubdc-js:
-#   filter: rjsmin
-#   output: ckanext-ubdc/%(version)s-ubdc.js
-#   contents:
-#     - js/ubdc.js
-#   extra:
-#     preload:
-#       - base/main
+ubdc-js:
+  filter: rjsmin
+  output: ckanext-ubdc/%(version)s-ubdc.js
+  contents:
+    - js/ubdc.js
+  extra:
+    preload:
+      - base/main
 
 ubdc-css:
   filter: cssrewrite

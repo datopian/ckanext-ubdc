@@ -1,6 +1,6 @@
 @use "sass:math";
 
-$notificationsBg: #C9403A;
+$notificationsBg: #c9403a;
 .account-masthead {
     @extend .clearfix;
     min-height: 30px;
@@ -114,14 +114,47 @@ $notificationsBg: #C9403A;
             white-space: nowrap;
         }
     }
-    .logo{
-      display: inline-block;
-      img{
-        max-height: $logoMaxHeight;
-      }
+    .logo-container {
+        background: rgba(54, 2, 51, 0.7);
+        position: absolute;
+        border-radius: 100%;
+        top: -113px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 319px;
+        min-height: 320px;
+        .logo {
+            display: inline-block;
+            margin-top: 20px;
+            img {
+                max-height: 130px;
+            }
+        }
     }
+
     .navbar-collapse {
         padding: math.div($grid-gutter-width, 3) 0;
+        .nav li a {
+            color: #fff !important;
+            position: relative;
+    
+            &:before {
+                transition: 300ms;
+                height: 4px;
+                content: "";
+                position: absolute;
+                background-color: #f37021;
+                width: 75%;
+                bottom: 0px;
+                opacity: 0;
+            }
+
+            &:hover:before {
+                bottom: 0px;
+                opacity: 1;
+            }
+        }
     }
     .section {
         float: left;
@@ -143,12 +176,12 @@ $notificationsBg: #C9403A;
             }
         }
     }
-    .nav>li>a,
-    .nav>li>a:focus,
-    .nav>li>a:hover,
-    .nav>.active>a,
-    .nav>.active>a:hover,
-    .nav>.active>a:focus {
+    .nav > li > a,
+    .nav > li > a:focus,
+    .nav > li > a:hover,
+    .nav > .active > a,
+    .nav > .active > a:hover,
+    .nav > .active > a:focus {
         color: #fff;
         text-shadow: none;
     }
@@ -156,10 +189,25 @@ $notificationsBg: #C9403A;
         @media (min-width: $screen-md-min) {
             margin-left: calc($grid-gutter-width/2);
         }
-        margin: calc(math.div($grid-gutter-width, 6) - 1px) calc(math.div($grid-gutter-width,3) - 2px) calc(math.div($grid-gutter-width, 6) - 1px) 0;
+        margin: calc(math.div($grid-gutter-width, 6) - 1px) calc(math.div($grid-gutter-width, 3) - 2px)
+            calc(math.div($grid-gutter-width, 6) - 1px) 0;
         input {
-            width: 200px;
+            width: 40px;
+            opacity: 0;
             padding: calc($grid-gutter-width/6) calc($grid-gutter-width/3);
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+            ~ .btn-search {
+                pointer-events: none;
+                cursor: default;
+            }
+            &:focus {
+                width: 200px;
+                opacity: 1;
+                ~ .btn-search {
+                    pointer-events: all !important;
+                }
+            }
         }
     }
     .btn-navbar-btn,
@@ -194,8 +242,8 @@ $notificationsBg: #C9403A;
 }
 
 @media (max-width: $screen-sm-max) {
-    .navbar-toggle{
-      margin-right: 0;
+    .navbar-toggle {
+        margin-right: 0;
     }
     .masthead {
         .section {
@@ -211,15 +259,38 @@ $notificationsBg: #C9403A;
         .site-search {
             display: none;
         }
+
+
+        .logo-container {
+            background: rgba(54, 2, 51, 0.7);
+            position: absolute;
+            border-radius: 100%;
+            top: -80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 200px;
+            min-height: 200px;
+            .logo {
+                display: inline-block;
+                margin-top: 20px;
+                img {
+                    max-height: 100px;
+                }
+            }
+        }
+
+
     }
 }
 
-@media (max-width: $screen-xs-max){
-  .masthead {
-    .navbar-collapse{
-      clear: both;
-      margin-left: 0;
-      margin-right: 0;
+@media (max-width: $screen-xs-max) {
+    .masthead {
+        .navbar-collapse {
+            clear: both;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
     }
-  }
 }

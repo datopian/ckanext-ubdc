@@ -10330,7 +10330,7 @@ h4 small {
 }
 .account-masthead .account .notifications.notifications-important a span.badge {
   color: #fff;
-  background-color: #C9403A;
+  background-color: #c9403a;
 }
 .account-masthead .account.authed .image {
   padding: 0 6px;
@@ -10379,14 +10379,44 @@ h4 small {
   line-height: 1.2;
   white-space: nowrap;
 }
-.masthead .logo {
-  display: inline-block;
+.masthead .logo-container {
+  background: rgba(54, 2, 51, 0.7);
+  position: absolute;
+  border-radius: 100%;
+  top: -113px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 319px;
+  min-height: 320px;
 }
-.masthead .logo img {
-  max-height: 60px;
+.masthead .logo-container .logo {
+  display: inline-block;
+  margin-top: 20px;
+}
+.masthead .logo-container .logo img {
+  max-height: 130px;
 }
 .masthead .navbar-collapse {
   padding: 10px 0;
+}
+.masthead .navbar-collapse .nav li a {
+  color: #fff !important;
+  position: relative;
+}
+.masthead .navbar-collapse .nav li a:before {
+  transition: 300ms;
+  height: 4px;
+  content: "";
+  position: absolute;
+  background-color: #f37021;
+  width: 75%;
+  bottom: 0px;
+  opacity: 0;
+}
+.masthead .navbar-collapse .nav li a:hover:before {
+  bottom: 0px;
+  opacity: 1;
 }
 .masthead .section {
   float: left;
@@ -10421,8 +10451,22 @@ h4 small {
   }
 }
 .masthead .site-search input {
-  width: 200px;
+  width: 40px;
+  opacity: 0;
   padding: 5px 10px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+.masthead .site-search input ~ .btn-search {
+  pointer-events: none;
+  cursor: default;
+}
+.masthead .site-search input:focus {
+  width: 200px;
+  opacity: 1;
+}
+.masthead .site-search input:focus ~ .btn-search {
+  pointer-events: all !important;
 }
 .masthead .btn-navbar-btn,
 .masthead .btn-navbar-btn:hover,
@@ -10476,6 +10520,24 @@ h4 small {
   }
   .masthead .site-search {
     display: none;
+  }
+  .masthead .logo-container {
+    background: rgba(54, 2, 51, 0.7);
+    position: absolute;
+    border-radius: 100%;
+    top: -80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    min-height: 200px;
+  }
+  .masthead .logo-container .logo {
+    display: inline-block;
+    margin-top: 20px;
+  }
+  .masthead .logo-container .logo img {
+    max-height: 100px;
   }
 }
 @media (max-width: 767px) {
