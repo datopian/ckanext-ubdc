@@ -10405,7 +10405,7 @@ h4 small {
   background: rgba(54, 2, 51, 0.7);
   position: absolute;
   border-radius: 100%;
-  top: -113px;
+  top: -140px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10414,7 +10414,7 @@ h4 small {
 }
 .masthead .logo-container .logo {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 .masthead .logo-container .logo img {
   max-height: 130px;
