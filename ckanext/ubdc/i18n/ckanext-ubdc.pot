@@ -1,0 +1,52 @@
+# Translations template for ckanext-ubdc.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the ckanext-ubdc project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-ubdc 0.0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-12-15 11:40+0545\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ckanext/ubdc/templates/home/snippets/hero.html:6
+msgid "Search datasets"
+msgstr ""
+
+#: ckanext/ubdc/templates/home/snippets/hero.html:11
+msgid "Search"
+msgstr ""
+
+#: ckanext/ubdc/templates/home/snippets/popular.html:7
+msgid "Most Popular Datasets"
+msgstr ""
+
+#: ckanext/ubdc/templates/home/snippets/stats.html:20
+msgid "Datasets"
+msgstr ""
+
+#: ckanext/ubdc/templates/home/snippets/stats.html:31
+msgid "Resources"
+msgstr ""
+
+#: ckanext/ubdc/templates/home/snippets/stats.html:43
+#: ckanext/ubdc/templates/home/snippets/themes.html:7
+msgid "Themes"
+msgstr ""
+
+#: ckanext/ubdc/templates/home/snippets/stats.html:54
+msgid "Tags"
+msgstr ""
+
+#: ckanext/ubdc/templates/home/snippets/stats.html:66
+msgid "Data Providers"
+msgstr ""
+
