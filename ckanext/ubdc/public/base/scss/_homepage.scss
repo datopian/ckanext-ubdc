@@ -94,7 +94,7 @@
         background-image: url("#{$imagePath}/popular-dataset-bg.png");
         background-repeat: no-repeat;
         background-position: 0 30px;
-        background-color: #edeced;
+        background-color: #00162C;
         .col-md-4 {
             &:nth-child(1) {
                 .icon {
@@ -127,7 +127,7 @@
             position: relative;
             font-weight: 700;
             font-size: 23px;
-            color: #000000;
+            color: #fff;
             text-transform: uppercase;
             padding-top: 70px;
             padding-bottom: 70px;
@@ -171,7 +171,7 @@
             text-align: center;
             padding: 30px;
             a {
-                color: #000000;
+                color: #fff;
                 font-size: 23px;
                 padding-bottom: 11px;
             }
