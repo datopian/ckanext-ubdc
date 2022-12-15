@@ -10047,7 +10047,7 @@ h4 small {
   background-image: url("../../../base/images/popular-dataset-bg.png");
   background-repeat: no-repeat;
   background-position: 0 30px;
-  background-color: #edeced;
+  background-color: #00162C;
 }
 .homepage .popular-dataset .col-md-4:nth-child(1) .icon {
   background: #bfd22b;
@@ -10073,7 +10073,7 @@ h4 small {
   position: relative;
   font-weight: 700;
   font-size: 23px;
-  color: #000000;
+  color: #fff;
   text-transform: uppercase;
   padding-top: 70px;
   padding-bottom: 70px;
@@ -10118,7 +10118,7 @@ h4 small {
   padding: 30px;
 }
 .homepage .popular-dataset .more a {
-  color: #000000;
+  color: #fff;
   font-size: 23px;
   padding-bottom: 11px;
 }
