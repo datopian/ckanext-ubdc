@@ -58,7 +58,7 @@ dataset_fields:
   label: Resource Type
 
 - field_name: data_format
-  label: Data Format f
+  label: Data Format
 
 - field_name: weighting
   label: Weighting
@@ -163,7 +163,7 @@ dataset_fields:
   display_snippet: null
   validators: ignore_missing publishing_status_validator
 
-- field_name: data_fields
+- field_name: dataset_fields
   label: Dataset Fields
   repeating_label: Dataset Field
   repeating_subfields:
