@@ -69,9 +69,6 @@ dataset_fields:
 - field_name: collection_status
   label: Collection Status
 
-- field_name: dataset_fields
-  label: Dataset Fields
-
 - field_name: dataset_aggregation
   label: Dataset Aggregation
 
@@ -163,9 +160,9 @@ dataset_fields:
   display_snippet: null
   validators: ignore_missing publishing_status_validator
 
-- field_name: dataset_fields
+- field_name: data_schema
   label: Dataset Fields
-  repeating_label: Dataset Field
+  repeating_label: Dataset Fields
   repeating_subfields:
 
   - field_name: name
@@ -179,16 +176,32 @@ dataset_fields:
     label: Type
     preset: select
     choices:
-      - value: text
-        label: Text
+      - value: string
+        label: String
       - value: number
         label: Number
-      - value: date
-        label: Date
       - value: boolean
         label: Boolean
-      - value: other
-        label: Other
+      - value: object
+        label: Object
+      - value: array
+        label: Array
+      - value: date
+        label: Date
+      - value: time
+        label: Time
+      - value: datetime
+        label: Datetime
+      - value: year
+        label: Year
+      - value: yearmonth
+        label: Yearmonth
+      - value: timestamptz
+        label: Timestamptz
+      - value: geojson
+        label: GeoJson
+      - value: any
+        label: Any
 
 resource_fields:
 
