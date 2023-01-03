@@ -16,9 +16,9 @@ class UbdcPlugin(plugins.SingletonPlugin):
     
     # IPackageController
     def before_index(self, data_dict):
-        if data_dict.get('data_fields', False):
+        if data_dict.get('data_schema', False):
             # convert the dict to json
-            data_dict['data_fields'] = json.dumps(data_dict['data_fields'])
+            data_dict['data_schema'] = json.dumps(data_dict['data_fields'])
         return data_dict
             
 
