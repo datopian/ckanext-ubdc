@@ -18,7 +18,7 @@ class UbdcPlugin(plugins.SingletonPlugin):
     def before_index(self, data_dict):
         if data_dict.get('data_schema', False):
             # convert the dict to json
-            data_dict['data_schema'] = json.dumps(data_dict['data_fields'])
+            data_dict['data_schema'] = json.dumps(data_dict['data_schema'])
         return data_dict
             
 
