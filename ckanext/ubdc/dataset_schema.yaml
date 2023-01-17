@@ -65,7 +65,8 @@ dataset_fields:
 
 - field_name: method_of_collection
   label: Method of Collection
-  
+  form_snippet: markdown.html
+
 - field_name: collection_status
   label: Collection Status
 
@@ -97,7 +98,7 @@ dataset_fields:
 
 - field_name: dataset_available
   label: Dataset Available
-  reset: date
+  preset: date
   form_placeholder: eg. 2011-01-01
 
 - field_name: dataset_closed
@@ -112,7 +113,7 @@ dataset_fields:
 
 - field_name: dataset_updating_frequency
   label: Dataset Updating Frequency
-  form_placeholder: eg. Every monthy
+  form_placeholder: eg. Every month
 
 - field_name: dataset_next_version_due
   label: Dataset Next Version Due
@@ -123,6 +124,7 @@ dataset_fields:
   label: Date Published
   preset: date
   form_placeholder: eg. 2022-01-01
+  required: true
 
 - field_name: date_of_fieldwork
   label: Date of Fieldwork
@@ -135,6 +137,7 @@ dataset_fields:
 - field_name: dataset_file_size
   label: Dataset File Size
   form_placeholder: eg. 1.5MB
+  required: true
 
 - field_name: dataset_creation_date
   label: Dataset Creation Date
