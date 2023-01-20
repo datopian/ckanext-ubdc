@@ -2,9 +2,11 @@ import json
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 import ckanext.ubdc.helpers as helpers
+from ckan.lib.plugins import DefaultTranslation
 
-class UbdcPlugin(plugins.SingletonPlugin):
+class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
     plugins.implements(plugins.IConfigurer)
+    plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IPackageController, inherit=True)
 

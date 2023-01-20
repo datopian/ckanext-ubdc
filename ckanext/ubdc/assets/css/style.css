@@ -7112,6 +7112,10 @@ button.close {
     display: none !important;
   }
 }
+.issues-actions .btn {
+  font-size: 16px;
+}
+
 .tag {
   display: inline-block;
   margin-bottom: 4px;
@@ -7214,6 +7218,7 @@ a.tag:hover {
   padding: 30px;
 }
 .module-content .add-to-group .btn-primary {
+  margin-top: 10px;
   margin-bottom: 30px;
 }
 
