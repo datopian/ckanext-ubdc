@@ -7116,6 +7116,19 @@ button.close {
   font-size: 16px;
 }
 
+.repeated_dataset_fields {
+  max-height: 920px;
+  overflow: hidden;
+}
+.repeated_dataset_fields .card-body {
+  padding-left: 20px;
+}
+
+.repeated_dataset_fields.more {
+  max-height: 100%;
+  overflow: hidden;
+}
+
 .tag {
   display: inline-block;
   margin-bottom: 4px;
