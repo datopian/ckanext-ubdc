@@ -1,0 +1,38 @@
+{% set fields = data[field.field_name] %}
+
+{% block subfield_display %}
+<div id="accordion" class="repeated_dataset_fields">
+  {% for field_data in fields %}
+   <div class="card">
+      <div class="card-header">
+        <a class="" data-bs-toggle="collapse" href="#repeated_field-{{ loop.index }}">
+         <li>
+          {{ h.scheming_language_text(field_data.name) }}
+         </li>
+        </a>
+      </div>
+      <div id="repeated_field-{{ loop.index }}" class="collapse show" data-bs-parent="#accordion">
+        <div class="card-body">
+          <dl class="scheming-subfield-list">
+            {% for subfield in field.repeating_subfields %}
+              <dt class="dataset-label">
+                {{ h.scheming_language_text(subfield.label) }}:
+              </dt>
+              <dd>
+              {%- snippet 'scheming/snippets/display_field.html',
+                field=subfield,
+                data=field_data,
+                entity_type=entity_type,
+                object_type=object_type
+              -%}
+              </dd>
+            {% endfor %}
+          </dl>
+        </div>
+      </div>
+    </div>  
+  {% endfor %}
+</div>
+<a href="" class="view_more_fields" style="float: right;">View more..</a>
+
+{% endblock %}
