@@ -7117,15 +7117,17 @@ button.close {
 }
 
 .repeated_dataset_fields {
-  max-height: 920px;
   overflow: hidden;
 }
 .repeated_dataset_fields .card-body {
   padding-left: 20px;
 }
 
+.view_more_fields {
+  text-decoration: underline;
+}
+
 .repeated_dataset_fields.more {
-  max-height: 100%;
   overflow: hidden;
 }
 

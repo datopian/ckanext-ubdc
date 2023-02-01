@@ -5026,15 +5026,11 @@ msgstr ""
 msgid "Redirecting to external site is not allowed."
 msgstr ""
 
-#============================================#
 # issue extension 
-#============================================#
 
 #: ckanext/issues/auth.py:20
 msgid "User {0} not authorized for action on issue {1}"
 msgstr "User {0} not authorized for action on request {1}"
-
-
 
 #: ckanext/issues/auth.py:91
 msgid "User {user} not authorized for action on issue {issue}"
