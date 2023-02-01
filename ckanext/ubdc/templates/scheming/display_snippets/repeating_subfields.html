@@ -3,7 +3,8 @@
 {% block subfield_display %}
 <div id="accordion" class="repeated_dataset_fields">
   {% for field_data in fields %}
-   <div class="card">
+  {% if loop.index <= 5 %} 
+    <div class="card">
       <div class="card-header">
         <a class="" data-bs-toggle="collapse" href="#repeated_field-{{ loop.index }}">
          <li>
@@ -31,8 +32,41 @@
         </div>
       </div>
     </div>  
+  {% else %}
+    <div class="card more hidden">
+      <div class="card-header">
+        <a class="" data-bs-toggle="collapse" href="#repeated_field-{{ loop.index }}">
+         <li>
+          {{ h.scheming_language_text(field_data.name) }}
+         </li>
+        </a>
+      </div>
+      <div id="repeated_field-{{ loop.index }}" class="collapse" data-bs-parent="#accordion">
+        <div class="card-body">
+          <dl class="scheming-subfield-list">
+            {% for subfield in field.repeating_subfields %}
+              <dt class="dataset-label">
+                {{ h.scheming_language_text(subfield.label) }}:
+              </dt>
+              <dd>
+              {%- snippet 'scheming/snippets/display_field.html',
+                field=subfield,
+                data=field_data,
+                entity_type=entity_type,
+                object_type=object_type
+              -%}
+              </dd>
+            {% endfor %}
+          </dl>
+        </div>
+      </div>
+    </div>  
+  {% endif %}
   {% endfor %}
 </div>
-<a href="" class="view_more_fields" style="float: right;">View more..</a>
+
+{% if fields|length >= 5 %}
+  <a href="#" class="view_more_fields" data-total-fields="{{fields|length}}"  style="float: right;" >View {{ fields|length - 5 }} more.</a>
+{% endif %}
 
 {% endblock %}
