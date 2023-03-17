@@ -12,3 +12,5 @@ ubdc-css:
   output: ckanext-ubdc/%(version)s-ubdc.css
   contents:
     - css/style.css
+    - css/issue.css
+    
