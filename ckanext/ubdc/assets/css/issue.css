@@ -231,13 +231,16 @@
   
   .list-group-item-name .icon {
     float: left;
-    margin-left: -24px;
+    padding-right: 6px;
+    margin-left: 0px;
+    margin-top: 2px;
     font-size: 16px;
     line-height: 1;
     display: inline-block;
     vertical-align: middle;
     position: relative;
-  }
+}
+
   
   .list-group-item-name .icon.open {
     color: #6cc644;
@@ -255,6 +258,21 @@
   
   .issue-home-sidebar {
     margin: 20px 0 0 15px;
+  }
+
+  #ckanext-issues-assign {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  #ckanext-issues-assign .controls {
+    width: 100%;
+    padding-right: 10px;
+  }
+
+  #ckanext-issues-assign .btn {
+    font-size: 0.7em;
   }
   
   .module-content .pagination {
