@@ -5038,7 +5038,7 @@ msgstr "User {user} not authorized for action on request {issue}"
 
 #: ckanext/issues/controller/controller.py:49
 msgid "Issues have not been enabled for this dataset"
-msgstr "Access request have not been enabled for this dataset"
+msgstr "Comments have not been enabled for this dataset"
 
 #: ckanext/issues/controller/controller.py:55
 msgid "Unauthorized to view issues for this dataset"
@@ -5046,36 +5046,36 @@ msgstr "Unauthorized to view request for this dataset"
 
 #: ckanext/issues/controller/controller.py:67
 msgid "Issues have not been enabled for this organization"
-msgstr "Access request have not been enabled for this organization"
+msgstr "Comments have not been enabled for this organization"
 
 #: ckanext/issues/controller/controller.py:73
 msgid "Unauthorized to view issues for this organization"
-msgstr "Unauthorized to view access requests for this organization"
+msgstr "Unauthorized to view comments for this organization"
 
 #: ckanext/issues/controller/controller.py:78
 msgid "Please login to add a new issue"
-msgstr "Please login to create a new access request"
+msgstr "Please login to create a new comments"
 
 #: ckanext/issues/controller/controller.py:87
 msgid "Not authorized to add a new issue"
-msgstr "Not authorized to create a new access request"
+msgstr "Not authorized to create a new comments"
 
 #: ckanext/issues/controller/controller.py:114
 msgid "Your issue has been registered, thank you for the feedback"
-msgstr "Your access request has been registered, thank you for the feedback"
+msgstr "Your commentst has been registered, thank you for the feedback"
 
 #: ckanext/issues/controller/controller.py:132
 #: ckanext/issues/controller/controller.py:135
 msgid "Issue not found: {0}"
-msgstr "Access request not found: {0}"
+msgstr "Comments thread not found: {0}"
 
 #: ckanext/issues/controller/controller.py:216
 msgid "Issue closed"
-msgstr "Access request closed"
+msgstr "Comments thread closed"
 
 #: ckanext/issues/controller/controller.py:218
 msgid "Issue re-opened"
-msgstr "Access request re-opened"
+msgstr "Comments thread re-opened"
 
 #: ckanext/issues/controller/controller.py:256
 msgid "Unauthorized to delete issue {0}"
@@ -5083,7 +5083,7 @@ msgstr "Unauthorized to delete request {0}"
 
 #: ckanext/issues/controller/controller.py:261
 msgid "Issue {0} has been deleted."
-msgstr "Access request {0} has been deleted."
+msgstr "Comments thread {0} has been deleted."
 
 
 #: ckanext/issues/controller/controller.py:309
@@ -5092,33 +5092,33 @@ msgstr "Unauthorized to assign users to request"
 
 #: ckanext/issues/controller/controller.py:323
 msgid "You must be logged in to report issues"
-msgstr "You must be logged in to report access request"
+msgstr "You must be logged in to report comments"
 
 
 #: ckanext/issues/controller/controller.py:338
 msgid "Issue is visible."
-msgstr "Access request is visible."
+msgstr "Comments is visible."
 
 #: ckanext/issues/controller/controller.py:340
 msgid "Issue is invisible to normal users."
-msgstr "Access request is invisible to normal users."
+msgstr "Comments is invisible to normal users."
 
 #: ckanext/issues/controller/controller.py:343
 msgid "Issue reported to an administrator"
-msgstr "Access request reported to an administrator"
+msgstr "Comments reported to an administrator"
 
 
 #: ckanext/issues/controller/controller.py:403
 msgid "Issue report cleared"
-msgstr "Access request report cleared"
+msgstr "Comments report cleared"
 
 #: ckanext/issues/controller/moderation.py:22
 msgid "You must be logged in to moderate issues"
-msgstr "You must be logged in to moderate access request"
+msgstr "You must be logged in to moderate Comments"
 
 #: ckanext/issues/controller/moderation.py:29
 msgid "Issue permanently hidden"
-msgstr "Access request permanently hidden"
+msgstr "Comments thread permanently hidden"
 
 #: ckanext/issues/controller/moderation.py:33
 msgid "All issue reports cleared"
@@ -5126,44 +5126,44 @@ msgstr "All request reports cleared"
 
 #: ckanext/issues/lib/helpers.py:202
 msgid "[{site_title} Issue] {dataset}"
-msgstr "[{site_title} access request request] {dataset}"
+msgstr "[{site_title} comments request] {dataset}"
 
 #: ckanext/issues/logic/action/action.py:63
 msgid "Issue does not exist"
-msgstr "Access request does not exist"
+msgstr "Commentsdoes not exist"
 
 #: ckanext/issues/logic/action/action.py:83
 msgid "Issue marked as spam/abuse"
-msgstr "Access request marked as spam/abuse"
+msgstr "Comment marked as spam/abuse"
 
 #: ckanext/issues/logic/action/action.py:561
 msgid "Issue has already been reported by this user"
-msgstr "Access request has already been reported by this user"
+msgstr "Comment has already been reported by this user"
 
 #: ckanext/issues/logic/validators/validators.py:65
 #: ckanext/issues/logic/validators/validators.py:78
 msgid "Issue not found"
-msgstr "Access request not found" 
+msgstr "Comment not found" 
 
 #: ckanext/issues/logic/validators/validators.py:87
 msgid "Issue Comment not found"
-msgstr "Access request comment not found"
+msgstr "Comments comment not found"
 
 #: ckanext/issues/templates/issues/add.html:3
 #: ckanext/issues/templates/issues/add.html:5
 #: ckanext/issues/templates/issues/dataset.html:22
 msgid "New Issue"
-msgstr "New access request"
+msgstr "New Comment"
 
 #: ckanext/issues/templates/issues/all_issues.html:5
 #: ckanext/issues/templates/issues/all_issues.html:8
 #: ckanext/issues/templates/issues/all_issues.html:12
 msgid "All Issues"
-msgstr "All requests"
+msgstr "All Comments"
 
 #: ckanext/issues/templates/issues/all_issues.html:24
 msgid "There are currently no issues"
-msgstr "There are currently no request"
+msgstr "There are currently no comments"
 
 #: ckanext/issues/templates/issues/base.html:9
 msgid "Datasets"
@@ -5179,11 +5179,11 @@ msgstr ""
 #: ckanext/issues/templates/issues/organization_issues.html:23
 #: ckanext/issues/templates/issues/show.html:15
 msgid "Issues"
-msgstr "Access requests"
+msgstr "Comments"
 
 #: ckanext/issues/templates/issues/base_form_page.html:15
 msgid "What are issues?"
-msgstr "What are access request?"
+msgstr "What are comments?"
 
 
 #: ckanext/issues/templates/issues/base_form_page.html:17
@@ -5191,18 +5191,18 @@ msgid ""
 "<p>Isses are problems reported per dataset and can be filled out by signed-"
 "in users.</p>"
 msgstr ""
-"<p>Access requests refer to requests made by users 
+"<p>Comments refer to requests made by users 
 "to access or retrieve data stored within the platform.</p>"
 
 #: ckanext/issues/templates/issues/comment_moderation.html:10
 #: ckanext/issues/templates/issues/moderation.html:9
 msgid "Reported issues"
-msgstr "Reported request"
+msgstr "Reported comments"
 
 #: ckanext/issues/templates/issues/comment_moderation.html:33
 #: ckanext/issues/templates/issues/moderation.html:32
 msgid "Reported Issues"
-msgstr "Reported request"
+msgstr "Reported comments"
 
 #: ckanext/issues/templates/issues/confirm_delete.html:9
 msgid "Are you sure you want to delete issue - {0}?"
@@ -5211,16 +5211,16 @@ msgstr "Are you sure you want to delete request - {0}?"
 #: ckanext/issues/templates/issues/dataset.html:26
 #: ckanext/issues/templates/issues/organization_issues.html:28
 msgid "Search issues..."
-msgstr "Search requests..."
+msgstr "Search comments..."
 
 #: ckanext/issues/templates/issues/dataset.html:35
 msgid "No issues"
-msgstr "No requests"
+msgstr "No comments"
 
 #: ckanext/issues/templates/issues/edit.html:3
 #: ckanext/issues/templates/issues/edit.html:5
 msgid "Edit Issue"
-msgstr "Edit request"
+msgstr "Edit comments"
 
 #: ckanext/issues/templates/issues/edit.html:36
 msgid "Update"
@@ -5228,22 +5228,22 @@ msgstr ""
 
 #: ckanext/issues/templates/issues/moderation.html:22
 msgid "No reported issues."
-msgstr "No reported requests.
+msgstr "No reported comments.
 
 #: ckanext/issues/templates/issues/moderation.html:43
 #: ckanext/issues/templates/issues/moderation.html:45
 msgid "created issue"
-msgstr "created request"
+msgstr "created comment"
 
 #: ckanext/issues/templates/issues/organization_issues.html:30
 #: ckanext/issues/templates/snippets/search_result_text.html:44
 msgid "{number} issue found"
-msgstr "{number} request found"
+msgstr "{number} comment found"
 
 #: ckanext/issues/templates/issues/organization_issues.html:30
 #: ckanext/issues/templates/snippets/search_result_text.html:45
 msgid "{number} issues found"
-msgstr "{number} requests found"
+msgstr "{number} comments found"
 
 #: ckanext/issues/templates/issues/organization_issues.html:42
 msgid "Reported"
@@ -5271,33 +5271,33 @@ msgstr ""
 
 #: ckanext/issues/templates/issues/organization_issues.html:88
 msgid "There are currently no issues for"
-msgstr "There are currently no access request for"
+msgstr "There are currently no comments for"
 
 #: ckanext/issues/templates/issues/show.html:19
 msgid "Issue"
-msgstr "Access request"
+msgstr "Comment"
 
 #: ckanext/issues/templates/issues/show.html:175
 msgid "opened this issue"
-msgstr "opened this access request"
+msgstr "opened this comment"
 
 #: ckanext/issues/templates/issues/show.html:210
 msgid "Are you sure you want to delete this issue?"
-msgstr "Are you sure you want to delete this request?"
+msgstr "Are you sure you want to delete this comment?"
 
 #: ckanext/issues/templates/snippets/search_result_text.html:40
 msgid "{number} issue found for \"{query}\""
-msgstr "{number} request found for \"{query}\""
+msgstr "{number} comment found for \"{query}\""
 
 #: ckanext/issues/templates/snippets/search_result_text.html:41
 msgid "{number} issues found for \"{query}\""
-msgstr "{number} requests found for \"{query}\""
+msgstr "{number} comment found for \"{query}\""
 
 #: ckanext/issues/templates/snippets/search_result_text.html:43
 msgid "No issues found for \"{query}\""
-msgstr "No request found"
+msgstr "No comments found"
 
 #: ckanext/issues/templates/snippets/search_result_text.html:47
 msgid "No issues found"
-msgstr "No request found"
+msgstr "No comments found"
 
