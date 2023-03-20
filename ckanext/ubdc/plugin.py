@@ -15,6 +15,14 @@ class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('assets', 'ubdc')
+
+    def update_config_schema(self, schema):
+        ignore_missing = toolkit.get_validator('ignore_missing')
+        schema.update({
+            'ckanext.ubdc.gtm_id': [ignore_missing],
+        })
+        return schema
+    
     
     # IPackageController
     def before_index(self, data_dict):
@@ -30,4 +38,5 @@ class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
             'popular_datasets': helpers.popular_datasets,
             'resources_count': helpers.resources_count,
             'tags_count': helpers.tags_count,
+            'get_gtm_id': helpers.get_gtm_id,
         }

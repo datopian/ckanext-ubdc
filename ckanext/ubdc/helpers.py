@@ -1,7 +1,7 @@
 
 from ckan import model
 from ckan.logic import get_action
-
+import ckan.plugins.toolkit as tk
 
 def popular_datasets(limit=3):
     """Return a list of the most popular datasets."""
@@ -20,3 +20,7 @@ def tags_count():
     """Return the total number of tags."""
     context = {'model': model, 'session': model.Session}
     return {'count': len(get_action('tag_list')(context, {})) }
+
+def get_gtm_id():
+    """Return the Google Tag Manager ID."""
+    return tk.config.get('ckanext.ubdc.gtm_id', '')
