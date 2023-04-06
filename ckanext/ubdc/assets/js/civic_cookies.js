@@ -45,8 +45,7 @@ ckan.module('civic_cookies', function (jQuery) {
               },
             ]
         };
-        console.log(config)
-          
+                  
         CookieControl.load( config );
       }
     };
