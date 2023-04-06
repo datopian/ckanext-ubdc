@@ -7,6 +7,12 @@ ubdc-js:
     preload:
       - base/main
 
+ubdc-cc-js:
+  filter: rjsmin
+  output: ckanext-ubdc/%(version)s-ubdc-cc.js
+  contents:
+    - js/civic_cookies.js
+
 ubdc-css:
   filter: cssrewrite
   output: ckanext-ubdc/%(version)s-ubdc.css

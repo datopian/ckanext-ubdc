@@ -39,4 +39,5 @@ class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
             'resources_count': helpers.resources_count,
             'tags_count': helpers.tags_count,
             'get_gtm_id': helpers.get_gtm_id,
+            'get_cookie_control_config': helpers.get_cookie_control_config
         }
