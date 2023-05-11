@@ -5062,7 +5062,7 @@ msgstr "Not authorized to create a new comments"
 
 #: ckanext/issues/controller/controller.py:114
 msgid "Your issue has been registered, thank you for the feedback"
-msgstr "Your commentst has been registered, thank you for the feedback"
+msgstr "Your comment have been registered, thank you for the feedback"
 
 #: ckanext/issues/controller/controller.py:132
 #: ckanext/issues/controller/controller.py:135
