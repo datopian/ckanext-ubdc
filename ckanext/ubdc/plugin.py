@@ -3,11 +3,13 @@ import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 import ckanext.ubdc.helpers as helpers
 from ckan.lib.plugins import DefaultTranslation
+from ckanext.ubdc.view import get_blueprints
 
 class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.IBlueprint)
     plugins.implements(plugins.IPackageController, inherit=True)
 
     # IConfigurer
@@ -41,3 +43,7 @@ class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
             'get_gtm_id': helpers.get_gtm_id,
             'get_cookie_control_config': helpers.get_cookie_control_config
         }
+
+    # IBlueprint
+    def get_blueprint(self):
+        return get_blueprints()
