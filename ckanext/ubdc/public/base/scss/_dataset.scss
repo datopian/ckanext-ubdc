@@ -105,14 +105,16 @@
 }
 
 .resource-item  .resource-button {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5;
     border-radius: 3px;
     display: flex;
+    text-transform: capitalize;
     &:hover {
         text-decoration: none;
     }
     .btn {
+        padding: 6px 8px;
         margin-right: 6px;
     }
 }
