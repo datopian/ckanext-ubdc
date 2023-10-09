@@ -8594,6 +8594,19 @@ select[data-module=autocomplete] {
   right: 10px;
 }
 
+.resource-item .resource-button {
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 3px;
+  display: flex;
+}
+.resource-item .resource-button:hover {
+  text-decoration: none;
+}
+.resource-item .resource-button .btn {
+  margin-right: 6px;
+}
+
 @media (max-width: 991px) {
   .resource-item .btn-group {
     display: none;

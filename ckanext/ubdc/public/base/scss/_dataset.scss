@@ -104,6 +104,19 @@
     right: 10px;
 }
 
+.resource-item  .resource-button {
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 3px;
+    display: flex;
+    &:hover {
+        text-decoration: none;
+    }
+    .btn {
+        margin-right: 6px;
+    }
+}
+
 @media (max-width: $screen-sm-max) {
     .resource-item .btn-group {
         display: none;
