@@ -1,0 +1,73 @@
+{#
+  Renders a list of resources with icons and view links.
+
+  resources - A list of resources (dicts) to render
+  pkg - A package dict that the resources belong to.
+
+  Example:
+
+  {% snippet "package/snippets/resources_list.html", pkg=pkg, resources=pkg.resources %}
+#}
+
+{% set metadata_resources = [] %}
+{% set only_resources = [] %}
+
+{% for resource in resources %}
+  {% set resource_type = resource.get('type') %}
+  {% set target_list = only_resources if resource_type == 'resource' else metadata_resources %}
+  {% set target_list = target_list.append(resource) %}
+{% endfor %}
+
+<section id="dataset-resources" class="resources">
+  {% if metadata_resources | length > 0 %}
+    <h2>{{ _('Data and Metadata') }}</h2>
+    {% block resource_list_metadata %}
+      {% if metadata_resources %}
+        {% set can_edit = can_edit or h.check_access('package_update', {'id': pkg.id }) %}
+        <ul class="{% block resource_list_metadata_class %}resource-list{% endblock %}">
+          {% block resource_list_metadata_inner %}
+            {% for resource in metadata_resources %}
+              {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource, can_edit=can_edit %}
+            {% endfor %}
+          {% endblock %}
+        </ul>
+      {% else %}
+        {% block resource_list_metadata_empty %}
+          {% if h.check_access('resource_create', {'package_id': pkg['id']}) %}
+            {% trans url=h.url_for(pkg.type ~ '_resource.new', id=pkg.name) %}
+            <p class="empty">This dataset has no metadata, <a href="{{ url }}">why not add some?</a></p>
+            {% endtrans %}
+          {% else %}
+            <p class="empty">{{ _('This dataset has no metadata') }}</p>
+          {% endif %}
+        {% endblock %}
+      {% endif %}
+    {% endblock %}
+  {% endif %}
+
+  {% if only_resources | length > 0 %}
+    <h2>{{ _('Resources') }}</h2>
+    {% block resource_list %}
+      {% if only_resources %}
+        {% set can_edit = can_edit or h.check_access('package_update', {'id': pkg.id }) %}
+        <ul class="{% block resource_list_class %}resource-list{% endblock %}">
+          {% block resource_list_inner %}
+            {% for resource in only_resources %}
+              {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource, can_edit=can_edit %}
+            {% endfor %}
+          {% endblock %}
+        </ul>
+      {% else %}
+        {% block resource_list_empty %}
+          {% if h.check_access('resource_create', {'package_id': pkg['id']}) %}
+            {% trans url=h.url_for(pkg.type ~ '_resource.new', id=pkg.name) %}
+            <p class="empty">This dataset has no data, <a href="{{ url }}">why not add some?</a></p>
+            {% endtrans %}
+          {% else %}
+            <p class="empty">{{ _('This dataset has no data') }}</p>
+          {% endif %}
+        {% endblock %}
+      {% endif %}
+    {% endblock %}
+  {% endif %}
+</section>
