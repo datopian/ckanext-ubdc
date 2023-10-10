@@ -1,10 +1,40 @@
-<!-- Extend the Resource Item Title to truncate to 70 Characters -->
 {% ckan_extends %}
 
+
 {% block resource_item_title %}
-<a class="heading" href="{{ url }}" title="{{ res.name or res.description }}">
-    {{ h.resource_display_name(res) | truncate(70) }}<span class="format-label" property="dc:format"
-        data-format="{{ res.format.lower() or 'data' }}">{{ h.get_translated(res, 'format') }}</span>
-    {{ h.popular('views', res.tracking_summary.total, min=10) if res.tracking_summary }}
-</a>
+	<a class="heading" href="{{ url }}" title="{{ res.name or res.description }}">
+		{{ h.resource_display_name(res) | truncate(70) }}<span class="format-label" property="dc:format"
+			data-format="{{ res.format.lower() or 'data' }}">{{ h.get_translated(res, 'format') }}</span>
+		{{ h.popular('views', res.tracking_summary.total, min=10) if res.tracking_summary }}
+	</a>
+{% endblock %}
+
+{% block resource_item_explore %}
+	<div class="resource-button">
+		<a  class="btn btn-primary" href="{{ url }}" >
+			{% if not is_activity_archive and res.has_views %}
+				<i class="fa fa-bar-chart-o"></i>
+			{{ _('Preview') }}
+			{% else %}
+				<i class="fa fa-info-circle"></i>
+			{{ _('More information') }}
+		</a>
+		{% endif %}
+		<a class="btn btn-primary" href="{{ res.url }}" class="resource-url-analytics" target="_blank" rel="noreferrer">
+			{% if res.has_views or res.url_type == 'upload' %}
+				<i class="fa fa-arrow-circle-o-down"></i>
+			{{ _('Download') }}
+			{% else %}
+				<i class="fa fa-external-link"></i>
+				{{ _('Go to resource') }}
+			{% endif %}
+		</a>
+		{% if can_edit %}
+
+		<a href="{{ h.url_for(pkg.type ~ '_resource.edit', id=pkg.name, resource_id=res.id) }}" class="btn btn-primary">
+				<i class="fa fa-pencil-square-o"></i>
+			{{ _('Edit') }}
+		</a>
+		{% endif %}
+	</div>
 {% endblock %}
