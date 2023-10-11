@@ -260,7 +260,7 @@ resource_fields:
 - field_name: type
   label: Type
   preset: select
-  form_include_blank_choice: false
+  validators: ignore_missing resource_type_validator
   required: true
   choices:
     - value: data_and_metadata
