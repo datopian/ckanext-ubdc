@@ -256,3 +256,14 @@ resource_fields:
       label: Allowed Users
       preset: tag_string_autocomplete
       data-module-source: /api/2/util/user/autocomplete?q=?
+
+- field_name: type
+  label: Type
+  preset: select
+  validators: ignore_missing resource_type_validator
+  required: true
+  choices:
+    - value: data_and_metadata
+      label: Data and metadata
+    - value: resource
+      label: Resource

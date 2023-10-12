@@ -4,11 +4,14 @@ import ckan.plugins.toolkit as toolkit
 import ckanext.ubdc.helpers as helpers
 from ckan.lib.plugins import DefaultTranslation
 from ckanext.ubdc.view import get_blueprints
+from ckanext.ubdc.validators import resource_type_validator
+
 
 class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.IValidators)
     plugins.implements(plugins.IBlueprint)
     plugins.implements(plugins.IPackageController, inherit=True)
 
@@ -42,6 +45,11 @@ class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
             'tags_count': helpers.tags_count,
             'get_gtm_id': helpers.get_gtm_id,
             'get_cookie_control_config': helpers.get_cookie_control_config
+        }
+    # IValidators
+    def get_validators(self):
+        return {
+            'resource_type_validator': resource_type_validator,
         }
 
     # IBlueprint
