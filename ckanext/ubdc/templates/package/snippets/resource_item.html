@@ -3,6 +3,19 @@
 {% block resource_item_explore %}
 {% if res['type'] and res['type'] == 'resource' %}
 <div class="resource-button">
+    <a class="btn btn-primary" href="{{ res.url }}">
+        <i class="fa fa-eye"></i>
+        {{ _('View') }}
+    </a>
+    {% if can_edit %}
+    <a href="{{ h.url_for(pkg.type ~ '_resource.edit', id=pkg.name, resource_id=res.id) }}" class="btn btn-primary">
+        <i class="fa fa-pencil-square-o"></i>
+        {{ _('Edit') }}
+    </a>
+    {% endif %}
+</div>
+{% else %}
+<div class="resource-button">
     <a class="btn btn-primary" href="{{ url }}">
         {% if not is_activity_archive and res.has_views %}
         <i class="fa fa-bar-chart-o"></i>
@@ -23,19 +36,6 @@
     </a>
     {% if can_edit %}
 
-    <a href="{{ h.url_for(pkg.type ~ '_resource.edit', id=pkg.name, resource_id=res.id) }}" class="btn btn-primary">
-        <i class="fa fa-pencil-square-o"></i>
-        {{ _('Edit') }}
-    </a>
-    {% endif %}
-</div>
-{% else %}
-<div class="resource-button">
-    <a class="btn btn-primary" href="{{ res.url }}">
-        <i class="fa fa-eye"></i>
-        {{ _('View') }}
-    </a>
-    {% if can_edit %}
     <a href="{{ h.url_for(pkg.type ~ '_resource.edit', id=pkg.name, resource_id=res.id) }}" class="btn btn-primary">
         <i class="fa fa-pencil-square-o"></i>
         {{ _('Edit') }}
