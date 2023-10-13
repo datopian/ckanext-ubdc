@@ -17,3 +17,16 @@ $('.view_more_fields').click(function(event) {
         $(this).text(`View ${count - 5} more.`);
     }
 });
+
+
+// Show More/Less Resource
+$(".show_more_resource").click(function (event) {
+  event.preventDefault();
+  var type = $(this).attr("id");
+  $(`.${type}.more`).toggleClass("hidden");
+  if ($(`.${type}`).hasClass("more")) {
+    $(this).text("Show less");
+  } else {
+    $(this).text(`Show All`);
+  }
+});
