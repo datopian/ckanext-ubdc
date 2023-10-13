@@ -1,7 +1,29 @@
 {% ckan_extends %}
 
+
+{% block resource_item_title %}
+	<a class="heading" href="{{ url }}" title="{{ res.name or res.description }}">
+		{{ h.resource_display_name(res) | truncate(70) }}<span class="format-label" property="dc:format"
+			data-format="{{ res.format.lower() or 'data' }}">{{ h.get_translated(res, 'format') }}</span>
+		{{ h.popular('views', res.tracking_summary.total, min=10) if res.tracking_summary }}
+	</a>
+{% endblock %}
+
 {% block resource_item_explore %}
 {% if res['type'] and res['type'] == 'resource' %}
+<div class="resource-button">
+    <a class="btn btn-primary" href="{{ res.url }}">
+        <i class="fa fa-eye"></i>
+        {{ _('View') }}
+    </a>
+    {% if can_edit %}
+    <a href="{{ h.url_for(pkg.type ~ '_resource.edit', id=pkg.name, resource_id=res.id) }}" class="btn btn-primary">
+        <i class="fa fa-pencil-square-o"></i>
+        {{ _('Edit') }}
+    </a>
+    {% endif %}
+</div>
+{% else %}
 <div class="resource-button">
     <a class="btn btn-primary" href="{{ url }}">
         {% if not is_activity_archive and res.has_views %}
@@ -23,19 +45,6 @@
     </a>
     {% if can_edit %}
 
-    <a href="{{ h.url_for(pkg.type ~ '_resource.edit', id=pkg.name, resource_id=res.id) }}" class="btn btn-primary">
-        <i class="fa fa-pencil-square-o"></i>
-        {{ _('Edit') }}
-    </a>
-    {% endif %}
-</div>
-{% else %}
-<div class="resource-button">
-    <a class="btn btn-primary" href="{{ res.url }}">
-        <i class="fa fa-eye"></i>
-        {{ _('View') }}
-    </a>
-    {% if can_edit %}
     <a href="{{ h.url_for(pkg.type ~ '_resource.edit', id=pkg.name, resource_id=res.id) }}" class="btn btn-primary">
         <i class="fa fa-pencil-square-o"></i>
         {{ _('Edit') }}

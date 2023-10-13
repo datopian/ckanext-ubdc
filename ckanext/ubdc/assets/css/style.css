@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,200,400,600,600,700");
+@import url("../../../base/fonts/stylesheet.css");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -8586,6 +8586,7 @@ select[data-module=autocomplete] {
   font-size: 12px;
   margin-bottom: 0;
   min-height: 12px;
+  padding-bottom: 6px;
 }
 
 .resource-item .btn-group {
@@ -8595,15 +8596,17 @@ select[data-module=autocomplete] {
 }
 
 .resource-item .resource-button {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.5;
   border-radius: 3px;
   display: flex;
+  text-transform: capitalize;
 }
 .resource-item .resource-button:hover {
   text-decoration: none;
 }
 .resource-item .resource-button .btn {
+  padding: 6px 8px;
   margin-right: 6px;
 }
 
