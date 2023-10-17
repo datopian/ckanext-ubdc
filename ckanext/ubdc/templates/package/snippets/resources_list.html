@@ -27,10 +27,22 @@
         <ul class="{% block resource_list_metadata_class %}resource-list{% endblock %}">
           {% block resource_list_metadata_inner %}
             {% for resource in metadata_resources %}
-              {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource, can_edit=can_edit %}
+              {% if loop.index <=12 %}
+                <span class="metadata_resources show">
+                  {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource, can_edit=can_edit %}
+                </span>
+              {% else %}
+                <span class="metadata_resources more hidden">
+                  {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource, can_edit=can_edit %}
+                </span>
+              {% endif %}
             {% endfor %}
           {% endblock %}
         </ul>
+        {% if metadata_resources|length > 12 %}
+          <i class="fa fa-chevron-circle-down text-primary" id="metadata_resources_icon"></i>
+          <a href="#" class="show_more_resource btn-text" id="metadata_resources" >Show More</a>
+        {% endif %}
       {% else %}
         {% block resource_list_metadata_empty %}
           {% if h.check_access('resource_create', {'package_id': pkg['id']}) %}
@@ -53,10 +65,22 @@
         <ul class="{% block resource_list_class %}resource-list{% endblock %}">
           {% block resource_list_inner %}
             {% for resource in only_resources %}
-              {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource, can_edit=can_edit %}
+              {% if loop.index <=12 %}
+                <span class="only_resources show">
+                  {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource, can_edit=can_edit %}
+                </span>
+              {% else %}
+                <span class="only_resources more hidden">
+                  {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource, can_edit=can_edit %}
+                </span>
+              {% endif %}
             {% endfor %}
           {% endblock %}
         </ul>
+        {% if only_resources|length > 12 %}
+          <i class="fa fa-chevron-circle-down text-primary" id="only_resources_icon"></i>
+          <a href="#" class="show_more_resource btn-text" id="only_resources"><u>Show More</u></a>
+        {% endif %}
       {% else %}
         {% block resource_list_empty %}
           {% if h.check_access('resource_create', {'package_id': pkg['id']}) %}

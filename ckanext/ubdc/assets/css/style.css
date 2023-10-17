@@ -8560,6 +8560,10 @@ select[data-module=autocomplete] {
   margin: -10px -10px 10px -10px;
 }
 
+.resources a.btn-text {
+  font-weight: bold;
+}
+
 .resource-item {
   position: relative;
   padding: 10px 10px 10px 60px;

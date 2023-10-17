@@ -17,3 +17,20 @@ $('.view_more_fields').click(function(event) {
         $(this).text(`View ${count - 5} more.`);
     }
 });
+
+
+// Show More/Less Resource
+$(".show_more_resource").click(function (event) {
+  event.preventDefault();
+  var type = $(this).attr("id");
+  $(`.${type}.more`).toggleClass("hidden");
+  if ($(`.${type}`).hasClass("hidden")) {
+    $(this).text(`Show More`);
+    $(`#${type}_icon`).removeClass("fa-chevron-circle-up");
+    $(`#${type}_icon`).addClass("fa-chevron-circle-down");
+  } else {
+    $(this).text("Show Less");
+    $(`#${type}_icon`).removeClass("fa-chevron-circle-down");
+    $(`#${type}_icon`).addClass("fa-chevron-circle-up");
+  }
+});
