@@ -29,7 +29,7 @@ $(".show_more_resource").click(function (event) {
     $(`#${type}_icon`).removeClass("fa-chevron-circle-up");
     $(`#${type}_icon`).addClass("fa-chevron-circle-down");
   } else {
-    $(this).text("Show less");
+    $(this).text("Show Less");
     $(`#${type}_icon`).removeClass("fa-chevron-circle-down");
     $(`#${type}_icon`).addClass("fa-chevron-circle-up");
   }
