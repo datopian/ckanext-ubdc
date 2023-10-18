@@ -46,7 +46,7 @@
   {% endif %}
 
   {% if only_resources | length > 0 %}
-    <h2>{{ _('Resources') }}</h2>
+    <h2>{{ _('Other Resources') }}</h2>
     {% block resource_list %}
       {% if only_resources %}
         {% set can_edit = can_edit or h.check_access('package_update', {'id': pkg.id }) %}
