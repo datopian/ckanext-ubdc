@@ -266,4 +266,4 @@ resource_fields:
     - value: data_and_metadata
       label: Data and metadata
     - value: resource
-      label: Resource
+      label: Other resources
