@@ -1,4 +1,5 @@
 import ast
+import datetime
 import logging
 import ckan.plugins.toolkit as tk
 from ckan.lib.navl.dictization_functions import validate
@@ -16,12 +17,13 @@ def _access_request_notification(request_id):
     """
     site_title = tk.config.get("ckan.site_title")
     site_url = tk.config.get("ckan.site_url")
+    datetime_now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     body_html = f"""
     <p>Dear Admin,</p>
-    <p>A new data access request has been submitted on {site_title}.</p>
-
-    <p>Click <a href='{site_url}/request-data-access/{request_id}'>here</a> to view the request.</p>
+    <p>A new submission from the Access Our Services form has been received.</p>
+    <p>Please check <a href='{site_url}/data-service/access-request/view/{request_id}'>here</a> to action the request.</p>
+    <p>The data request was submitted on {datetime_now}.</p>
     
     <p></p>
     <p>Have a nice day.<p>
@@ -31,7 +33,7 @@ def _access_request_notification(request_id):
     <p>This is an automated message, please don't respond to this address.</p>
     """
 
-    subject = f"New data access request on {site_title}"
+    subject = "New Data Services Enquiry Submitted"
     emails = tk.config.get(
         "ckanext.ubdc.access_request_email_notification_email_to", ""
     )
@@ -78,7 +80,7 @@ def request_data_access_create(context, data_dict):
     upload.upload(uploader.get_max_resource_size())
 
     data = RequestDataAccess.create(data_dict)
-    # _access_request_notification(data.id)
+    _access_request_notification(data.id)
     return data.as_dict()
 
 
