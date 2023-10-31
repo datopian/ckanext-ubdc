@@ -118,17 +118,16 @@ Data", "Registers of Scotland Data", "Springboard's Footfall Data", "Strava (Gla
             upload_label=_('Optional supporting documentation upload (PDF or DOC only)'),
             url_label=_('Optional supporting documentation URL')) }}
 
-            {% if g.recaptcha_publickey %}
-                {% snippet "access_form/recaptcha.html", public_key=g.recaptcha_publickey %}
-            {% endif %}
-
             {{ form.checkbox('consent', label=_('By ticking this box, you agree that i have read <a
                 href="https://www.ubdc.ac.uk/privacy-and-cookies/" target="_blank">privacy cookies</a>'), id='field-consent', value="True") }}
-
-                
             <div class="form-actions">
                 {% block form_actions %}
-                <button class="btn btn-primary" type="submit" name="save">{{ _("Submit") }}</button>
+                {% if g.recaptcha_publickey %}
+                <button type="submit" class="btn btn-primary" aria-label="Submit" data-module="reCaptcha"
+                    data-module-sitekey="{{ g.recaptcha_publickey }}">{{ _("Submit") }}</button>
+                {% else %}
+                <button type="submit" class="btn btn-primary" aria-label="Submit">{{ _("Submit") }}</button>
+                {% endif %}
                 {% endblock %}
             </div>
 

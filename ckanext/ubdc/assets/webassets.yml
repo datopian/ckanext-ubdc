@@ -13,6 +13,7 @@ ubdc-cc-js:
   contents:
     - js/civic_cookies.js
     - js/access_request.js
+    - js/reCaptcha.js
 
 ubdc-css:
   filter: cssrewrite
