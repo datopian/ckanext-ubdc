@@ -18,9 +18,16 @@ ckan.module("data-service-request-form", function (jQuery) {
             this.el.on('submit', this._onSubmit);
 
             this.el.find('.checkboxes label').click(function (event) {
-                var checkbox = $(event.currentTarget).find('input')
+                event.stopPropagation();
+                var checkbox = $(this).find('input');
                 checkbox.prop('checked', !checkbox.prop('checked'));
             });
+            
+            this.el.find('.checkboxes label input').click(function (event) {
+                event.stopPropagation();
+            });
+            
+
         },
         _onSubmit: function () {
             // The button is not disabled immediately so that its value can be sent
