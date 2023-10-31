@@ -11385,6 +11385,15 @@ br.line-height2 {
   margin-right: 8px;
 }
 
+.access-request-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+.access-request-container a {
+  font-size: 14px;
+}
+
 .input-group .form-control {
   z-index: 0;
 }

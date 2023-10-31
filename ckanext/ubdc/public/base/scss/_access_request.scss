@@ -39,3 +39,12 @@
         }
     }
 }
+
+.access-request-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    a {
+        font-size: 14px;
+    }
+}

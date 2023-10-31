@@ -17,12 +17,12 @@
         {% for key, value in data.items() %}
         <div class="access-request-response">
             <h4 class="response">{{ h.get_field_to_question(key) }}</h4>
-            {% if key == "wish_to_use_data" %}
-            {% for item in value %}
-                <ul>
-                    <li>{{ item }}</li>
-                </ul>
-            {% endfor %}
+            {% if key == "wish_to_use_data" and value %}
+                {% for item in value %}
+                    <ul>
+                        <li> {{ item }}</li>
+                    </ul>
+                {% endfor %}
             {% elif key == "created" %}
             <p>
                 <span class="automatic-local-datetime" data-datetime="{{ value }}">{{ value }}</span>
