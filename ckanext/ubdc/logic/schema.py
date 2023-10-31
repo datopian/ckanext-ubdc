@@ -12,7 +12,7 @@ ignore_missing = toolkit.get_validator("ignore_missing")
 ignore = toolkit.get_validator("ignore")
 keep_extras = toolkit.get_validator("keep_extras")
 boolean_validator = toolkit.get_validator("boolean_validator")
-convert_to_list_if_string = toolkit.get_validator("convert_to_list_if_string")
+list_of_strings = toolkit.get_validator("list_of_strings")
 
 
 def request_data_access_base_schema():
@@ -26,7 +26,7 @@ def request_data_access_base_schema():
         "summary_of_project": [not_empty, unicode_safe],
         "project_funding": [not_empty, unicode_safe, boolean_validator],
         "funding_information": [ignore, unicode_safe],
-        "wish_to_use_data": [ignore_missing, unicode_safe, convert_to_list_if_string],
+        "wish_to_use_data": [ignore_missing, list_of_strings],
         "suggest_data": [ignore_missing, unicode_safe],
         "collaborate": [ignore_missing, unicode_safe],
         "document_url": [ignore_missing, unicode_safe],

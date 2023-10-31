@@ -79,6 +79,7 @@ class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
             "request_data_access_list": auth.request_data_access_list,
             "request_data_access_show": auth.request_data_access_show,
             "request_data_access_update": auth.request_data_access_update,
+            "request_data_access_create": auth.request_data_access_create,
         }
 
     # IBlueprint

@@ -50,25 +50,39 @@ class AccessRequestController(MethodView):
             dict_fns.unflatten(tuplize_dict(parse_params(tk.request.form)))
         )
 
+        if not asbool(data_dict.get("consent", False)):
+            error_msg = tk._("Please accept the terms and conditions.")
+            tk.h.flash_error(error_msg)
+            return self.get()
+
         try:
             captcha.check_recaptcha(tk.request)
         except captcha.CaptchaError:
             error_msg = tk._("Bad Captcha. Please try again.")
             tk.h.flash_error(error_msg)
-            return self.get(data_dict)
+            return self.get()
+
         try:
             data_dict["document_upload"] = tk.request.files.get("document_upload")
             data_dict["project_funding"] = asbool(
                 data_dict.get("project_funding", False)
             )
-            tk.get_action("request_data_access_create")(context, data_dict)
+            if data_dict.get("wish_to_use_data", False):
+                if not isinstance(data_dict["wish_to_use_data"], list):
+                    data_dict["wish_to_use_data"] = [
+                        data_dict["wish_to_use_data"],
+                    ]
+            context["for_view"] = True
 
+            tk.get_action("request_data_access_create")(context, data_dict)
         except logic.ValidationError as e:
             errors = e.error_dict
             error_summary = e.error_summary
             return self.get(data_dict, errors, error_summary)
 
-        tk.h.flash_success("Access request submitted")
+        tk.h.flash_success(
+            "Your application has been successfully submitted, we will review your request and get back to you soon"
+        )
 
         return tk.redirect_to("ubdc.access_request")
 
@@ -104,7 +118,6 @@ def access_request_view(id):
     keys_to_exclude = ["id", "updated", "deleted"]
 
     result = {key: value for key, value in result.items() if key not in keys_to_exclude}
-    print(result)
     extra_vars = {
         "data": result,
         "errors": {},

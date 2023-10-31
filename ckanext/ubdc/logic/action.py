@@ -64,6 +64,10 @@ def request_data_access_create(context, data_dict):
     :param supporting_doc: supporting doc file upload
     """
 
+    # print(data_dict)
+    if not context.get("for_view", False):
+        tk.check_access("request_data_access_create", context, data_dict)
+
     upload = uploader.get_uploader("forms")
 
     upload.update_data_dict(
@@ -92,6 +96,8 @@ def request_data_access_update(context, data_dict):
 
     upload = uploader.get_uploader("forms")
 
+    tk.check_access("request_data_access_update", context, data_dict)
+
     upload.update_data_dict(
         data_dict, "document_url", "document_upload", "clear_upload"
     )
@@ -113,6 +119,7 @@ def request_data_access_delete(context, data_dict):
     """
     Data access request delete action
     """
+    tk.check_access("request_data_access_update", context, data_dict)
     tk.get_or_bust(data_dict, "id")
     RequestDataAccess.delete(data_dict["id"])
     return {"success": True}
@@ -137,5 +144,4 @@ def request_data_access_show(context, data_dict):
     tk.check_access("request_data_access_show", context, data_dict)
 
     data_dict = RequestDataAccess.get_by_id(data_dict["id"])
-    data_dict.wish_to_use_data = ast.literal_eval(data_dict.wish_to_use_data[0])
     return data_dict.as_dict()
