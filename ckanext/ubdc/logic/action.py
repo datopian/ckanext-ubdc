@@ -64,7 +64,6 @@ def request_data_access_create(context, data_dict):
     :param supporting_doc: supporting doc file upload
     """
 
-    # print(data_dict)
     if not context.get("for_view", False):
         tk.check_access("request_data_access_create", context, data_dict)
 
@@ -81,7 +80,7 @@ def request_data_access_create(context, data_dict):
     if errors:
         raise tk.ValidationError(errors)
 
-    upload.upload(uploader.get_max_resource_size())
+    upload.upload(10)
 
     data = RequestDataAccess.create(data_dict)
     _access_request_notification(data.id)
@@ -109,7 +108,7 @@ def request_data_access_update(context, data_dict):
     if errors:
         raise tk.ValidationError(errors)
 
-    upload.upload(uploader.get_max_resource_size())
+    upload.upload(10)
 
     data = RequestDataAccess.update(data_dict)
     return data.as_dict()
