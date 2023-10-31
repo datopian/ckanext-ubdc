@@ -9,12 +9,7 @@ ckan.module("data-service-request-form", function (jQuery) {
 
             // Disable the submit button on form submit, to prevent multiple
             // consecutive form submissions.
-            var button = this.el.find('button[name="save"]')
 
-            var consent = this.el.find('input[name="consent"]')
-            if (consent.length > 0) {
-                consent.attr('required', true);
-            }
             this.el.on('submit', this._onSubmit);
 
             this.el.find('.checkboxes label').click(function (event) {
@@ -26,13 +21,18 @@ ckan.module("data-service-request-form", function (jQuery) {
             this.el.find('.checkboxes label input').click(function (event) {
                 event.stopPropagation();
             });
-            
-
         },
         _onSubmit: function () {
             // The button is not disabled immediately so that its value can be sent
             // the first time the form is submitted, because the "save" field is
             // used in the backend.
+
+            var consent = this.el.find('input[name="consent"]')
+            if (!consent.prop('checked')) {
+                consent.attr('required', true);
+                return false; 
+            }
+                    
             setTimeout(function () {
                 this.el.find('button[name="save"]').attr('disabled', true);
             }.bind(this), 0);

@@ -11371,6 +11371,7 @@ br.line-height2 {
 
 .checkboxes label {
   display: flex;
+  font-weight: 400;
 }
 .checkboxes label input {
   margin: 0;
