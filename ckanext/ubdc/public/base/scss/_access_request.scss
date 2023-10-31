@@ -28,6 +28,11 @@
             margin: 0;
             margin-right: 8px;
         }
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
     }
 }
 .radio-group {

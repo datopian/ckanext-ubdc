@@ -79,7 +79,7 @@ Data", "Registers of Scotland Data", "Springboard's Footfall Data", "Strava (Gla
                 <div class="controls">
                     {{ form.textarea("funding_information", id="field-funding_information",
                     label=_("If yes, please provide additional information (e.g. deadline) and/or a link to the Funding
-                    Call."), value=data.funding_information,
+                    Call"), value=data.funding_information,
                     error=errors.funding_information, classes=["control-medium"]) }}
                 </div>
 
@@ -103,11 +103,11 @@ Data", "Registers of Scotland Data", "Springboard's Footfall Data", "Strava (Gla
             </div>
 
             {{ form.textarea("suggest_data", id="field-suggest_data", label=_("Do you wish to suggest datasets that we
-            could add to our collection? If yes, please provide details here."), value=data.suggest_data,
+            could add to our collection? If yes, please provide details here"), value=data.suggest_data,
             error=errors.suggest_data)}}
 
             {{ form.textarea("collaborate", id="field-collaborate", label=_("Do you wish to work with us in some other
-            way (e.g. Data Partnership, event, etc.)? If yes, please provide details here. ") , value=data.collaborate,
+            way (e.g. Data Partnership, event, etc.)? If yes, please provide details here") , value=data.collaborate,
             error=errors.collaborat)}}
 
             {% set is_upload = data.image_url and not data.image_url.startswith('http') %}

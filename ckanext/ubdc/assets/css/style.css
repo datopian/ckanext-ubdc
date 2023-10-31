@@ -11376,6 +11376,11 @@ br.line-height2 {
   margin: 0;
   margin-right: 8px;
 }
+.checkboxes label::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
 .radio-group label {
   display: flex;
