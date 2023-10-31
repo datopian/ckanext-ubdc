@@ -1,12 +1,23 @@
+from crypt import methods
 import logging
+from flask.views import MethodView
+import ckan.logic as logic
 from flask import Blueprint, redirect
-
+import ckan.model as model
+from ckan.common import asbool
 from ckan.plugins import toolkit as tk
 from ckan.views.group import register_group_plugin_rules
+import ckan.lib.navl.dictization_functions as dict_fns
+import ckan.lib.captcha as captcha
+
+tuplize_dict = logic.tuplize_dict
+clean_dict = logic.clean_dict
+parse_params = logic.parse_params
+
 
 log = logging.getLogger(__name__)
 
-udbc = Blueprint("udbc", __name__)
+ubdc = Blueprint("ubdc", __name__)
 
 # Redirect organization pages to provider pages
 provider = Blueprint(
@@ -17,16 +28,116 @@ provider = Blueprint(
 )
 
 
-@udbc.route("/organization/")
+@ubdc.route("/organization/")
 def org_redirect_root():
     return redirect("/provider")
 
 
-@udbc.route("/organization/<path:path>")
+@ubdc.route("/organization/<path:path>")
 def org_redirect(path):
     return redirect("/provider/{}".format(path))
 
 
+class AccessRequestController(MethodView):
+    def get(self, data={}, errors={}, error_summary={}):
+        extra_vars = {"data": data, "errors": errors, "error_summary": error_summary}
+        return tk.render("access_form/index.html", extra_vars)
+
+    def post(self):
+        context = {"model": model, "user": tk.c.user, "auth_user_obj": tk.c.userobj}
+
+        data_dict = clean_dict(
+            dict_fns.unflatten(tuplize_dict(parse_params(tk.request.form)))
+        )
+
+        try:
+            captcha.check_recaptcha(tk.request)
+        except captcha.CaptchaError:
+            error_msg = tk._("Bad Captcha. Please try again.")
+            tk.h.flash_error(error_msg)
+            return self.get(data_dict)
+        try:
+            data_dict["document_upload"] = tk.request.files.get("document_upload")
+            data_dict["project_funding"] = asbool(
+                data_dict.get("project_funding", False)
+            )
+            tk.get_action("request_data_access_create")(context, data_dict)
+
+        except logic.ValidationError as e:
+            errors = e.error_dict
+            error_summary = e.error_summary
+            return self.get(data_dict, errors, error_summary)
+
+        tk.h.flash_success("Access request submitted")
+
+        return tk.redirect_to("ubdc.access_request")
+
+
+ubdc.add_url_rule(
+    "/data-service/access-request",
+    view_func=AccessRequestController.as_view("access_request"),
+)
+
+
+def access_request_list():
+    context = {"model": model, "user": tk.c.user, "auth_user_obj": tk.c.userobj}
+    try:
+        result = tk.get_action("request_data_access_list")(context, {})
+    except logic.NotAuthorized:
+        tk.abort(403, tk._("Not authorized to see this page"))
+
+    extra_vars = {
+        "data": result,
+        "errors": {},
+        "error_summary": {},
+    }
+    return tk.render("access_form/list.html", extra_vars)
+
+
+def access_request_view(id):
+    context = {"model": model, "user": tk.c.user, "auth_user_obj": tk.c.userobj}
+    try:
+        result = tk.get_action("request_data_access_show")(context, {"id": id})
+    except logic.NotAuthorized:
+        tk.abort(403, tk._("Not authorized to see this page"))
+
+    keys_to_exclude = ["id", "updated", "deleted"]
+
+    result = {key: value for key, value in result.items() if key not in keys_to_exclude}
+    print(result)
+    extra_vars = {
+        "data": result,
+        "errors": {},
+        "error_summary": {},
+    }
+    return tk.render("access_form/view.html", extra_vars)
+
+
+def access_request_delete(id):
+    context = {"model": model, "user": tk.c.user, "auth_user_obj": tk.c.userobj}
+    try:
+        result = tk.get_action("request_data_access_delete")(context, {"id": id})
+    except logic.ValidationError as e:
+        tk.abort(404, e.error_dict["message"])
+
+    tk.h.flash_success("Access request deleted")
+    return tk.redirect_to("ubdc.access_request_list")
+
+
+ubdc.add_url_rule("/data-service/access-request/view", view_func=access_request_list)
+
+
+ubdc.add_url_rule(
+    "/data-service/access-request/view/<id>", view_func=access_request_view
+)
+
+ubdc.add_url_rule(
+    "/data-service/access-request/view/<id>/delete",
+    methods=["POST"],
+    view_func=access_request_delete,
+)
+
+
 def get_blueprints():
     register_group_plugin_rules(provider)
-    return [udbc, provider]
+    return [ubdc, provider]

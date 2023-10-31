@@ -1,0 +1,53 @@
+{% extends "page.html" %}
+{% import "macros/form.html" as form %}
+
+{% block subtitle %}{{ _('Register') }}{% endblock %}
+
+{% block breadcrumb_content %}
+<li class="active">{{ h.nav_link(_('Registration'), named_route='user.register') }}</li>
+{% endblock %}
+
+{% block primary_content %}
+<article class="module">
+    <div class="module-content">
+        {% block primary_content_inner %}
+        <h2 class="page-heading">
+            {% block page_heading %}{{ _('Data Service Access Request Responses') }}{% endblock %}
+        </h2>
+        {% for key, value in data.items() %}
+        <div class="access-request-response">
+            <h4 class="response">{{ h.get_field_to_question(key) }}</h4>
+            {% if key == "wish_to_use_data" %}
+            {% for item in value %}
+                <ul>
+                    <li>{{ item }}</li>
+                </ul>
+            {% endfor %}
+            {% elif key == "created" %}
+            <p>
+                <span class="automatic-local-datetime" data-datetime="{{ value }}">{{ value }}</span>
+            </p>
+            {% elif key == "document_url" %}
+                <p><a href="/uploads/forms/{{ value }}">{{ value }}</a></p>
+            {% else %}
+            <p>{{ value }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        {% endblock %}
+    </div>
+</article>
+{% endblock %}
+
+{% block secondary_content %}
+{% block help %}
+<section class="module module-narrow module-shallow">
+    {% block help_inner %}
+    <h2 class="module-heading">{{ _('Access our services') }}</h2>
+    <div class="module-content">
+        <p>{% trans %} &nbsp; {% endtrans %}</p>
+    </div>
+    {% endblock %}
+</section>
+{% endblock %}
+{% endblock %}

@@ -1,6 +1,6 @@
 import datetime
 
-from sqlalchemy import types, Column, Table
+from sqlalchemy import types, Column, Table, desc
 from sqlalchemy.dialects.postgresql import JSONB
 
 from ckan.model import meta
@@ -32,7 +32,7 @@ request_data_access_table = Table(
     Column("postal_address", types.UnicodeText),
     Column("summary_of_project", types.UnicodeText),
     Column("project_funding", types.UnicodeText),
-    Column("additional_funding_information", types.UnicodeText),
+    Column("funding_information", types.UnicodeText),
     Column("wish_to_use_data", types.ARRAY(types.UnicodeText)),
     Column("suggest_data", types.UnicodeText),
     Column("collaborate", types.UnicodeText),
@@ -50,13 +50,21 @@ class RequestDataAccess(core.StatefulObjectMixin, domain_object.DomainObject):
 
     @classmethod
     def get_all(cls):
-        return meta.Session.query(cls).all()
+        return meta.Session.query(cls).order_by(desc(cls.created)).all()
 
     @classmethod
     def create(cls, data_dict):
         data = cls(**data_dict)
         meta.Session.add(data)
         meta.Session.commit()
+        return data
+
+    @classmethod
+    def delete(cls, id):
+        data = cls.get_by_id(id)
+        if data:
+            meta.Session.delete(data)
+            meta.Session.commit()
         return data
 
     @classmethod

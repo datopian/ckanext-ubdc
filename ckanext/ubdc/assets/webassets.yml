@@ -12,6 +12,7 @@ ubdc-cc-js:
   output: ckanext-ubdc/%(version)s-ubdc-cc.js
   contents:
     - js/civic_cookies.js
+    - js/access_request.js
 
 ubdc-css:
   filter: cssrewrite

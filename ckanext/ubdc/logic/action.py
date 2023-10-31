@@ -1,3 +1,4 @@
+import ast
 import logging
 import ckan.plugins.toolkit as tk
 from ckan.lib.navl.dictization_functions import validate
@@ -54,7 +55,7 @@ def request_data_access_create(context, data_dict):
     :param postal_address: postal address
     :param summary_of_project: project or intended use of data
     :param project_funding: project funding
-    :param additional_funding_information: additional funding information
+    :param funding_information: additional funding information
     :param wish_to_use_data: wish to use data
     :param suggest_data: suggest data
     :params collaborate: collaborate
@@ -77,7 +78,7 @@ def request_data_access_create(context, data_dict):
     upload.upload(uploader.get_max_resource_size())
 
     data = RequestDataAccess.create(data_dict)
-    _access_request_notification(data.id)
+    # _access_request_notification(data.id)
     return data.as_dict()
 
 
@@ -103,8 +104,16 @@ def request_data_access_update(context, data_dict):
     upload.upload(uploader.get_max_resource_size())
 
     data = RequestDataAccess.update(data_dict)
-
     return data.as_dict()
+
+
+def request_data_access_delete(context, data_dict):
+    """
+    Data access request delete action
+    """
+    tk.get_or_bust(data_dict, "id")
+    RequestDataAccess.delete(data_dict["id"])
+    return {"success": True}
 
 
 @tk.side_effect_free
@@ -126,4 +135,5 @@ def request_data_access_show(context, data_dict):
     tk.check_access("request_data_access_show", context, data_dict)
 
     data_dict = RequestDataAccess.get_by_id(data_dict["id"])
+    data_dict.wish_to_use_data = ast.literal_eval(data_dict.wish_to_use_data[0])
     return data_dict.as_dict()

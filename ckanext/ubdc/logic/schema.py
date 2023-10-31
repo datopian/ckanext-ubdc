@@ -25,7 +25,7 @@ def request_data_access_base_schema():
         "postal_address": [not_empty, unicode_safe],
         "summary_of_project": [not_empty, unicode_safe],
         "project_funding": [not_empty, unicode_safe, boolean_validator],
-        "additional_funding_information": [ignore, unicode_safe],
+        "funding_information": [ignore, unicode_safe],
         "wish_to_use_data": [ignore_missing, unicode_safe, convert_to_list_if_string],
         "suggest_data": [ignore_missing, unicode_safe],
         "collaborate": [ignore_missing, unicode_safe],

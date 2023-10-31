@@ -1,0 +1,154 @@
+{% extends "page.html" %}
+{% import "macros/form.html" as form %}
+{% set wish_list = [ "BGS' Accessing Subsurface Knowledge (ASK) Data", "Cycling Scotland Data", "Goad Plan Experian
+Data", "Glasgow Valuation Roll Data", "Huq Data", "iMCD GPS Data", "iMCD Household Survey Data", "iMCD Lifelogging
+Data", "iMCD Travel Diary Data", "iMCD Twitter Data", "LiDAR Data", "Lothian Valuation Roll Data", "Met Office Forecasts
+Data", "Met Office Hourly Observations Data", "Mobility metrics for Glasgow City Region", "Nestoria Property Data",
+"Nightlight Data", "Public Transport Accessibility Indicators Data 2022", "Public Transport Availability Indicators
+Data", "Registers of Scotland Data", "Springboard's Footfall Data", "Strava (Glasgow) Data", "Strava (Manchester) Data",
+"Strava (Sheffield) Data", "Strava (Scotland) Data", "Strava (Tyne & Wear) Data", "SUDS / Urban Indicators Data",
+"Tamoco Data", "Zoopla Property Data" ]%}
+{% block subtitle %}{{ _('Register') }}{% endblock %}
+
+{% block breadcrumb_content %}
+<li class="active">{{ h.nav_link(_('Data service access request'), named_route='ubdc.access_request') }}</li>
+
+{% endblock %}
+
+{% block primary_content %}
+<article class="module">
+    <div class="module-content">
+        {% block primary_content_inner %}
+        <h2 class="page-heading">
+            {% block page_heading %}{{ _('If you are ready to use our Data Services, please complete the UBDC
+            Application Form below.') }}{% endblock %}
+        </h2>
+        <p>We welcome applications to use our Data Collections all year round. If you only need open data, you can have
+            immediate access to our Open Data Collection.</p>
+
+        <p>Following submission, we will review your application and contact you within two weeks. </p>
+
+        <p>Please note: If you choose to request access to data you will need to pass personal data to the Centre
+            through this web form. This data will be used only for the service you have requested unless you consent
+            otherwise at the time of submitting the data. For full details, view our Privacy Policy. </p>
+
+        <form id="data-service-access-request" action="" method="post" enctype="multipart/form-data"
+            data-module="data-service-request-form">
+            {{ form.errors(error_summary) }}
+
+            {{ form.input("fullname", id="field-fullname", label=_("Full Name"),
+            value=data.fullname, error=errors.fullname, classes=["control-medium"], is_required=True) }}
+
+            {{ form.input("organization", id="field-organization", label=_("Organization / Institution"),
+            value=data.organization, error=errors.organization,
+            classes=["control-medium"], is_required=True) }}
+
+            {{ form.input("email", id="field-email", label=_("Email"), type="email",
+            value=data.email, error=errors.email, classes=["control-medium"], is_required=True) }}
+
+            {{ form.input("telephone", id="field-telephone", label=_("Telephone Number"), value=data.telephone, error=errors.telephone, classes=["control-medium"], is_required=True) }}
+
+            {{ form.input("postal_address", id="field-postal_address", label=_("Postal Address"),
+            value=data.postal_address,error=errors.postal_address, classes=["control-medium"], is_required=True) }}
+
+            {{ form.textarea("summary_of_project", id="field-summary_of_project", label=_("Summary of your project or
+            intended use of UBDCdata and/or services"), value=data.summary_of_project, error=errors.summary_of_project,
+            classes=["control-medium"], is_required=True) }}
+
+            <div class="form-group ">
+                <div class="controls">
+                    <label class="checkbox" for="remember">
+                        The UBDC does not provide project funding itself, but our collections and services can be used
+                        in projects funded from other sources. Are you applying for funding for this project or work?
+                        <span class="contourIndicator">*</span>
+                    </label>
+
+                    <fieldset class="radio-group">
+                        {%- for option in ["Yes", "No" ] -%}
+                        <div>
+                            <label for="field-project_funding-yes">
+                                <input id="field-project_funding-yes" type="radio" name="project_funding"
+                                    value="{{ option }}" />
+                                {{ option }}
+                            </label>
+                        </div>
+                        {%- endfor -%}
+                    </fieldset>
+                </div>
+
+                <div class="controls">
+                    {{ form.textarea("funding_information", id="field-funding_information",
+                    label=_("If yes, please provide additional information (e.g. deadline) and/or a link to the Funding
+                    Call."), value=data.funding_information,
+                    error=errors.funding_information, classes=["control-medium"]) }}
+                </div>
+
+            </div>
+
+            <div class="form-group ">
+                <div class="controls">
+                    <label> Please select all data from the UBDC collections you wish to use.</label>
+                    <fieldset class="checkboxes">
+                        {% for wish in wish_list %}
+                        <p>
+                            <label for="field-wish_to_use_data-{{wish}}">
+                                <input id="field-wish_to_use_data" type="checkbox" name="wish_to_use_data"
+                                    value="{{wish}}" />
+                                {{wish}}
+                            </label>
+                        </p>
+                        {% endfor %}
+                    </fieldset>
+                </div>
+            </div>
+
+            {{ form.textarea("suggest_data", id="field-suggest_data", label=_("Do you wish to suggest datasets that we
+            could add to our collection? If yes, please provide details here."), value=data.suggest_data,
+            error=errors.suggest_data)}}
+
+            {{ form.textarea("collaborate", id="field-collaborate", label=_("Do you wish to work with us in some other
+            way (e.g. Data Partnership, event, etc.)? If yes, please provide details here. ") , value=data.collaborate,
+            error=errors.collaborat)}}
+
+            {% set is_upload = data.image_url and not data.image_url.startswith('http') %}
+            {% set is_url = data.image_url and data.image_url.startswith('http') %}
+
+            {{ form.image_upload(data, errors, is_upload_enabled=h.uploads_enabled(), is_url=is_url,
+            is_upload=is_upload,field_url='document_url', field_upload='document_upload', field_clear='clear_upload',
+            upload_label=_('Optional supporting documentation upload (PDF or DOC only)'),
+            url_label=_('Optional supporting documentation URL')) }}
+
+            {% if g.recaptcha_publickey %}
+                {% snippet "access_form/recaptcha.html", public_key=g.recaptcha_publickey %}
+            {% endif %}
+
+            {{ form.checkbox('consent', label=_('By ticking this box, you agree that i have read <a
+                href="https://www.ubdc.ac.uk/privacy-and-cookies/" target="_blank">privacy cookies</a>'),
+            checked=false, value=data.consent, is_required=True) }}
+
+            <div class="form-actions">
+                {% block form_actions %}
+                <button class="btn btn-primary" type="submit" name="save">{{ _("Submit") }}</button>
+                {% endblock %}
+            </div>
+
+        </form>
+
+
+        {% endblock %}
+    </div>
+</article>
+{% endblock %}
+
+{% block secondary_content %}
+{% block help %}
+<section class="module module-narrow module-shallow">
+    {% block help_inner %}
+    <h2 class="module-heading">{{ _('Access our services') }}</h2>
+    <div class="module-content">
+        <p>{% trans %} &nbsp; {% endtrans %}</p>
+    </div>
+    {% endblock %}
+</section>
+{% endblock %}
+{% endblock %}

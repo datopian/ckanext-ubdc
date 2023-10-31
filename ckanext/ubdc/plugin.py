@@ -46,6 +46,7 @@ class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
             "request_data_access_list": action.request_data_access_list,
             "request_data_access_show": action.request_data_access_show,
             "request_data_access_update": action.request_data_access_update,
+            "request_data_access_delete": action.request_data_access_delete,
         }
 
     # IPackageController
@@ -63,6 +64,7 @@ class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
             "tags_count": helpers.tags_count,
             "get_gtm_id": helpers.get_gtm_id,
             "get_cookie_control_config": helpers.get_cookie_control_config,
+            "get_field_to_question": helpers.get_field_to_question,
         }
 
     # IValidators

@@ -1,6 +1,8 @@
+from dataclasses import field
 from ckan import model
 from ckan.logic import get_action
 import ckan.plugins.toolkit as tk
+from ckanext.ubdc import view
 
 
 def popular_datasets(limit=3):
@@ -50,3 +52,22 @@ def get_cookie_control_config():
     cookie_control_config["gtm_id"] = gtm_id.replace("G-", "_ga_")
 
     return cookie_control_config
+
+
+def get_field_to_question(value):
+    get_field_to_question = {
+        "fullname": "Full Name",
+        "organization": "Organisation / Institution",
+        "email": "Email Address",
+        "telephone": "Telephone Number",
+        "postal_address": "Postal Address",
+        "summary_of_project": "Summary of your project or intended use of UBDC data and/or services",
+        "project_funding": "The UBDC does not provide project funding itself, but our collections and services can be used in projects funded from other sources. Are you applying for funding for this project or work?",
+        "funding_information": "If yes, please provide additional information (e.g. deadline) and/or a link to the Funding Call.",
+        "wish_to_use_data": "Please select all data from the UBDC collections you wish to use.",
+        "suggest_data": "Do you wish to suggest datasets that we could add to our collection? If yes, please provide details here.",
+        "collaborate": "Do you wish to work with us in some other way (e.g. Data Partnership, event, etc.)? If yes, please provide details here.",
+        "document_url": "Optional supporting documentation upload (PDF or DOC only).",
+        "created": "Date of submission",
+    }
+    return get_field_to_question.get(value, value)
