@@ -17,7 +17,7 @@ def _access_request_notification(request_id):
     """
     site_title = tk.config.get("ckan.site_title")
     site_url = tk.config.get("ckan.site_url")
-    datetime_now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    datetime_now = datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S")
 
     body_html = f"""
     <p>Dear Admin,</p>
