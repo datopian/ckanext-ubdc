@@ -272,7 +272,7 @@
                 margin: 0 auto;
                 text-align: center;
                 img {
-                    filter: grayscale(100%) contrast(0.3);
+                    // filter: grayscale(100%) contrast(0.3);
                     max-width: 100%;
                     &:hover {
                         filter: grayscale(0%) contrast(1);
