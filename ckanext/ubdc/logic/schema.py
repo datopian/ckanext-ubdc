@@ -18,11 +18,12 @@ list_of_strings = toolkit.get_validator("list_of_strings")
 def request_data_access_base_schema():
     schema = {
         "id": [ignore_missing],
-        "fullname": [not_empty, unicode_safe],
+        "firstname": [not_empty, unicode_safe],
+        "surname": [not_empty, unicode_safe],
         "organization": [not_empty, unicode_safe],
         "email": [not_empty, unicode_safe],
         "telephone": [not_empty, unicode_safe],
-        "postal_address": [not_empty, unicode_safe],
+        "country": [not_empty, unicode_safe],
         "summary_of_project": [not_empty, unicode_safe],
         "project_funding": [not_empty, unicode_safe, boolean_validator],
         "funding_information": [ignore_missing, unicode_safe],

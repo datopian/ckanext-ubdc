@@ -50,11 +50,12 @@ def _access_request_notification(request_id):
 def request_data_access_create(context, data_dict):
     """
     Data access request action
-    :param fullname: full name
+    :param firstname: first name
+    :param surname: surname
     :param organization: organisation/institution name
     :param email: email address
     :param telephone: telephone number
-    :param postal_address: postal address
+    :param country: country
     :param summary_of_project: project or intended use of data
     :param project_funding: project funding
     :param funding_information: additional funding information

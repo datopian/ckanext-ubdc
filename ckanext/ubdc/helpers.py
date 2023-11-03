@@ -56,11 +56,12 @@ def get_cookie_control_config():
 
 def get_field_to_question(value):
     get_field_to_question = {
-        "fullname": "Full Name",
+        "firstname": "First Name",
+        "surname": "Surname",
         "organization": "Organisation / Institution",
         "email": "Email Address",
         "telephone": "Telephone Number",
-        "postal_address": "Postal Address",
+        "country": "Country",
         "summary_of_project": "Summary of your project or intended use of UBDC data and/or services",
         "project_funding": "The UBDC does not provide project funding itself, but our collections and services can be used in projects funded from other sources. Are you applying for funding for this project or work?",
         "funding_information": "If yes, please provide additional information (e.g. deadline) and/or a link to the Funding Call.",

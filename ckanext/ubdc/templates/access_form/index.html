@@ -36,8 +36,11 @@ Data", "Registers of Scotland Data", "Springboard's Footfall Data", "Strava (Gla
             data-module="data-service-request-form">
             {{ form.errors(error_summary) }}
 
-            {{ form.input("fullname", id="field-fullname", label=_("Full Name"),
-            value=data.fullname, error=errors.fullname, classes=["control-medium"], is_required=True) }}
+            {{ form.input("firstname", id="field-fullname", label=_("First Name"),
+            value=data.firstname, error=errors.firstname, classes=["control-medium"], is_required=True) }}
+
+            {{ form.input("surname", id="field-surname", label=_("Surname"),
+            value=data.surname, error=errors.surname, classes=["control-medium"], is_required=True) }}
 
             {{ form.input("organization", id="field-organization", label=_("Organization / Institution"),
             value=data.organization, error=errors.organization,
@@ -48,8 +51,8 @@ Data", "Registers of Scotland Data", "Springboard's Footfall Data", "Strava (Gla
 
             {{ form.input("telephone", id="field-telephone", label=_("Telephone Number"), value=data.telephone, error=errors.telephone, classes=["control-medium"], is_required=True) }}
 
-            {{ form.input("postal_address", id="field-postal_address", label=_("Postal Address"),
-            value=data.postal_address,error=errors.postal_address, classes=["control-medium"], is_required=True) }}
+            {{ form.input("country", id="field-country", label=_("Country"),
+            value=data.country,error=errors.country, classes=["control-medium"], is_required=True) }}
 
             {{ form.textarea("summary_of_project", id="field-summary_of_project", label=_("Summary of your project or
             intended use of UBDCdata and/or services"), value=data.summary_of_project, error=errors.summary_of_project,
