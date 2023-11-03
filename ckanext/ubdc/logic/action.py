@@ -60,8 +60,6 @@ def request_data_access_create(context, data_dict):
     :param project_funding: project funding
     :param funding_information: additional funding information
     :param wish_to_use_data: wish to use data
-    :param suggest_data: suggest data
-    :params collaborate: collaborate
     :param supporting_doc: supporting doc file upload
     """
 

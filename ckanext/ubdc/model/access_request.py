@@ -35,8 +35,6 @@ request_data_access_table = Table(
     Column("project_funding", types.UnicodeText),
     Column("funding_information", types.UnicodeText),
     Column("wish_to_use_data", types.ARRAY(types.UnicodeText)),
-    Column("suggest_data", types.UnicodeText),
-    Column("collaborate", types.UnicodeText),
     Column("document_url", types.UnicodeText),
     Column("created", types.DateTime, default=datetime.datetime.utcnow),
     Column("updated", types.DateTime, default=datetime.datetime.utcnow),

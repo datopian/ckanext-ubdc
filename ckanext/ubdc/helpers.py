@@ -66,8 +66,6 @@ def get_field_to_question(value):
         "project_funding": "The UBDC does not provide project funding itself, but our collections and services can be used in projects funded from other sources. Are you applying for funding for this project or work?",
         "funding_information": "If yes, please provide additional information (e.g. deadline) and/or a link to the Funding Call.",
         "wish_to_use_data": "Please select all data from the UBDC collections you wish to use.",
-        "suggest_data": "Do you wish to suggest datasets that we could add to our collection? If yes, please provide details here.",
-        "collaborate": "Do you wish to work with us in some other way (e.g. Data Partnership, event, etc.)? If yes, please provide details here.",
         "document_url": "Optional supporting documentation upload (PDF or DOC only).",
         "created": "Date of submission",
     }

@@ -28,8 +28,6 @@ def request_data_access_base_schema():
         "project_funding": [not_empty, unicode_safe, boolean_validator],
         "funding_information": [ignore_missing, unicode_safe],
         "wish_to_use_data": [ignore_missing, list_of_strings],
-        "suggest_data": [ignore_missing, unicode_safe],
-        "collaborate": [ignore_missing, unicode_safe],
         "document_url": [ignore_missing, unicode_safe],
         "deleted": [ignore_missing],
     }
