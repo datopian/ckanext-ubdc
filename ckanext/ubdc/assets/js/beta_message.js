@@ -2,7 +2,7 @@ ckan.module('beta-message', function (jQuery) {
     return {
         initialize: function () {
             // message with cross to close and save on cookiee
-            var message = '<div class="beta-message-content">This is a beta version of the UBDC Data Catalog. Please <a href="mailto:ubdc-dataservice@glasgow.ac.uk">contact us</a> if you have any feedback.</div>'
+            var message = '<div class="beta-message-content">Welcome to our new Data Catalogue. This site is still on BETA and we are working hard to improve your experience on the site. If you have any issues, suggestions or questions <a href="mailto:ubdc-dataservice@glasgow.ac.uk">please get in touch</a>.</div>'
             // append message to the page
             var close = '<button class="beta-message-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>'
             message = message + close 
