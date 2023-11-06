@@ -7144,9 +7144,10 @@ button.close {
 .beta-message .beta-message-close {
   background: none;
   border: none;
-  margin-top: -8px;
+  margin-top: -22px;
   font-weight: 900;
   font-size: 18px;
+  padding-right: 16px;
 }
 .beta-message a {
   color: #fff;
