@@ -55,6 +55,10 @@ class AccessRequestController(MethodView):
             tk.h.flash_error(error_msg)
             return self.get()
 
+        if not asbool(data_dict.get("contactConsent", False)):
+            error_msg = tk._("Please accept the contact consent.")
+            tk.h.flash_error(error_msg)
+            return self.get()
         try:
             captcha.check_recaptcha(tk.request)
         except captcha.CaptchaError:

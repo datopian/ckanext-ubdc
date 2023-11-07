@@ -25,7 +25,7 @@ request_data_access_table = Table(
     "request_data_access",
     meta.metadata,
     Column("id", types.UnicodeText, primary_key=True, default=_types.make_uuid),
-    Column("firstname", types.UnicodeText),
+    Column("first_name", types.UnicodeText),
     Column("surname", types.UnicodeText),
     Column("organization", types.UnicodeText),
     Column("email", types.UnicodeText),

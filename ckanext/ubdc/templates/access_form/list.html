@@ -27,7 +27,7 @@
             <tbody>
                 {% for item in data %}
                 <tr>
-                    <td>{{ item.fullname }}</td>
+                    <td>{{ item.first_name }} {{ item.surname }}</td>
                     <td>{{ item.email }}</td>
                     <td>{{ item.organization }}</td>
                     <td>{{ h.time_ago_from_timestamp(item.created) }}</td>

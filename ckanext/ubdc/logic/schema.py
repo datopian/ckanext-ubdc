@@ -18,7 +18,7 @@ list_of_strings = toolkit.get_validator("list_of_strings")
 def request_data_access_base_schema():
     schema = {
         "id": [ignore_missing],
-        "firstname": [not_empty, unicode_safe],
+        "first_name": [not_empty, unicode_safe],
         "surname": [not_empty, unicode_safe],
         "organization": [not_empty, unicode_safe],
         "email": [not_empty, unicode_safe],

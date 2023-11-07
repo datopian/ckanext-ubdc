@@ -56,7 +56,7 @@ def get_cookie_control_config():
 
 def get_field_to_question(value):
     get_field_to_question = {
-        "firstname": "First Name",
+        "first_name": "First Name",
         "surname": "Surname",
         "organization": "Organisation / Institution",
         "email": "Email Address",

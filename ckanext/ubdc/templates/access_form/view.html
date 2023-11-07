@@ -29,6 +29,8 @@
             </p>
             {% elif key == "document_url" %}
                 <p><a href="/uploads/forms/{{ value }}">{{ value }}</a></p>
+            {% elif key == "project_funding" %}
+                <p>{{ 'Yes' if value else 'No' }}</p>
             {% else %}
             <p>{{ value }}</p>
             {% endif %}

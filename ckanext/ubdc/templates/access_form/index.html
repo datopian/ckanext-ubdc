@@ -36,8 +36,8 @@ Data", "Registers of Scotland Data", "Springboard's Footfall Data", "Strava (Gla
             data-module="data-service-request-form">
             {{ form.errors(error_summary) }}
 
-            {{ form.input("firstname", id="field-fullname", label=_("First Name"),
-            value=data.firstname, error=errors.firstname, classes=["control-medium"], is_required=True) }}
+            {{ form.input("first_name", id="field-first_name", label=_("First Name"),
+            value=data.first_name, error=errors.first_name, classes=["control-medium"], is_required=True) }}
 
             {{ form.input("surname", id="field-surname", label=_("Surname"),
             value=data.surname, error=errors.surname, classes=["control-medium"], is_required=True) }}
@@ -105,14 +105,6 @@ Data", "Registers of Scotland Data", "Springboard's Footfall Data", "Strava (Gla
                 </div>
             </div>
 
-            {{ form.textarea("suggest_data", id="field-suggest_data", label=_("Do you wish to suggest datasets that we
-            could add to our collection? If yes, please provide details here"), value=data.suggest_data,
-            error=errors.suggest_data)}}
-
-            {{ form.textarea("collaborate", id="field-collaborate", label=_("Do you wish to work with us in some other
-            way (e.g. Data Partnership, event, etc.)? If yes, please provide details here") , value=data.collaborate,
-            error=errors.collaborat)}}
-
             {% set is_upload = data.image_url and not data.image_url.startswith('http') %}
             {% set is_url = data.image_url and data.image_url.startswith('http') %}
 
@@ -123,6 +115,7 @@ Data", "Registers of Scotland Data", "Springboard's Footfall Data", "Strava (Gla
 
             {{ form.checkbox('consent', label=_('By ticking this box, you agree that i have read <a
                 href="https://www.ubdc.ac.uk/privacy-and-cookies/" target="_blank">privacy cookies</a>'), id='field-consent', value="True") }}
+            {{ form.checkbox('contactConsent', label=_('By ticking this box, I consent to being contacted about events.'), id='field-event-consent', value="True") }}
             <div class="form-actions">
                 {% block form_actions %}
                 {% if g.recaptcha_publickey %}
