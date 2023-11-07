@@ -324,6 +324,11 @@
                 text-align: center;
                 img {
                     max-width: 100%;
+                    
+                }
+                img.funding-img {
+                    background: black;
+                    padding: 0 5px;
                 }
             }
         }
