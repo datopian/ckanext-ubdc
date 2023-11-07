@@ -7131,6 +7131,34 @@ button.close {
   overflow: hidden;
 }
 
+.beta-message {
+  background: #d5580d;
+  color: #fff;
+  font-weight: 400;
+  display: flex;
+  padding: 4px 0;
+  font-size: 14px;
+  margin: 0;
+  padding-left: 30%;
+}
+.beta-message .beta-message-close {
+  background: none;
+  border: none;
+  margin-top: -22px;
+  font-weight: 900;
+  font-size: 18px;
+  padding-right: 16px;
+}
+.beta-message a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .beta-message {
+    padding-left: 40%;
+  }
+}
 .tag {
   display: inline-block;
   margin-bottom: 4px;
