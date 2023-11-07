@@ -25,6 +25,7 @@ ckan.module('reCaptcha', function (jQuery) {
                 return function () {
                     grecaptcha.execute(module.options.sitekey, { action: 'submit' }).then(function (token) {
                         jQuery('input[name="g-recaptcha-response"]').val(token);
+                        jQuery('#data-service-access-request')[0].reportValidity()
                         module.el.closest('form').submit();
                     });
                 };

@@ -7131,6 +7131,11 @@ button.close {
   overflow: hidden;
 }
 
+input[type=checkbox][name=contactConsent]:focus,
+input[type=checkbox][name=consentName]:focus {
+  outline: 1px solid lightblue;
+}
+
 .tag {
   display: inline-block;
   margin-bottom: 4px;

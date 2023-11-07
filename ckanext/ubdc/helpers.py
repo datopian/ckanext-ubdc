@@ -1,4 +1,3 @@
-from dataclasses import field
 from ckan import model
 from ckan.logic import get_action
 import ckan.plugins.toolkit as tk

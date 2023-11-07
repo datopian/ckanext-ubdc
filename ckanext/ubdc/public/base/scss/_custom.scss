@@ -17,3 +17,8 @@
 .repeated_dataset_fields.more {
     overflow: hidden;
 }
+
+input[type=checkbox][name="contactConsent"]:focus,
+input[type=checkbox][name="consentName"]:focus {
+  outline: 1px solid lightblue;
+}
