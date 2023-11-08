@@ -10278,7 +10278,6 @@ h4 small {
   text-align: center;
 }
 .homepage .providers .logo-grid__item img {
-  filter: grayscale(100%) contrast(0.3);
   max-width: 100%;
 }
 .homepage .providers .logo-grid__item img:hover {
@@ -10329,6 +10328,10 @@ h4 small {
 }
 .homepage .funding .logo-grid__item img {
   max-width: 100%;
+}
+.homepage .funding .logo-grid__item img.funding-img {
+  background: black;
+  padding: 0 5px;
 }
 
 @media (max-width: 992px) {
