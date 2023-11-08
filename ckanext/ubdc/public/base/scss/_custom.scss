@@ -22,3 +22,32 @@ input[type=checkbox][name="contactConsent"]:focus,
 input[type=checkbox][name="consentName"]:focus {
   outline: 1px solid lightblue;
 }
+.beta-message {
+    background: #d5580d;
+    color: #fff;
+    font-weight: 400;
+    display: flex;
+    padding: 4px 0;
+    font-size: 14px;
+    margin: 0;
+    padding-left: 30%;
+    .beta-message-close {
+        background: none;
+        border: none;
+        margin-top: -22px;
+        font-weight: 900;
+        font-size: 18px;
+        padding-right: 16px;
+    }
+    a {
+        color: #fff;
+        text-decoration: underline;
+    }
+}
+
+// small screen
+@media (max-width: 767px) {
+    .beta-message {
+        padding-left: 40%;
+    }
+}
