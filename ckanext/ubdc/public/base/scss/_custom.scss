@@ -18,6 +18,10 @@
     overflow: hidden;
 }
 
+input[type=checkbox][name="contactConsent"]:focus,
+input[type=checkbox][name="consentName"]:focus {
+  outline: 1px solid lightblue;
+}
 .beta-message {
     background: #d5580d;
     color: #fff;
