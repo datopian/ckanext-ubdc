@@ -10283,7 +10283,6 @@ h4 small {
   text-align: center;
 }
 .homepage .providers .logo-grid__item img {
-  filter: grayscale(100%) contrast(0.3);
   max-width: 100%;
 }
 .homepage .providers .logo-grid__item img:hover {
