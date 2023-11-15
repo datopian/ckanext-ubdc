@@ -22,7 +22,6 @@ def request_data_access_base_schema():
         "surname": [not_empty, unicode_safe],
         "organization": [not_empty, unicode_safe],
         "email": [not_empty, unicode_safe],
-        "telephone": [not_empty, unicode_safe],
         "country": [not_empty, unicode_safe],
         "summary_of_project": [not_empty, unicode_safe],
         "project_funding": [not_empty, unicode_safe, boolean_validator],

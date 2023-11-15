@@ -54,7 +54,6 @@ def request_data_access_create(context, data_dict):
     :param surname: surname
     :param organization: organisation/institution name
     :param email: email address
-    :param telephone: telephone number
     :param country: country
     :param summary_of_project: project or intended use of data
     :param project_funding: project funding
