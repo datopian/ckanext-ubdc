@@ -7132,25 +7132,26 @@ button.close {
 }
 
 .beta-message {
-  background: #d5580d;
-  color: #fff;
-  font-weight: 400;
+  background: #f79152;
+  color: #0a0a0a;
+  font-weight: 500;
   display: flex;
-  padding: 4px 0;
+  padding: 10px 0;
   font-size: 14px;
   margin: 0;
-  padding-left: 30%;
+  padding-left: 28%;
+  border: 4px solid #d25c14;
 }
 .beta-message .beta-message-close {
   background: none;
   border: none;
-  margin-top: -22px;
+  margin-top: -3px;
   font-weight: 900;
   font-size: 18px;
   padding-right: 16px;
 }
 .beta-message a {
-  color: #fff;
+  color: #0a0a0a;
   text-decoration: underline;
 }
 
