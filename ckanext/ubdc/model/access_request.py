@@ -29,7 +29,6 @@ request_data_access_table = Table(
     Column("surname", types.UnicodeText),
     Column("organization", types.UnicodeText),
     Column("email", types.UnicodeText),
-    Column("telephone", types.UnicodeText),
     Column("country", types.UnicodeText),
     Column("summary_of_project", types.UnicodeText),
     Column("project_funding", types.UnicodeText),
