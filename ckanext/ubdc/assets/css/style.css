@@ -10268,10 +10268,10 @@ h4 small {
   padding-bottom: 11px;
 }
 .homepage .providers {
-  background: #00162c;
+  background: #fff;
 }
 .homepage .providers h2 {
-  color: #fff;
+  color: #000000;
   text-align: center;
   padding: 30px 0;
   font-weight: 700;
@@ -10300,7 +10300,7 @@ h4 small {
   padding: 30px;
 }
 .homepage .providers .more a {
-  color: #fff;
+  color: #000000;
   font-size: 23px;
   padding-bottom: 11px;
 }
@@ -10340,10 +10340,6 @@ h4 small {
 }
 .homepage .funding .logo-grid__item img {
   max-width: 100%;
-}
-.homepage .funding .logo-grid__item img.funding-img {
-  background: black;
-  padding: 0 5px;
 }
 
 @media (max-width: 992px) {

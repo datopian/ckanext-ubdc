@@ -5,7 +5,7 @@ ckan.module('beta-message', function (jQuery) {
             var message = '<div class="beta-message-content">Welcome to our new Data Catalogue. This site is still in BETA mode. If you experience issues or have questions <a href="mailto:ubdc-dataservice@glasgow.ac.uk">please get in touch</a>.</div>'
             // append message to the page
             var close = '<button class="beta-message-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>'
-            message = message + close 
+            message = `<div class="beta-message"> ${message} ${close} </div>`
             var cookie = document.cookie;
             if (cookie.indexOf('beta-message') === -1) {
                 jQuery(this.el).html(message);

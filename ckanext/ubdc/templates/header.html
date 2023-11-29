@@ -1,7 +1,7 @@
 {% ckan_extends %}
 
 {% block header_account %}
-<div class="beta-message" data-module="beta-message" ></div>
+<div data-module="beta-message" ></div>
  {{ super() }}
 {% endblock %}
 
@@ -13,10 +13,10 @@
 {% endblock %}
 
 {% block header_account_logged %}
-  <li>
+  {# <li>
     <a href="{{ h.url_for('ubdc.access_request_list') }}" title="{{ _('Form') }}">
       <i class="fa fa-list icon-file"></i>
     </a>
-  </li>
+  </li> #}
   {{ super() }}
 {% endblock %}
