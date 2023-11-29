@@ -1,12 +1,13 @@
 {% ckan_extends %}
 
 {% block package_notes %}
-    <!-- <div class="access-request-container">
+    {# <div class="access-request-container">
         <a class="btn btn-primary" href="{{ h.url_for('ubdc.access_request') }}" title="{{ _('Form') }}">
             <i class="fa fa-key"></i>
             {{ _("Access to the data") }}
         </a>  
-    </div>   -->
+    </div>  
+    #}
     {% if pkg.notes %}
         <div class="notes embedded-content">
             {{ h.render_markdown(h.get_translated(pkg, 'notes')) }}
