@@ -23,19 +23,19 @@ ubdc = Blueprint("ubdc", __name__)
 provider = Blueprint(
     "provider",
     __name__,
-    url_prefix="/provider",
+    url_prefix="/providers",
     url_defaults={"group_type": "organization", "is_organization": True},
 )
 
 
 @ubdc.route("/organization/")
 def org_redirect_root():
-    return redirect("/provider")
+    return redirect("/providers")
 
 
 @ubdc.route("/organization/<path:path>")
 def org_redirect(path):
-    return redirect("/provider/{}".format(path))
+    return redirect("/providers/{}".format(path))
 
 
 class AccessRequestController(MethodView):
