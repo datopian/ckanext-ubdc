@@ -9950,7 +9950,7 @@ h4 small {
 }
 .context-info .description {
   word-wrap: break-word;
-  word-break: break-all;
+  word-break: normal;
   overflow: auto;
 }
 .context-info code {
@@ -10044,7 +10044,7 @@ h4 small {
 }
 .homepage .hero {
   min-height: 505px;
-  background: url("../../../base/images/hero.png");
+  background: url("../../../base/images/hero.jpeg");
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
