@@ -4,7 +4,7 @@
     }
     .hero {
         min-height: 505px;
-        background: url("#{$imagePath}/hero.png");
+        background: url("#{$imagePath}/hero.jpeg");
         background-repeat: no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -273,6 +273,7 @@
                 text-align: center;
                 img {
                     max-width: 100%;
+                    object-fit: scale-down;
                     &:hover {
                         filter: grayscale(0%) contrast(1);
                     }

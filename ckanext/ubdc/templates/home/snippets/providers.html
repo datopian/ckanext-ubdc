@@ -2,20 +2,24 @@
     <div class="container">
         <h2>- DATA PROVIDERS -</h2>
         <div class="wrap">
-            {% set providers = h.get_featured_organizations(6) %}
+            {% set count = namespace(value=0) %}
+            {% set providers = h.get_featured_organizations(20) %}
             <div class="logo-grid">
                 {% for provider in providers %}
-                {% set url = h.url_for('organization' ~ '.read', id=provider.name) %}
                     {% if provider.image_display_url %}
-                    <div class="logo-grid__item">
-                        <a href="{{ url }}">
-                            <img src="{{ provider.image_display_url }}" alt="ACT Government">
-                        </a>
-                    </div>
+                        {% set url = h.url_for('organization' ~ '.read', id=provider.name) %}
+                        {% if count.value < 6 %}
+                            <div class="logo-grid__item">
+                                <a href="{{ url }}">
+                                    <img src="{{ provider.image_display_url }}" alt="{{ provider.name }}" width="150" height="85">
+                                </a>
+                            </div>
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
                     {% endif %}
                 {% endfor %}
             </div>
-            <p class="more"><a href="/organization">See more →</a> </p>
+            <p class="more"><a href="/organization">See more →</a></p>
         </div>
     </div>
 </section>

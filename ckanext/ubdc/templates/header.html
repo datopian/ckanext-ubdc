@@ -20,3 +20,12 @@
   </li> #}
   {{ super() }}
 {% endblock %}
+
+{# Removed About from Nav, used nav from ckanext-showcase #}
+{% block header_site_navigation_tabs %}
+  {{ h.build_nav_main(
+    (search_route, _('Datasets')),
+    (org_route, _('Organizations')),
+    (group_route, _('Groups')),
+  ) }}
+{% endblock %}

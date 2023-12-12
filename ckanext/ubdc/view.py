@@ -23,19 +23,19 @@ ubdc = Blueprint("ubdc", __name__)
 provider = Blueprint(
     "provider",
     __name__,
-    url_prefix="/provider",
+    url_prefix="/providers",
     url_defaults={"group_type": "organization", "is_organization": True},
 )
 
 
 @ubdc.route("/organization/")
 def org_redirect_root():
-    return redirect("/provider")
+    return redirect("/providers")
 
 
 @ubdc.route("/organization/<path:path>")
 def org_redirect(path):
-    return redirect("/provider/{}".format(path))
+    return redirect("/providers/{}".format(path))
 
 
 class AccessRequestController(MethodView):
@@ -91,10 +91,10 @@ class AccessRequestController(MethodView):
         return tk.redirect_to("ubdc.access_request")
 
 
-# ubdc.add_url_rule(
-#     "/data-service/access-request",
-#     view_func=AccessRequestController.as_view("access_request"),
-# )
+ubdc.add_url_rule(
+    "/data-service/access-request",
+    view_func=AccessRequestController.as_view("access_request"),
+)
 
 
 def access_request_list():
@@ -141,18 +141,18 @@ def access_request_delete(id):
     return tk.redirect_to("ubdc.access_request_list")
 
 
-# ubdc.add_url_rule("/data-service/access-request/view", view_func=access_request_list)
+ubdc.add_url_rule("/data-service/access-request/view", view_func=access_request_list)
 
 
-# ubdc.add_url_rule(
-#     "/data-service/access-request/view/<id>", view_func=access_request_view
-# )
+ubdc.add_url_rule(
+    "/data-service/access-request/view/<id>", view_func=access_request_view
+)
 
-# ubdc.add_url_rule(
-#     "/data-service/access-request/view/<id>/delete",
-#     methods=["POST"],
-#     view_func=access_request_delete,
-# )
+ubdc.add_url_rule(
+    "/data-service/access-request/view/<id>/delete",
+    methods=["POST"],
+    view_func=access_request_delete,
+)
 
 
 def get_blueprints():
