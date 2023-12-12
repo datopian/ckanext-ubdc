@@ -10291,6 +10291,7 @@ h4 small {
 }
 .homepage .providers .logo-grid__item img {
   max-width: 100%;
+  object-fit: scale-down;
 }
 .homepage .providers .logo-grid__item img:hover {
   filter: grayscale(0%) contrast(1);
