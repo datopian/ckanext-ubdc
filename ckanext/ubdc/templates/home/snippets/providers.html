@@ -3,7 +3,7 @@
         <h2>- DATA PROVIDERS -</h2>
         <div class="wrap">
             {% set count = namespace(value=0) %}
-            {% set providers = h.get_featured_organizations(20) %}
+            {% set providers = h.get_featured_organizations(50) %}
             <div class="logo-grid">
                 {% for provider in providers %}
                     {% if provider.image_display_url %}
