@@ -2,13 +2,16 @@ from ckan import model
 from ckan.logic import get_action
 import ckan.plugins.toolkit as tk
 from ckanext.ubdc import view
-
+from ckanext.googleanalytics.dbutil import get_top_packages
+import ckan.lib.dictization.model_dictize as model_dictize
 
 def popular_datasets(limit=3):
     """Return a list of the most popular datasets."""
+    packages = get_top_packages(limit)
     context = {"model": model, "session": model.Session}
-    data_dict = {"sort": "views_recent desc", "rows": limit}
-    return get_action("package_search")(context, data_dict)["results"]
+    datasets = [model_dictize.package_dictize(dataset[0], context)
+                  for dataset in packages]
+    return datasets
 
 
 def resources_count():
