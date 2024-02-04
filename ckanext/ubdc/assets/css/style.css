@@ -7498,6 +7498,11 @@ a.tag:hover {
 .media-item:hover .media-edit, .module-item:hover .media-edit {
   opacity: 1;
 }
+.media-item .media-description, .module-item .media-description {
+  word-wrap: break-word;
+  word-break: normal;
+  overflow: auto;
+}
 
 .media-view {
   position: absolute;
@@ -10702,7 +10707,7 @@ h4 small {
 .site-footer__col-2 {
   display: flex;
   flex-direction: column;
-  width: calc(20px + (100% - 220px) / 12 * 6);
+  width: calc(20px + (100% - 220px) / 12 * 2);
   margin-right: 20px;
   position: relative;
 }

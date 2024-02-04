@@ -52,6 +52,11 @@
             opacity: 1;
         }
     }
+    .media-description {
+        word-wrap: break-word;
+        word-break: normal;
+        overflow: auto;
+    }
 }
 
 .media-view {
