@@ -91,10 +91,10 @@ class AccessRequestController(MethodView):
         return tk.redirect_to("ubdc.access_request")
 
 
-# ubdc.add_url_rule(
-#     "/data-service/access-request",
-#     view_func=AccessRequestController.as_view("access_request"),
-# )
+ubdc.add_url_rule(
+    "/data-service/access-request",
+    view_func=AccessRequestController.as_view("access_request"),
+)
 
 
 def access_request_list():
@@ -141,18 +141,18 @@ def access_request_delete(id):
     return tk.redirect_to("ubdc.access_request_list")
 
 
-# ubdc.add_url_rule("/data-service/access-request/view", view_func=access_request_list)
+ubdc.add_url_rule("/data-service/access-request/view", view_func=access_request_list)
 
 
-# ubdc.add_url_rule(
-#     "/data-service/access-request/view/<id>", view_func=access_request_view
-# )
+ubdc.add_url_rule(
+    "/data-service/access-request/view/<id>", view_func=access_request_view
+)
 
-# ubdc.add_url_rule(
-#     "/data-service/access-request/view/<id>/delete",
-#     methods=["POST"],
-#     view_func=access_request_delete,
-# )
+ubdc.add_url_rule(
+    "/data-service/access-request/view/<id>/delete",
+    methods=["POST"],
+    view_func=access_request_delete,
+)
 
 
 def get_blueprints():
