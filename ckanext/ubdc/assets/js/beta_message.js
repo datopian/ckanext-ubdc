@@ -11,12 +11,13 @@ ckan.module('beta-message', function (jQuery) {
                 jQuery(this.el).html(message);
             }
             var close = document.querySelector('.beta-message-close');
-
-            close.addEventListener('click', function () {
-                document.cookie = 'beta-message=true; path=/';
-                var message = document.querySelector('.beta-message');
-                message.parentNode.removeChild(message);
-            });
+            if(close){
+                close.addEventListener('click', function () {
+                    document.cookie = 'beta-message=true; path=/';
+                    var message = document.querySelector('.beta-message');
+                    message.parentNode.removeChild(message);
+                });
+            }
      
         }
 
