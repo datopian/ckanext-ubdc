@@ -1,5 +1,12 @@
 {% ckan_extends %}
+{% block title %}Home page{% endblock %}
 
+{% block meta %}
+    {{ super() }}
+    <meta property="og:title" content="Home page">
+  <meta property="og:description" content="Discover the Urban Big Data Centre's extensive data catalogue, your premier resource for urban research datasets. Explore a comprehensive collection of high-quality data, tailored to empower researchers, policymakers, and academics in their quest for insightful urban studies and innovative solutions.">
+  <meta name="description" value="Discover the Urban Big Data Centre's extensive data catalogue, your premier resource for urban research datasets. Explore a comprehensive collection of high-quality data, tailored to empower researchers, policymakers, and academics in their quest for insightful urban studies and innovative solutions." />
+  {% endblock %}
 {% block primary_content %}
  {% snippet "home/snippets/hero.html"%}
  {% snippet "home/snippets/stats.html"%}
