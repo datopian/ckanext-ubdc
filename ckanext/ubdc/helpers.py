@@ -29,7 +29,7 @@ def tags_count():
 
 def get_gtm_id():
     """Return the Google Tag Manager ID."""
-    return tk.config.get("ls", "")
+    return tk.config.get("ckanext.ubdc.gtm_id", "")
 
 
 def get_cookie_control_config():
