@@ -1,0 +1,14 @@
+{% ckan_extends %}
+
+
+{% block meta %}
+    {{ super() }}
+  <meta property="og:title" content="{{group_dict.display_name}} - Providers - {{ g.site_title }}">
+  <meta property="og:description" content="Meet our trusted providers and data owners contributing to the Urban Big Data Centre's dataset catalogue. Our partnerships ensure access to reliable and up-to-date urban data, fostering collaborative research and comprehensive urban insights.">
+  <meta name="description" value="Meet our trusted providers and data owners contributing to the Urban Big Data Centre's dataset catalogue. Our partnerships ensure access to reliable and up-to-date urban data, fostering collaborative research and comprehensive urban insights.">
+  <meta name="og:image" content="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
+  <meta name="twitter:title" content="{{group_dict.display_name}} - Providers - {{ g.site_title }}">
+  <meta name="twitter:description" content="Meet our trusted providers and data owners contributing to the Urban Big Data Centre's dataset catalogue. Our partnerships ensure access to reliable and up-to-date urban data, fostering collaborative research and comprehensive urban insights.">
+  <meta name="twitter:image" content="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {% endblock %}
