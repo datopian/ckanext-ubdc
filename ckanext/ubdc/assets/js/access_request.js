@@ -28,15 +28,15 @@ ckan.module("data-service-request-form", function (jQuery) {
             // used in the backend.
 
             var consent = this.el.find('input[name="consent"]')
-            var contactConsent = this.el.find('input[name="contactConsent"]')
+            var contactConsent = this.el.find('input[name="contact_consent"]')
             if (!consent.prop('checked')) {
                 consent.focus();
                 this.el.preventDefault()
             }
 
             if (!contactConsent.prop('checked')) {
-                contactConsent.focus();
-                 this.el.preventDefault()
+                // contactConsent.focus();
+                //  this.el.preventDefault()
             }
                     
             setTimeout(function () {

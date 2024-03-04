@@ -7131,7 +7131,7 @@ button.close {
   overflow: hidden;
 }
 
-input[type=checkbox][name=contactConsent]:focus,
+input[type=checkbox][name=contact_consent]:focus,
 input[type=checkbox][name=consentName]:focus {
   outline: 1px solid lightblue;
 }
