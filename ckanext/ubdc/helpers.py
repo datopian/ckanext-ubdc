@@ -70,5 +70,6 @@ def get_field_to_question(value):
         "wish_to_use_data": "Please select all data from the UBDC collections you wish to use.",
         "document_url": "Optional supporting documentation upload (PDF or DOC only).",
         "created": "Date of submission",
+        "contact_consent": "Contact Consent",
     }
     return get_field_to_question.get(value, value)

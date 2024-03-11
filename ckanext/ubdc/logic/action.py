@@ -60,6 +60,7 @@ def request_data_access_create(context, data_dict):
     :param funding_information: additional funding information
     :param wish_to_use_data: wish to use data
     :param supporting_doc: supporting doc file upload
+    :param newsletter_consent: Consent for Newsletter/Events
     """
 
     if not context.get("for_view", False):

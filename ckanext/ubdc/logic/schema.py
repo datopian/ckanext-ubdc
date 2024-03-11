@@ -28,6 +28,7 @@ def request_data_access_base_schema():
         "funding_information": [ignore_missing, unicode_safe],
         "wish_to_use_data": [ignore_missing, list_of_strings],
         "document_url": [ignore_missing, unicode_safe],
+        "contact_consent": [ignore_missing, boolean_validator],
         "deleted": [ignore_missing],
     }
     return schema

@@ -37,6 +37,7 @@ request_data_access_table = Table(
     Column("document_url", types.UnicodeText),
     Column("created", types.DateTime, default=datetime.datetime.utcnow),
     Column("updated", types.DateTime, default=datetime.datetime.utcnow),
+    Column("contact_consent", types.Boolean, default=False),
     Column("deleted", types.Boolean, default=False),
 )
 
