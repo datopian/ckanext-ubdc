@@ -1381,7 +1381,7 @@ html {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Faktum", sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
@@ -6352,7 +6352,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Faktum", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.428571429;
@@ -6473,7 +6473,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Faktum", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.428571429;
@@ -10764,7 +10764,7 @@ h4 small {
   height: 50px;
   width: 50px;
   font-size: 18px;
-  color: #7c878d;
+  color: #000000;
 }
 .site-footer__col-2 .social .icon:hover i {
   border-color: #F37021;
@@ -10811,7 +10811,7 @@ h4 small {
   display: inline-block;
 }
 .site-footer__bottom ul li a {
-  color: #7c878d;
+  color: #000000;
   text-decoration: none;
 }
 .site-footer__bottom ul li a:hover {
@@ -10867,7 +10867,7 @@ h4 small {
     height: 50px;
     width: 50px;
     font-size: 18px;
-    color: #7c878d;
+    color: #000000;
   }
   .site-footer__social .icon:hover i {
     border-color: #F37021;
@@ -11481,7 +11481,7 @@ body {
   background: #fff;
   font-size: 16px;
   font-weight: 400;
-  color: #7c878d;
+  color: #000000;
 }
 
 [hidden] {

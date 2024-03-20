@@ -1,7 +1,25 @@
 /* Open Sans */
-@font-face {
+/* @font-face {
   font-family: "Open Sans";
   font-style: normal;
   src: local("Open Sans Regular"), local("OpenSans-Regular"),
     url("OpenSans.ttf") format("truetype");
+} */
+/* Faktum */
+@font-face {
+  font-family: "Faktum";
+  font-style: normal;
+  font-weight: 700; /* Bold font */
+  src: url("FaktumBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Faktum";
+  font-style: normal;
+  font-weight: 400; /* Regular font */
+  src: url("FaktumRegular.otf") format("opentype");
+}
+
+body {
+  font-family: "Faktum", Arial, sans-serif; /* Use Faktum font as default */
 }
