@@ -9,14 +9,14 @@
                             <h4>IN NUMBERS</h3>
                     </div>
                 </div>
-
+                {% set stats = h.get_site_statistics() %}
                 <div class="col-md-2">
                     <div class="stat">
                         <div class="stat-number">
-                            {{ h.get_site_statistics().dataset_count }}
+                            {{ stats.dataset_count }}
                         </div>
                         <div class="stat-label
-                                {% if h.get_site_statistics().dataset_count == 1 %}stat-label-singular{% endif %}">
+                                {% if stats.dataset_count == 1 %}stat-label-singular{% endif %}">
                             {% block stats_datasets %}{{ _('Datasets') }}{% endblock %}
                         </div>
                     </div>
@@ -59,10 +59,10 @@
                 <div class="col-md-2">
                     <div class="stat">
                         <div class="stat-number">
-                            {{ h.get_site_statistics().organization_count }}
+                            {{ stats.organization_count }}
                         </div>
                         <div class="stat-label
-                                {% if h.get_site_statistics().organization_count == 1 %}stat-label-singular{% endif %}">
+                                {% if stats.organization_count == 1 %}stat-label-singular{% endif %}">
                             {{ _('Data Providers') }}
                         </div>
                     </div>
