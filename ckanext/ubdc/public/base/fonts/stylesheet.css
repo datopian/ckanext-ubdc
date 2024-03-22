@@ -1,7 +1,15 @@
 /* Open Sans */
 @font-face {
   font-family: "Open Sans";
-  font-style: normal;
   src: local("Open Sans Regular"), local("OpenSans-Regular"),
     url("OpenSans.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  src: local("Open Sans Bold"), local("OpenSans-Bold"),
+    url("OpenSansBold.ttf") format("truetype");
+  font-weight: bold;
 }
