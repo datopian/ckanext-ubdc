@@ -65,6 +65,7 @@ class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
             "get_gtm_id": helpers.get_gtm_id,
             "get_cookie_control_config": helpers.get_cookie_control_config,
             "get_field_to_question": helpers.get_field_to_question,
+            'get_data_providers': helpers.get_data_providers,
         }
 
     # IValidators

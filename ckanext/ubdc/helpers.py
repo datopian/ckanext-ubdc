@@ -4,13 +4,19 @@ import ckan.plugins.toolkit as tk
 from ckanext.ubdc import view
 from ckanext.googleanalytics.dbutil import get_top_packages
 import ckan.lib.dictization.model_dictize as model_dictize
+import ckan.lib.helpers as h
+import logging
+
+log = logging.getLogger(__name__)
+
 
 def popular_datasets(limit=3):
     """Return a list of the most popular datasets."""
     packages = get_top_packages(limit)
     context = {"model": model, "session": model.Session}
-    datasets = [model_dictize.package_dictize(dataset[0], context)
-                  for dataset in packages]
+    datasets = [
+        model_dictize.package_dictize(dataset[0], context) for dataset in packages
+    ]
     return datasets
 
 
@@ -73,3 +79,26 @@ def get_field_to_question(value):
         "contact_consent": "Contact Consent",
     }
     return get_field_to_question.get(value, value)
+
+
+def get_data_providers():
+    # Get the data provider only when they have the image to show on homepage
+    group_list = []
+    try:
+
+        context = {"model": model, "session": model.Session}
+        groups = (
+            model.Session.query(model.Group)
+            .filter(model.Group.image_url != "")
+            .filter(model.Group.type == "organization")
+            .filter_by(state="active")
+            .all()
+        )
+        group_list = model_dictize.group_list_dictize(groups, context)
+    except:
+        # Fallback to get_featured_organizations which already exists
+        group_list = []
+        limit = tk.config.get("organization_list_size_homepage", 50)
+        group_list = h.get_featured_organizations(limit)
+
+    return group_list
