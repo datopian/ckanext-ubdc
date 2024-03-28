@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block header_logo %}
-<div class="logo-container {%if h.current_url()  != '/' %}small-logo{% endif %}">
+<div class="logo-container small-logo">
     <a class="logo" href="{{ h.url_for('home.index') }}"><img
             src="{{ h.url_for_static_or_external('/base/images/ubdc-logo1.svg') }}" alt="{{ g.site_title }}"
             title="{{ g.site_title }}" /></a>
