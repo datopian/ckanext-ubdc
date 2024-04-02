@@ -20,21 +20,24 @@
   padding-left: 0px;
   min-height: 205px;
   padding-top: calc($grid-gutter-width/2);
-  background: lighten($layoutBackgroundColor, 5%) url("#{$bgPath}");
-  border: 1px solid $moduleHeadingBorderColor;
-  border-width: 1px 0;
+  background: $whiteBackground;
+  border: none;
 }
 
 .media-item {
   position: relative;
   float: left;
-  width: 178px;
+  width: 100%;
   padding: calc($grid-gutter-width/2);
   margin: 0 0 calc($grid-gutter-width/2) calc($grid-gutter-width/2);
   background-color: white;
+  display: flex;
   @include border-radius(3px);
+  .stats {
+    padding: 0px 10px;
+  }
   span.count {
-    color: #999;
+    color: $black;
   }
   .media-image {
     margin-bottom: 5px;
@@ -47,6 +50,7 @@
     @include transition(opacity 0.2s ease-in);
   }
   &:hover {
+    box-shadow: none;
     z-index: 1;
     .media-edit {
       opacity: 1;
@@ -56,6 +60,10 @@
     word-wrap: break-word;
     word-break: normal;
     overflow: auto;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    display: block;
   }
 }
 
@@ -71,8 +79,8 @@
   @include border-radius(3px);
   &:hover,
   &.hovered {
-    border-color: $mastheadBackgroundColor;
-    @include box-shadow(0 0 0 4px rgba(0, 0, 0, 0.1));
+    border-color: none;
+    box-shadow: none;
     .banner {
       background-color: $bannerBackgroundColor;
     }

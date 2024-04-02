@@ -25,7 +25,7 @@ $font-size-xxxsmall : 0.2em;
 
 // Layout Variables
 $layoutFontFamily: 'Open Sans', sans-serif;
-$layoutTextColor: #444;
+$layoutTextColor: #000;
 $layoutBoldColor: #000;
 $layoutLinkColor: $brandPrimary;
 $layoutBackgroundColor: #eee;
@@ -33,7 +33,7 @@ $layoutTrimBackgroundColor: #fff;
 $layoutTrimBorderColor: #ccc;
 $logoMaxHeight: 60px;
 
-$navLinkColor: #333;
+$navLinkColor: #000;
 $navActiveBackgroundColor: #f6f6f6;
 
 // Module Variables
@@ -51,10 +51,10 @@ $gutterY: 20px;
 $gutterSmallX: 15px;
 $gutterSmallY: $gutterY;
 
-$emptyTextColor: #6e6e6e;
+$emptyTextColor: #000000;
 $genericBorderColor: #ddd;
 
-$breadcrumbTextColor: #505050;
+$breadcrumbTextColor: #000000;
 
 $mastheadTextColor: #fff;
 $mastheadLinkColor: $mastheadTextColor;

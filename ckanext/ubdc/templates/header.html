@@ -28,6 +28,8 @@
 
 {# Removed About from Nav, used nav from ckanext-showcase #}
 {% block header_site_navigation_tabs %}
+<li><a href="/">Home</a></li>
+<li><a href="https://ubdc.ac.uk/">UBDC Main Website</a></li>
 {{ h.build_nav_main(
 (search_route, _('Datasets')),
 (org_route, _('Organizations')),
