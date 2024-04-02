@@ -9,7 +9,12 @@ import logging
 
 log = logging.getLogger(__name__)
 
+from cachetools import cached
+from cachetools import TTLCache
 
+cache_time=tk.config.get('ckanext.stats.cache_time', 120)
+
+@cached(cache=TTLCache(maxsize=1024, ttl=cache_time))
 def popular_datasets(limit=3):
     """Return a list of the most popular datasets."""
     packages = get_top_packages(limit)
@@ -20,6 +25,7 @@ def popular_datasets(limit=3):
     return datasets
 
 
+@cached(cache=TTLCache(maxsize=1024, ttl=cache_time))
 def resources_count():
     """Return the total number of resources."""
     context = {"model": model, "session": model.Session}
@@ -27,6 +33,7 @@ def resources_count():
     return get_action("resource_search")(context, data_dict)["count"]
 
 
+@cached(cache=TTLCache(maxsize=1024, ttl=cache_time))
 def tags_count():
     """Return the total number of tags."""
     context = {"model": model, "session": model.Session}
@@ -81,6 +88,7 @@ def get_field_to_question(value):
     return get_field_to_question.get(value, value)
 
 
+@cached(cache=TTLCache(maxsize=1024, ttl=86400))
 def get_data_providers():
     # Get the data provider only when they have the image to show on homepage
     group_list = []
