@@ -40,8 +40,8 @@
         display: block;
         margin: 20px 0 0;
         text-decoration: none;
-        color: #02152b;
-        text-transform: uppercase;
+        color: $black;
+        text-transform: capitalize;
         &:hover {
           color: $brandPrimary;
         }

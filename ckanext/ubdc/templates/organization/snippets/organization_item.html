@@ -16,9 +16,11 @@
     <li class="media-item">
       {% block item_inner %}
       {% block image %}
+      <div class="col-md-3 m-auto p-5">
         <img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-organization.png') }}" alt="{{ organization.name }}" class="img-fluid media-image">
+      </div>
       {% endblock %}
-      <div class="stats">
+      <div class="stats col-md-9">
         {% block title %}
             <h2 class="media-heading">{{ organization.display_name }}</h2>
         {% endblock %}

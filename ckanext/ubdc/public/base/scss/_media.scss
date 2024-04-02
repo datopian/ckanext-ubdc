@@ -28,10 +28,11 @@
   position: relative;
   float: left;
   width: 100%;
-  padding: calc($grid-gutter-width/2);
+  padding: calc($grid-gutter-width/4);
   margin: 0 0 calc($grid-gutter-width/2) calc($grid-gutter-width/2);
   background-color: white;
   display: flex;
+  border: 1px solid #ccc;
   @include border-radius(3px);
   .stats {
     padding: 0px 10px;
@@ -41,6 +42,7 @@
   }
   .media-image {
     margin-bottom: 5px;
+    width: -webkit-fill-available;
   }
   .media-edit {
     opacity: 0;
@@ -73,7 +75,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border: 1px solid $moduleHeadingBorderColor;
+  border: none;
   overflow: hidden;
   @include transition(all 0.2s ease-in);
   @include border-radius(3px);

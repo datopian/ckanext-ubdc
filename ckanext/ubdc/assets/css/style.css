@@ -7471,10 +7471,11 @@ a.tag:hover {
   position: relative;
   float: left;
   width: 100%;
-  padding: 15px;
+  padding: 7.5px;
   margin: 0 0 15px 15px;
   background-color: white;
   display: flex;
+  border: 1px solid #ccc;
   border-radius: 3px;
 }
 .media-item .stats, .module-item .stats {
@@ -7485,6 +7486,7 @@ a.tag:hover {
 }
 .media-item .media-image, .module-item .media-image {
   margin-bottom: 5px;
+  width: -webkit-fill-available;
 }
 .media-item .media-edit, .module-item .media-edit {
   opacity: 0;
@@ -7519,7 +7521,7 @@ a.tag:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  border: 1px solid #ddd;
+  border: none;
   overflow: hidden;
   -webkit-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
@@ -9219,8 +9221,9 @@ td.diff_header {
   border-radius: 0 3px 0 0;
 }
 .page-header.module-content {
-  padding-top: 15px;
+  padding-top: 3px;
   padding-bottom: 0;
+  background-color: transparent;
 }
 .page-header:before, .page-header:after {
   display: table;
@@ -10429,6 +10432,14 @@ h4 small {
     width: 100%;
   }
 }
+.m-auto {
+  margin: auto;
+}
+
+.p-5 {
+  padding: 5px;
+}
+
 .account-masthead {
   min-height: 30px;
   color: #fff;
@@ -10759,8 +10770,8 @@ h4 small {
   display: block;
   margin: 20px 0 0;
   text-decoration: none;
-  color: #02152b;
-  text-transform: uppercase;
+  color: #000000;
+  text-transform: capitalize;
 }
 .site-footer__col-2 ul li a:hover {
   color: #F37021;

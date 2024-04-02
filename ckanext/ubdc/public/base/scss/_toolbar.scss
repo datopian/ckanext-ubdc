@@ -88,8 +88,9 @@
 
 .page-header {
     &.module-content{
-        padding-top: calc($grid-gutter-width/2);
+        padding-top: calc($grid-gutter-width/10);
         padding-bottom: 0;
+        background-color: transparent;
     }
     margin-top: $grid-gutter-width;
     @include clearfix;
