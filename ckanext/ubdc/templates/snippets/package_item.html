@@ -10,7 +10,7 @@
 {% block resources_inner %}
     {% for resource in h.dict_list_reduce(package.resources, 'format') %}
     <li>
-        <a id={{ga_tag_id}} href="{{ h.url_for(package.type ~ '.read', id=package.name) }}" class="label label-default" data-format="{{ resource.lower() }}">{{ resource }}</a>
+        <span id={{ga_tag_id}}  class="label label-default" data-format="{{ resource.lower() }}">{{ resource }}</span>
     </li>
     {% endfor %}
 {% endblock %}

@@ -5213,12 +5213,13 @@ a.label:hover, a.label:focus {
   font-size: 12px;
   font-weight: bold;
   line-height: 1;
-  color: #fff;
+  color: #000000;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  background-color: #6E6E6E;
-  border-radius: 10px;
+  background-color: #ffffff;
+  float: right;
+  padding-right: 2rem;
 }
 .badge:empty {
   display: none;
@@ -7166,6 +7167,10 @@ input[type=checkbox][name=consentName]:focus {
   display: inline-block;
 }
 
+.nav li a:hover {
+  background-color: transparent !important;
+}
+
 @media (max-width: 767px) {
   .beta-message {
     padding-left: 40%;
@@ -7291,6 +7296,9 @@ a.tag:hover {
 .module .read-more {
   font-weight: bold;
   color: #000;
+}
+.module .read-more .read-more-icon {
+  padding-left: 1rem;
 }
 
 .pagination-wrapper {
@@ -7478,6 +7486,9 @@ a.tag:hover {
   border: 1px solid #ccc;
   border-radius: 3px;
 }
+.media-item .thumb, .module-item .thumb {
+  max-width: fit-content;
+}
 .media-item .stats, .module-item .stats {
   padding: 0px 10px;
 }
@@ -7487,6 +7498,7 @@ a.tag:hover {
 .media-item .media-image, .module-item .media-image {
   margin-bottom: 5px;
   width: -webkit-fill-available;
+  object-fit: scale-down;
 }
 .media-item .media-edit, .module-item .media-edit {
   opacity: 0;
@@ -10153,14 +10165,14 @@ h4 small {
 }
 .homepage .stats .stat-number {
   font-size: 42px;
-  font-weight: 600;
+  font-weight: 100;
   margin: 0;
   color: #000000;
 }
 .homepage .stats .stat-label {
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 100;
 }
 .homepage .stats .title {
   border-right: 1px solid #cccccc;
@@ -10172,6 +10184,14 @@ h4 small {
   padding: 0;
   margin: 0;
   text-align: right;
+}
+.homepage .stats .title span {
+  font-weight: 100;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+  display: block;
 }
 .homepage .popular-dataset {
   background-image: url("../../../base/images/popular-dataset-bg.png");
@@ -10210,6 +10230,7 @@ h4 small {
 }
 .homepage .popular-dataset .title h3 {
   font-size: 23px;
+  text-transform: capitalize;
 }
 .homepage .popular-dataset .icon {
   position: absolute;
@@ -10234,14 +10255,25 @@ h4 small {
   border-top: 3px solid;
   padding: 30px;
   border-color: #8869ae;
+  height: 30rem;
+  max-height: 30rem;
+  overflow: hidden;
 }
-.homepage .popular-dataset .item a {
+.homepage .popular-dataset .item span {
   color: #02152b;
   font-size: 24px;
   padding-bottom: 11px;
 }
 .homepage .popular-dataset .item p {
   padding-top: 12px;
+  min-height: 13rem;
+  max-height: 13rem;
+  overflow: hidden;
+  color: #000000;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
 }
 .homepage .popular-dataset .more {
   text-align: center;
@@ -10365,7 +10397,6 @@ h4 small {
   color: #000000;
 }
 .homepage .funding {
-  border-top: 1px solid #edeced;
   padding: 42px 0;
 }
 .homepage .funding h4 {
@@ -10381,6 +10412,7 @@ h4 small {
 }
 .homepage .funding .logo-grid {
   padding-left: 40px;
+  padding-top: 2rem;
   display: flex;
 }
 .homepage .funding .logo-grid__item {
@@ -10586,7 +10618,7 @@ h4 small {
 .masthead .navbar-collapse .nav li a {
   color: #000000 !important;
   position: relative;
-  padding: 0px 0px 5px 0px;
+  padding: 5px 0px 5px 0px;
 }
 .masthead .navbar-collapse .nav li a:before {
   transition: 300ms;
@@ -10637,7 +10669,7 @@ h4 small {
 .masthead .site-search input {
   width: 40px;
   opacity: 0;
-  padding: 1px 10px;
+  padding: 5px 10px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }

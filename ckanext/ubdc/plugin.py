@@ -8,6 +8,8 @@ from ckanext.ubdc.validators import resource_type_validator
 from ckanext.ubdc.logic import action
 from ckanext.ubdc.logic import auth
 from ckanext.ubdc.model import access_request
+from ckan.common import _
+from collections import OrderedDict
 
 
 class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
@@ -18,6 +20,7 @@ class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
     plugins.implements(plugins.IValidators)
     plugins.implements(plugins.IBlueprint)
     plugins.implements(plugins.IActions)
+    plugins.implements(plugins.IFacets)
     plugins.implements(plugins.IPackageController, inherit=True)
     plugins.implements(plugins.IAuthFunctions)
 
@@ -86,3 +89,19 @@ class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
     # IBlueprint
     def get_blueprint(self):
         return get_blueprints()
+
+    def dataset_facets(self, facets_dict, package_type):
+        return OrderedDict(
+            [
+                ("organization", "Providers"),
+                ("groups", "Research Themes"),
+                ("res_format", _("Formats")),
+                ("license_id", _("Licenses")),
+            ]
+        )
+
+    def group_facets(self, facets_dict, group_type, package_type):
+        return facets_dict
+
+    def organization_facets(self, facets_dict, organization_type, package_type):
+        return facets_dict

@@ -7,6 +7,10 @@ import ckan.model as model
 from ckan.common import asbool
 from ckan.plugins import toolkit as tk
 from ckan.views.group import register_group_plugin_rules
+from ckan.views.dataset import register_dataset_plugin_rules
+from ckan.views.resource import (
+    register_dataset_plugin_rules as register_resource_plugin_rules,
+)
 import ckan.lib.navl.dictization_functions as dict_fns
 import ckan.lib.captcha as captcha
 
@@ -27,6 +31,20 @@ provider = Blueprint(
     url_defaults={"group_type": "organization", "is_organization": True},
 )
 
+datasets = Blueprint(
+    "datasets",
+    __name__,
+    url_prefix="/datasets",
+    url_defaults={"package_type": "dataset"},
+)
+
+resources = Blueprint(
+    "datasets_resource",
+    __name__,
+    url_prefix="/datasets/<id>/resource",
+    url_defaults={"package_type": "dataset"},
+)
+
 
 @ubdc.route("/organization/")
 def org_redirect_root():
@@ -36,6 +54,16 @@ def org_redirect_root():
 @ubdc.route("/organization/<path:path>")
 def org_redirect(path):
     return redirect("/providers/{}".format(path))
+
+
+@ubdc.route("/dataset/")
+def dataset_redirect_root():
+    return redirect("/datasets")
+
+
+@ubdc.route("/dataset/<path:path>")
+def dataset_redirect(path):
+    return redirect("/datasets/{}".format(path))
 
 
 class AccessRequestController(MethodView):
@@ -54,7 +82,7 @@ class AccessRequestController(MethodView):
             error_msg = tk._("Please accept the terms and conditions.")
             tk.h.flash_error(error_msg)
             return self.get()
-        
+
         # if not asbool(data_dict.get("contactConsent", False)):
         #     error_msg = tk._("Please accept the contact consent.")
         #     tk.h.flash_error(error_msg)
@@ -157,4 +185,6 @@ ubdc.add_url_rule(
 
 def get_blueprints():
     register_group_plugin_rules(provider)
-    return [ubdc, provider]
+    register_dataset_plugin_rules(datasets)
+    register_resource_plugin_rules(resources)
+    return [ubdc, provider, datasets, resources]

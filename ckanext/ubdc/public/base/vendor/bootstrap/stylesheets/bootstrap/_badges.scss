@@ -11,12 +11,13 @@
   font-size: $font-size-small;
   font-weight: $badge-font-weight;
   line-height: $badge-line-height;
-  color: $badge-color;
+  color: #000000;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  background-color: $badge-bg;
-  border-radius: $badge-border-radius;
+  background-color: #ffffff;
+  float: right;
+  padding-right: 2rem;
 
   // Empty badges collapse automatically (not available in IE8)
   &:empty {

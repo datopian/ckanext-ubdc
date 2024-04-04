@@ -17,7 +17,7 @@
     <li class="media-item">
       {% block item_inner %}
       {% block image %}
-      <div class="col-md-3 m-auto p-5">
+      <div class="col-md-3 m-auto p-5 thumb">
         <img src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" alt="{{ group.name }}" class="media-image img-fluid">
       </div> 
       {% endblock %}

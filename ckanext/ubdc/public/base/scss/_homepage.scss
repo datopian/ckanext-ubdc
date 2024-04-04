@@ -20,7 +20,7 @@
       .search-form {
         width: 60%;
         button {
-        //   background-color: #05011f;
+          //   background-color: #05011f;
           top: 0;
           right: 0;
           margin-top: 0;
@@ -68,14 +68,14 @@
     }
     .stat-number {
       font-size: 42px;
-      font-weight: 600;
+      font-weight: 100;
       margin: 0;
       color: #000000;
     }
     .stat-label {
-      text-transform: uppercase;
+      text-transform: capitalize;
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 100;
     }
 
     .title {
@@ -87,6 +87,14 @@
         padding: 0;
         margin: 0;
         text-align: right;
+      }
+      span {
+        font-weight: 100;
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+        text-align: right;
+        display: block;
       }
     }
   }
@@ -134,6 +142,7 @@
       padding-bottom: 70px;
       h3 {
         font-size: 23px;
+        text-transform: capitalize;
       }
     }
     .icon {
@@ -153,13 +162,21 @@
       }
     }
     .item {
-      a {
+      span {
         color: #02152b;
         font-size: 24px;
         padding-bottom: 11px;
       }
       p {
         padding-top: 12px;
+        min-height: 13rem;
+        max-height: 13rem;
+        overflow: hidden;
+        color: $black;
+        width: 100%;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
       }
       font-weight: 400;
       font-size: 16px;
@@ -167,6 +184,9 @@
       border-top: 3px solid;
       padding: 30px;
       border-color: #8869ae;
+      height: 30rem;
+      max-height: 30rem;
+      overflow: hidden;
     }
     .more {
       text-align: center;
@@ -302,7 +322,7 @@
   }
 
   .funding {
-    border-top: 1px solid #edeced;
+    // border-top: 1px solid #edeced;
     padding: 42px 0;
     h4 {
       font-weight: 700;
@@ -317,6 +337,7 @@
     }
     .logo-grid {
       padding-left: 40px;
+      padding-top: 2rem;
       display: flex;
       &__item {
         padding-right: 20px;
@@ -396,5 +417,5 @@
 }
 
 .p-5 {
-  padding: 5px
+  padding: 5px;
 }

@@ -34,6 +34,12 @@
   display: flex;
   border: 1px solid #ccc;
   @include border-radius(3px);
+  .thumb {
+    max-width: fit-content;
+    img {
+
+    }
+  }
   .stats {
     padding: 0px 10px;
   }
@@ -43,6 +49,7 @@
   .media-image {
     margin-bottom: 5px;
     width: -webkit-fill-available;
+    object-fit: scale-down;
   }
   .media-edit {
     opacity: 0;
