@@ -56,9 +56,15 @@ def org_redirect(path):
     return redirect("/providers/{}".format(path))
 
 
+@ubdc.route("/dataset")
 @ubdc.route("/dataset/")
 def dataset_redirect_root():
-    return redirect("/datasets")
+    original_query = tk.request.query_string.decode("utf-8")
+    if original_query:
+        target_url = '/datasets' + '?' + original_query
+    else:
+        target_url = '/datasets'
+    return redirect(target_url)
 
 
 @ubdc.route("/dataset/<path:path>")

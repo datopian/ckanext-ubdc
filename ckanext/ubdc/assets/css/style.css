@@ -7681,6 +7681,10 @@ a.tag:hover {
   padding: 7px 25px;
 }
 
+.nav-item > a > span.item-label {
+  text-transform: capitalize;
+}
+
 .nav-item.active,
 .nav-aside li.active {
   background-color: #f6f6f6;
@@ -8583,8 +8587,16 @@ select[data-module=autocomplete] {
 
 .dataset-item {
   border-bottom: 1px dotted #ddd;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  padding-bottom: 4rem;
+  margin-bottom: 4rem;
+}
+.dataset-item a {
+  color: #000000;
+  text-decoration: none;
+}
+.dataset-item:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  cursor: pointer;
 }
 
 @media (max-width: 991px) {
@@ -8663,7 +8675,7 @@ select[data-module=autocomplete] {
   border-radius: 3px;
 }
 .resource-item:hover {
-  background-color: #eee;
+  background-color: transparent;
 }
 
 .resource-item .heading {
@@ -9096,6 +9108,10 @@ td.diff_header {
 }
 .tertiary .search-input {
   margin-bottom: 10px;
+}
+
+.dataset-count {
+  margin-top: 3.5rem;
 }
 
 @media (min-width: 992px) {

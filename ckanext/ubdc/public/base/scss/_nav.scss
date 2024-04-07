@@ -19,6 +19,10 @@
     padding: 7px ($gutterX);
 }
 
+.nav-item > a > span.item-label {
+    text-transform: capitalize;
+}
+
 .nav-item.active,
 .nav-aside li.active {
     background-color: $navActiveBackgroundColor;
