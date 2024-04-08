@@ -17,7 +17,9 @@
       {% block item_inner %}
       {% block image %}
       <div class="col-md-3 m-auto p-5 thumb">
+        {% if organization.image_display_url %}
         <img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-organization.png') }}" alt="{{ organization.name }}" class="img-fluid media-image">
+        {% endif %}
       </div>
       {% endblock %}
       <div class="stats col-md-9">

@@ -4,38 +4,70 @@
 }
 
 .site-footer {
+  .container-large {
+    width: 100%;
+    max-width: 79.5em;
+    margin: auto;
+  }
   &__links {
     display: flex;
     color: $footerLinkColor;
   }
+  .social {
+    display: flex;
+    float: right;
+    margin: -30px 0px;
+    h4 {
+      padding-bottom: 40px;
+    }
+    .icon {
+      float: left;
+      padding-left: 2px;
+      padding-bottom: 2px;
+      i {
+        // border: 3px solid $black;
+        border-radius: 100%;
+        padding: 14px;
+        height: 50px;
+        width: 50px;
+        font-size: 18px;
+        color: $black;
+      }
+      &:hover i {
+        border-color: $brandPrimary;
+        color: $brandPrimary;
+      }
+    }
+  }
   &__col-2 {
     h4 {
-      font-size: 1.375em;
-      color: $brandPrimary;
-      font-weight: 200;
+      color: $black;
+      font-weight: 500;
       padding: 0;
       margin: 0;
+      font-size: 1.7rem;
     }
     display: flex;
     flex-direction: column;
     width: calc(20px + ((100% - 220px) / 12 * 2));
     margin-right: 20px;
     position: relative;
-    &:nth-child(5) {
-      width: calc(40px + ((100% - 220px) / 12 * 3));
-      margin-right: 20px;
-      position: relative;
-    }
-    &:nth-child(6) {
-      margin-right: 0;
-      width: calc(((100% - 220px) / 12 * 1));
-      margin-right: 20px;
-      position: relative;
-    }
+    // &:nth-child(5) {
+    //   width: calc(40px + ((100% - 220px) / 12 * 3));
+    //   margin-right: 20px;
+    //   position: relative;
+    // }
+    // &:nth-child(6) {
+    //   margin-right: 0;
+    //   width: calc(((100% - 220px) / 12 * 1));
+    //   margin-right: 20px;
+    //   position: relative;
+    // }
     ul {
       list-style: none;
       margin: 0;
-      padding: 20px 0 0;
+      padding: 0px 0 0;
+      font-size: 14px;
       li a {
         display: block;
         margin: 20px 0 0;
@@ -43,31 +75,6 @@
         color: $black;
         text-transform: capitalize;
         &:hover {
-          color: $brandPrimary;
-        }
-      }
-    }
-    .social {
-      display: block;
-      width: 105px;
-      h4 {
-        padding-bottom: 40px;
-      }
-      .icon {
-        float: left;
-        padding-left: 2px;
-        padding-bottom: 2px;
-        i {
-          border: 3px solid $black;
-          border-radius: 100%;
-          padding: 14px;
-          height: 50px;
-          width: 50px;
-          font-size: 18px;
-          color: $black;
-        }
-        &:hover i {
-          border-color: $brandPrimary;
           color: $brandPrimary;
         }
       }
@@ -100,14 +107,16 @@
   &__bottom {
     border-top: 1px solid #edeced;
     margin-top: 15px;
-    padding: 30px 0px;
+    padding: 40px 0px;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 14px;
     .warp {
-      display: flex;
+      display: block;
       justify-content: space-between;
       align-items: center;
+      font-weight: 100;
+      text-transform: capitalize;
     }
     ul {
       list-style: none;

@@ -34,9 +34,57 @@
   }
 
   .newsletter {
-    background: #05011f;
+    background-image: url("../../../base/images/newsletter.webp");
+    background-color: $dark-green-bg-primary;
     color: #fff;
-    padding: 78px 0px;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 3rem;
+    overflow: hidden;
+    .container-small {
+      width: 100%;
+      max-width: 48em;
+      margin: auto;
+      .padding-section-medium {
+        padding-top: 5em;
+        padding-bottom: 5em;
+        position: relative;
+        .head-h2 {
+          letter-spacing: -0.175vw;
+          margin-top: 0;
+          margin-bottom: 1vw;
+          font-size: 3.5em;
+          font-weight: 700;
+          line-height: 114.286%;
+        }
+        .cta_paragraph {
+          color: #fff;
+          text-align: center;
+          letter-spacing: -0.0275rem;
+          width: 100%;
+          max-width: 47vw;
+          margin-bottom: 2vw;
+          margin-left: auto;
+          margin-right: auto;
+          font-size: 1.375em;
+          font-weight: 500;
+          line-height: 145.455%;
+        }
+
+        .btn-newsletter {
+          letter-spacing: -0.01rem;
+          border-radius: 0.25em;
+          min-height: 3em;
+          padding: 0.75em 1.5em;
+          font-size: 1em;
+          font-weight: 600;
+          line-height: 1.5;
+          transition: all 0.3s;
+        }
+      }
+    }
+
     .wrap {
       display: flex;
       align-items: center;
@@ -323,17 +371,43 @@
 
   .funding {
     // border-top: 1px solid #edeced;
-    padding: 42px 0;
-    h4 {
+    background-color: $aqua-bg-primary;
+    .container-medium {
+      width: 100%;
+      max-width: 70em;
+      margin: auto;
+    }
+    h3 {
+      letter-spacing: -0.045vw;
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 1.5em;
       font-weight: 700;
-      font-size: 16px;
-      padding-right: 80px;
-      border-right: 1px solid #cccccc;
+      line-height: 1.333;
+    }
+    .funded_divider {
+      background-color: #a4acb9;
+      width: 0.0625em;
+      height: 5em;
+    }
+    .funded_logo {
+      grid-column-gap: 3em;
+      grid-row-gap: 3em;
+      height: 4em;
+      font-size: 1em;
+      line-height: 1.5;
+      display: flex;
     }
     .wrap {
-      margin: auto;
-      display: flex;
+      padding-top: 3em;
+      padding-bottom: 3em;
+    }
+    .funded-wrapper {
+      grid-column-gap: 4em;
+      grid-row-gap: 4em;
       justify-content: center;
+      align-items: center;
+      display: flex;
     }
     .logo-grid {
       padding-left: 40px;

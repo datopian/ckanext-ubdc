@@ -60,6 +60,11 @@ input[type=checkbox][name="consentName"]:focus {
     }
 }
 
+.padding-global {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
 // small screen
 @media (max-width: 767px) {
     .beta-message {

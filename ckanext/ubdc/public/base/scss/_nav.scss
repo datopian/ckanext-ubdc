@@ -33,10 +33,10 @@
     position: relative;
     color: $navItemActiveTextColor;
     background-color: $navItemActiveBackgroundColor;
-    &:hover {
-        color: $navItemActiveTextColor;
-        background-color: $navItemActiveBackgroundColor;
-    }
+    // &:hover {
+    //     color: $black;
+    //     background-color: $navItemActiveBackgroundColor;
+    // }
 }
 
 @media (min-width: $screen-sm-min) {

@@ -4364,6 +4364,7 @@ tbody.collapse.in {
   line-height: 1.428571429;
   border: 1px solid transparent;
   border-radius: 4px 4px 0 0;
+  color: #000;
 }
 .nav-tabs > li > a:hover {
   border-color: #eeeeee #eeeeee #ddd;
@@ -7171,6 +7172,11 @@ input[type=checkbox][name=consentName]:focus {
   background-color: transparent !important;
 }
 
+.padding-global {
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+}
+
 @media (max-width: 767px) {
   .beta-message {
     padding-left: 40%;
@@ -7693,11 +7699,6 @@ a.tag:hover {
 .nav-item.active > a,
 .nav-aside li.active a {
   position: relative;
-  color: #FFF;
-  background-color: #647A82;
-}
-.nav-item.active > a:hover,
-.nav-aside li.active a:hover {
   color: #FFF;
   background-color: #647A82;
 }
@@ -9252,6 +9253,7 @@ td.diff_header {
   padding-top: 3px;
   padding-bottom: 0;
   background-color: transparent;
+  margin: 0;
 }
 .page-header:before, .page-header:after {
   display: table;
@@ -9263,14 +9265,17 @@ td.diff_header {
 .page-header .nav-tabs {
   float: left;
   margin-bottom: -1px;
+  border: none;
 }
 .page-header .nav-tabs li.active a,
 .page-header .nav-tabs a:hover {
   background-color: #fff;
+  border: none;
 }
 .page-header .content_action {
   float: right;
   margin-top: -3px;
+  padding: 10px 15px;
 }
 
 .no-nav .page-header {
@@ -9927,6 +9932,7 @@ h4 small {
   position: relative;
   float: right;
   margin-left: 0;
+  padding: 0;
 }
 
 .main .secondary {
@@ -10150,9 +10156,55 @@ h4 small {
   align-items: center;
 }
 .homepage .newsletter {
-  background: #05011f;
+  background-image: url("../../../base/images/newsletter.webp");
+  background-color: #061b16;
   color: #fff;
-  padding: 78px 0px;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-bottom: 3rem;
+  overflow: hidden;
+}
+.homepage .newsletter .container-small {
+  width: 100%;
+  max-width: 48em;
+  margin: auto;
+}
+.homepage .newsletter .container-small .padding-section-medium {
+  padding-top: 5em;
+  padding-bottom: 5em;
+  position: relative;
+}
+.homepage .newsletter .container-small .padding-section-medium .head-h2 {
+  letter-spacing: -0.175vw;
+  margin-top: 0;
+  margin-bottom: 1vw;
+  font-size: 3.5em;
+  font-weight: 700;
+  line-height: 114.286%;
+}
+.homepage .newsletter .container-small .padding-section-medium .cta_paragraph {
+  color: #fff;
+  text-align: center;
+  letter-spacing: -0.0275rem;
+  width: 100%;
+  max-width: 47vw;
+  margin-bottom: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.375em;
+  font-weight: 500;
+  line-height: 145.455%;
+}
+.homepage .newsletter .container-small .padding-section-medium .btn-newsletter {
+  letter-spacing: -0.01rem;
+  border-radius: 0.25em;
+  min-height: 3em;
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.5;
+  transition: all 0.3s;
 }
 .homepage .newsletter .wrap {
   display: flex;
@@ -10413,18 +10465,44 @@ h4 small {
   color: #000000;
 }
 .homepage .funding {
-  padding: 42px 0;
+  background-color: #effefa;
 }
-.homepage .funding h4 {
+.homepage .funding .container-medium {
+  width: 100%;
+  max-width: 70em;
+  margin: auto;
+}
+.homepage .funding h3 {
+  letter-spacing: -0.045vw;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.5em;
   font-weight: 700;
-  font-size: 16px;
-  padding-right: 80px;
-  border-right: 1px solid #cccccc;
+  line-height: 1.333;
+}
+.homepage .funding .funded_divider {
+  background-color: #a4acb9;
+  width: 0.0625em;
+  height: 5em;
+}
+.homepage .funding .funded_logo {
+  grid-column-gap: 3em;
+  grid-row-gap: 3em;
+  height: 4em;
+  font-size: 1em;
+  line-height: 1.5;
+  display: flex;
 }
 .homepage .funding .wrap {
-  margin: auto;
-  display: flex;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+.homepage .funding .funded-wrapper {
+  grid-column-gap: 4em;
+  grid-row-gap: 4em;
   justify-content: center;
+  align-items: center;
+  display: flex;
 }
 .homepage .funding .logo-grid {
   padding-left: 40px;
@@ -10780,9 +10858,39 @@ h4 small {
   background: #fff;
 }
 
+.site-footer .container-large {
+  width: 100%;
+  max-width: 79.5em;
+  margin: auto;
+}
 .site-footer__links {
   display: flex;
   color: #CCDEE3;
+}
+.site-footer .social {
+  display: flex;
+  float: right;
+  margin: -30px 0px;
+}
+.site-footer .social h4 {
+  padding-bottom: 40px;
+}
+.site-footer .social .icon {
+  float: left;
+  padding-left: 2px;
+  padding-bottom: 2px;
+}
+.site-footer .social .icon i {
+  border-radius: 100%;
+  padding: 14px;
+  height: 50px;
+  width: 50px;
+  font-size: 18px;
+  color: #000000;
+}
+.site-footer .social .icon:hover i {
+  border-color: #F37021;
+  color: #F37021;
 }
 .site-footer__col-2 {
   display: flex;
@@ -10792,27 +10900,17 @@ h4 small {
   position: relative;
 }
 .site-footer__col-2 h4 {
-  font-size: 1.375em;
-  color: #F37021;
-  font-weight: 200;
+  color: #000000;
+  font-weight: 500;
   padding: 0;
   margin: 0;
-}
-.site-footer__col-2:nth-child(5) {
-  width: calc(40px + (100% - 220px) / 12 * 3);
-  margin-right: 20px;
-  position: relative;
-}
-.site-footer__col-2:nth-child(6) {
-  margin-right: 0;
-  width: calc((100% - 220px) / 12 * 1);
-  margin-right: 20px;
-  position: relative;
+  font-size: 1.7rem;
 }
 .site-footer__col-2 ul {
   list-style: none;
   margin: 0;
-  padding: 20px 0 0;
+  padding: 0px 0 0;
+  font-size: 14px;
 }
 .site-footer__col-2 ul li a {
   display: block;
@@ -10822,31 +10920,6 @@ h4 small {
   text-transform: capitalize;
 }
 .site-footer__col-2 ul li a:hover {
-  color: #F37021;
-}
-.site-footer__col-2 .social {
-  display: block;
-  width: 105px;
-}
-.site-footer__col-2 .social h4 {
-  padding-bottom: 40px;
-}
-.site-footer__col-2 .social .icon {
-  float: left;
-  padding-left: 2px;
-  padding-bottom: 2px;
-}
-.site-footer__col-2 .social .icon i {
-  border: 3px solid #000000;
-  border-radius: 100%;
-  padding: 14px;
-  height: 50px;
-  width: 50px;
-  font-size: 18px;
-  color: #000000;
-}
-.site-footer__col-2 .social .icon:hover i {
-  border-color: #F37021;
   color: #F37021;
 }
 .site-footer__social {
@@ -10871,15 +10944,17 @@ h4 small {
 .site-footer__bottom {
   border-top: 1px solid #edeced;
   margin-top: 15px;
-  padding: 30px 0px;
+  padding: 40px 0px;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 14px;
 }
 .site-footer__bottom .warp {
-  display: flex;
+  display: block;
   justify-content: space-between;
   align-items: center;
+  font-weight: 100;
+  text-transform: capitalize;
 }
 .site-footer__bottom ul {
   list-style: none;
