@@ -34,13 +34,13 @@
         {{ _('More information') }}
     </a>
     {% endif %}
-    <a class="btn btn-primary" href="{{ res.url }}" class="resource-url-analytics" target="_blank" rel="noreferrer">
+    <a class="btn btn-primary" href="{{ res.url }}" class="resource-url-analytics" rel="noreferrer">
         {% if res.has_views or res.url_type == 'upload' %}
         <i class="fa fa-arrow-circle-o-down"></i>
         {{ _('Download') }}
         {% else %}
-        <i class="fa fa-external-link"></i>
-        {{ _('Go to resource') }}
+        <i class="fa fa-arrow-circle-o-down"></i>
+        {{ _('Download Resource') }}
         {% endif %}
     </a>
     {% if can_edit %}

@@ -49,4 +49,3 @@ msgstr ""
 #: ckanext/ubdc/templates/home/snippets/stats.html:66
 msgid "Data Providers"
 msgstr ""
-

@@ -1,0 +1,41 @@
+{% ckan_extends %}
+
+{% set res = resource %}
+{% block resource_actions_inner %}
+{% if h.check_access('package_update', {'id':pkg.id }) and not is_activity_archive %}
+    <li>{% link_for _('Manage'), named_route=pkg.type ~ '_resource.edit', id=pkg.name, resource_id=res.id, class_='btn btn-default', icon='wrench' %}</li>
+{% endif %}
+{% if res.url and h.is_url(res.url) %}
+    <li>
+    <div class="btn-group">
+    <a class="btn btn-primary resource-url-analytics resource-type-{{ res.resource_type }}" href="{{ res.url }}">
+        {% if res.resource_type in ('listing', 'service') %}
+        <i class="fa fa-eye"></i> {{ _('View') }}
+        {% elif  res.resource_type == 'api' %}
+        <i class="fa fa-key"></i> {{ _('API Endpoint') }}
+        {% elif not res.has_views and not res.url_type == 'upload' %}
+        <i class="fa fa-arrow-circle-o-down"></i> {{ _('Download Resource') }}
+        {% else %}
+        <i class="fa fa-arrow-circle-o-down"></i> {{ _('Download') }}
+        {% endif %}
+    </a>
+    {% block download_resource_button %}
+        {{ super () }}
+    {% endblock %}
+    </div>
+    </li>
+{% endif %}
+{% endblock %}
+{% block resource_read_url %}
+<!-- For hiding URL  -->
+{% endblock %}
+
+{% block secondary_content %}
+
+  {% block resources_list %}
+    {% snippet "package/snippets/resources.html", pkg=pkg, active=res.id, action='read' %}
+  {% endblock %}
+
+  {% block resource_license %}
+test  {% endblock %}
+{% endblock %}

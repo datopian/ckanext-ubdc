@@ -6,6 +6,7 @@
     position: relative;
     min-height: 300px;
     background-color: #fff;
+    box-shadow: none;
     @media (min-width: $screen-sm-min) {
         &:before {
             content: '';
@@ -47,8 +48,8 @@
 
 @media (min-width: $screen-sm-min) {
     .main {
-        padding-top: 10px;
-        background: $layoutBackgroundColor url("#{$bgPath}");
+        padding-top: 20px;
+        background: $whiteBackground;
     }
 }
 
@@ -67,6 +68,7 @@
     position: relative;
     float: right;
     margin-left: 0; // Remove grid margin.
+    padding: 0;
 }
 
 .main .secondary {

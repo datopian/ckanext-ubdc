@@ -950,7 +950,7 @@ msgstr "Incorrect research theme type"
 #: ckan/templates/organization/read_base.html:6 ckan/templates/package/base.html:16
 #: ckan/views/dataset.py:284 ckan/views/group.py:304 ckan/views/home.py:49
 msgid "Organizations"
-msgstr "Providers"
+msgstr "Data Providers"
 
 #: ckan/controllers/group.py:318 ckan/controllers/home.py:62
 #: ckan/controllers/package.py:257 ckan/lib/helpers.py:1250
@@ -3288,7 +3288,7 @@ msgstr "Add Provider"
 
 #: ckan/templates/organization/index.html:20
 msgid "Search organizations..."
-msgstr "Search providers..."
+msgstr "Search data providers..."
 
 #: ckan/templates/organization/index.html:29
 msgid "There are currently no organizations for this site"
@@ -3544,7 +3544,7 @@ msgstr ""
 
 #: ckan/templates/package/resource_read.html:42
 #: ckan/templates/package/snippets/resource_item.html:61
-msgid "Go to resource"
+msgid "Download Resource"
 msgstr ""
 
 #: ckan/templates/package/resource_read.html:44
@@ -4179,22 +4179,22 @@ msgstr "No research themes found"
 #: ckan/templates/snippets/search_result_text.html:27
 msgid "{number} organization found for \"{query}\""
 msgid_plural "{number} organizations found for \"{query}\""
-msgstr[0] "{number} provider found for \"{query}\""
-msgstr[1] "{number} providers found for \"{query}\""
+msgstr[0] "{number} data provider found for \"{query}\""
+msgstr[1] "{number} data providers found for \"{query}\""
 
 #: ckan/templates/snippets/search_result_text.html:28
 msgid "No organizations found for \"{query}\""
-msgstr "No providers found for \"{query}\""
+msgstr "No data providers found for \"{query}\""
 
 #: ckan/templates/snippets/search_result_text.html:29
 msgid "{number} organization found"
 msgid_plural "{number} organizations found"
-msgstr[0] "{number} provider found"
-msgstr[1] "{number} providers found"
+msgstr[0] "{number} data provider found"
+msgstr[1] "{number} data providers found"
 
 #: ckan/templates/snippets/search_result_text.html:30
 msgid "No organizations found"
-msgstr "No providers found"
+msgstr "No data providers found"
 
 #: ckan/templates/snippets/social.html:5
 msgid "Social"

@@ -66,6 +66,9 @@
 .module .read-more {
     font-weight: bold;
     color: $layoutBoldColor;
+    .read-more-icon {
+        padding-left: 1rem;
+    }
 }
 
 .pagination-wrapper{

@@ -19,6 +19,10 @@
     padding: 7px ($gutterX);
 }
 
+.nav-item > a > span.item-label {
+    text-transform: capitalize;
+}
+
 .nav-item.active,
 .nav-aside li.active {
     background-color: $navActiveBackgroundColor;
@@ -29,10 +33,10 @@
     position: relative;
     color: $navItemActiveTextColor;
     background-color: $navItemActiveBackgroundColor;
-    &:hover {
-        color: $navItemActiveTextColor;
-        background-color: $navItemActiveBackgroundColor;
-    }
+    // &:hover {
+    //     color: $black;
+    //     background-color: $navItemActiveBackgroundColor;
+    // }
 }
 
 @media (min-width: $screen-sm-min) {

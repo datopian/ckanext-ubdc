@@ -1,19 +1,33 @@
 {% ckan_extends %}
+{% block primary_content_inner %}
+   
+    {% block package_notes %}
+    {% set licensed=['notspecified','other-at','other-closed','other-nc'] %}
+    {% if pkg.license_id and pkg.license_id in licensed %}
+    <div class="access-request-container">
+        <a class="btn btn-primary" href="{{ h.url_for('ubdc.access_request') }}" title="{{ _('Form') }}">
+            <i class="fa fa-key"></i>
+            {{ _("Request data") }}
+        </a>
+    </div>
+    {% endif %}
 
-{% block package_notes %}
-{% set licensed=['notspecified','other-at','other-closed','other-nc'] %}
-{% if pkg.license_id and pkg.license_id in licensed %}
-<div class="access-request-container">
-    <a class="btn btn-primary" href="{{ h.url_for('ubdc.access_request') }}" title="{{ _('Form') }}">
-        <i class="fa fa-key"></i>
-        {{ _("Request data") }}
-    </a>
-</div>
-{% endif %}
+    {% block package_resources %}
+    {% snippet "package/snippets/resources_list.html", pkg=pkg, resources=pkg.resources, is_activity_archive=is_activity_archive %}
+    {% endblock %}
 
-{% if pkg.notes %}
-<div class="notes embedded-content">
-    {{ h.render_markdown(h.get_translated(pkg, 'notes')) }}
-</div>
-{% endif %}
+    {% if pkg.notes %}
+    <div class="notes embedded-content">
+        {{ h.render_markdown(h.get_translated(pkg, 'notes')) }}
+    </div>
+    {% endif %}
+    {% endblock %}
+    {% block package_tags %}
+        {% snippet "package/snippets/tags.html", tags=pkg.tags %}
+    {% endblock %}
+
+    {% block package_additional_info %}
+    
+        {{ super ()}}
+    {% endblock %}
 {% endblock %}

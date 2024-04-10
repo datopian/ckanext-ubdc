@@ -2,305 +2,305 @@
 
 $notificationsBg: #c9403a;
 .account-masthead {
-    @extend .clearfix;
-    min-height: 30px;
-    color: $mastheadTextColor;
-    background: darken($mastheadBackgroundColor, 10%) url("#{$bgPath}");
-    .account {
-        float: right;
-        ul {
-            @extend .clearfix;
-            li {
-                display: block;
-                float: left;
-                border-left: 1px solid darken($mastheadBackgroundColor, 15%);
-                a {
-                    display: block;
-                    color: mix($mastheadBackgroundColor, $mastheadLinkColor, 25%);
-                    font-size: 13px;
-                    font-weight: bold;
-                    padding: 0 10px;
-                    line-height: 31px;
-                    span.username,
-                    span.text {
-                        margin: 0 2px 0 4px;
-                    }
-                    span.text {
-                        position: absolute;
-                        top: -9999px;
-                        left: -9999px;
-                    }
-                    &:hover {
-                        color: mix($mastheadBackgroundColor, $mastheadLinkColor, 15%);
-                        background-color: darken($mastheadBackgroundColor, 15%);
-                        text-decoration: none;
-                    }
-                    &.sub {
-                        font-weight: 300;
-                    }
-                    .btn {
-                        vertical-align: 1px;
-                        margin-left: 3px;
-                    }
-                }
-            }
+  @extend .clearfix;
+  min-height: 30px;
+  color: $mastheadTextColor;
+  border-bottom: 1px solid $black;
+  background: $whiteBackground;
+  .account {
+    float: right;
+    ul {
+      @extend .clearfix;
+      li {
+        display: block;
+        float: left;
+        border-left: 1px solid darken($mastheadBackgroundColor, 15%);
+        a {
+          display: block;
+          color: $black;
+          font-size: 13px;
+          font-weight: bold;
+          padding: 0 10px;
+          line-height: 31px;
+          span.username,
+          span.text {
+            margin: 0 2px 0 4px;
+          }
+          span.text {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+          }
+          &:hover {
+            color: mix($mastheadBackgroundColor, $mastheadLinkColor, 15%);
+            background-color: darken($mastheadBackgroundColor, 15%);
+            text-decoration: none;
+          }
+          &.sub {
+            font-weight: 300;
+          }
+          .btn {
+            vertical-align: 1px;
+            margin-left: 3px;
+          }
         }
-        .notifications {
-            a {
-                span.badge {
-                    font-size: 12px;
-                    margin-left: 3px;
-                    padding: 1px 6px;
-                    background-color: darken($mastheadBackgroundColor, 15%);
-                    @include border-radius(4px);
-                    text-shadow: none;
-                    color: mix($mastheadBackgroundColor, $mastheadLinkColor, 25%);
-                }
-                &:hover span {
-                    color: $mastheadLinkColor;
-                    background-color: darken($mastheadBackgroundColor, 20%);
-                }
-            }
-            &.notifications-important a {
-                span.badge {
-                    color: $mastheadLinkColor;
-                    background-color: $notificationsBg;
-                }
-            }
-        }
-        &.authed {
-            .image {
-                padding: 0 6px;
-                img {
-                    @include border-radius(4px);
-                }
-            }
-        }
+      }
     }
+    .notifications {
+      a {
+        span.badge {
+          font-size: 12px;
+          margin-left: 3px;
+          padding: 1px 6px;
+          background-color: darken($mastheadBackgroundColor, 15%);
+          @include border-radius(4px);
+          text-shadow: none;
+          color: mix($mastheadBackgroundColor, $mastheadLinkColor, 25%);
+        }
+        &:hover span {
+          color: $mastheadLinkColor;
+          background-color: darken($mastheadBackgroundColor, 20%);
+        }
+      }
+      &.notifications-important a {
+        span.badge {
+          color: $mastheadLinkColor;
+          background-color: $notificationsBg;
+        }
+      }
+    }
+    &.authed {
+      .image {
+        padding: 0 6px;
+        img {
+          @include border-radius(4px);
+        }
+      }
+    }
+  }
 }
 
 .masthead {
-    @include clearfix(); //min-height: 55px;
-    margin-bottom: initial;
-    padding: calc($grid-gutter-width/3) 0;
-    color: $mastheadTextColor;
-    background: $mastheadBackgroundColor url("#{$bgPath}");
-    .container {
-        position: relative;
+  @include clearfix(); //min-height: 55px;
+  margin-bottom: initial;
+  padding: calc($grid-gutter-width/3) 0;
+  color: $black;
+  background: $whiteBackground;
+  .container {
+    position: relative;
+  }
+  a {
+    color: $mastheadLinkColor;
+  }
+  hgroup {
+    h1,
+    h2 {
+      float: left;
+      font-size: 30px;
+      line-height: 1.5;
     }
-    a {
-        color: $mastheadLinkColor;
+    h1 {
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin: 3px 0;
     }
-    hgroup {
-        h1,
-        h2 {
-            float: left;
-            font-size: 30px;
-            line-height: 1.5;
-        }
-        h1 {
-            font-weight: 900;
-            letter-spacing: -1px;
-            margin: 3px 0;
-        }
-        h2 {
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            margin: 0;
-            font-size: 15px;
-            font-weight: normal;
-            line-height: 1.2;
-            white-space: nowrap;
-        }
+    h2 {
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      margin: 0;
+      font-size: 15px;
+      font-weight: normal;
+      line-height: 1.2;
+      white-space: nowrap;
     }
-    .logo-container {
-        background: rgba(54, 2, 51, 0.7);
-        position: absolute;
-        border-radius: 100%;
-        top: -140px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 319px;
-        min-height: 320px;
-        .logo {
-            display: inline-block;
-            margin-top: 60px;
-            img {
-                max-height: 130px;
-            }
-        }
+  }
+  .logo-container {
+    background: $transparent;
+    position: absolute;
+    border-radius: 100%;
+    top: -140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 319px;
+    min-height: 320px;
+    .logo {
+      display: inline-block;
+      margin-top: 60px;
+      img {
+        max-height: 130px;
+      }
     }
-    .small-logo {
-        min-width: 230px;
-        min-height: 230px;
-        .logo {
-            margin-top: 80px !important;
-            img {
-                max-height: 85px !important;
-            }
-        }
+  }
+  .small-logo {
+    min-width: 0px;
+    min-height: 0px;
+    display: block;
+    position: static;
+    .logo {
+      margin-top: 0px !important;
+      img {
+        max-height: 85px !important;
+      }
     }
+  }
 
-    .navbar-collapse {
-        padding: math.div($grid-gutter-width, 3) 0;
-        .nav li a {
-            color: #fff !important;
-            position: relative;
-    
-            &:before {
-                transition: 300ms;
-                height: 4px;
-                content: "";
-                position: absolute;
-                background-color: #f37021;
-                width: 75%;
-                bottom: 0px;
-                opacity: 0;
-            }
+  .navbar-collapse {
+    padding: math.div($grid-gutter-width, 3) 0;
+    .nav li {
+      padding: 10px 10px;
+    }
+    .nav li a {
+      color: $black !important;
+      position: relative;
+      padding: 5px 0px 5px 0px;
 
-            &:hover:before {
-                bottom: 0px;
-                opacity: 1;
-            }
-        }
-    }
-    .section {
-        float: left;
-    }
-    .navigation {
-        &.section {
-            @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-                float: right;
-            }
-        }
-        .nav-pills {
-            margin-bottom: 0;
-            li {
-                a:hover,
-                a:focus,
-                &.active a {
-                    background-color: darken($mastheadBackgroundColor, 10%);
-                }
-            }
-        }
-    }
-    .nav > li > a,
-    .nav > li > a:focus,
-    .nav > li > a:hover,
-    .nav > .active > a,
-    .nav > .active > a:hover,
-    .nav > .active > a:focus {
-        color: #fff;
-        text-shadow: none;
-    }
-    .site-search {
-        @media (min-width: $screen-md-min) {
-            margin-left: calc($grid-gutter-width/2);
-        }
-        margin: calc(math.div($grid-gutter-width, 6) - 1px) calc(math.div($grid-gutter-width, 3) - 2px)
-            calc(math.div($grid-gutter-width, 6) - 1px) 0;
-        input {
-            width: 40px;
-            opacity: 0;
-            padding: calc($grid-gutter-width/6) calc($grid-gutter-width/3);
-            -webkit-transition: width 0.4s ease-in-out;
-            transition: width 0.4s ease-in-out;
-            ~ .btn-search {
-                pointer-events: none;
-                cursor: default;
-            }
-            &:focus {
-                width: 200px;
-                opacity: 1;
-                ~ .btn-search {
-                    pointer-events: all !important;
-                }
-            }
-        }
-    }
-    .btn-navbar-btn,
-    .btn-navbar-btn:hover,
-    .btn-navbar-btn:focus,
-    .btn-navbar-btn:active,
-    .btn-navbar-btn.active,
-    .btn-navbar-btn.disabled,
-    .btn-navbar-btn[disabled] {
-        background-color: darken($mastheadBackgroundColor, 10%);
-        background-image: none;
-        border: none;
-        @include box-shadow(none);
-        text-shadow: none;
-        margin-top: 15px;
-        .icon-bar {
-            margin-right: 0;
-        }
-    }
-    .debug {
+      &:before {
+        transition: 300ms;
+        height: 4px;
+        content: "";
         position: absolute;
-        top: 37px;
-        left: 10px;
-        color: rgba(255, 255, 255, 0.5);
+        background-color: #f37021;
+        width: 100%;
+        bottom: 0px;
+        opacity: 0;
+      }
+
+      &:hover:before {
+        bottom: 0px;
+        opacity: 1;
+      }
     }
+  }
+  .section {
+    float: left;
+  }
+  .navigation {
+    &.section {
+      @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        float: right;
+      }
+    }
+    .nav-pills {
+      margin-bottom: 0;
+      li {
+        a:hover,
+        a:focus,
+        &.active a {
+          background-color: $whiteBackground;
+        }
+      }
+    }
+  }
+  .nav > li > a,
+  .nav > li > a:focus,
+  .nav > li > a:hover,
+  .nav > .active > a,
+  .nav > .active > a:hover,
+  .nav > .active > a:focus {
+    color: #fff;
+    text-shadow: none;
+  }
+  .site-search {
+    @media (min-width: $screen-md-min) {
+      margin-left: calc($grid-gutter-width/2);
+    }
+    margin: calc(math.div($grid-gutter-width, 6) - 1px)
+      calc(math.div($grid-gutter-width, 3) - 2px)
+      calc(math.div($grid-gutter-width, 6) - 1px) 0;
+    input {
+      width: 40px;
+      opacity: 0;
+      padding: calc($grid-gutter-width/6) calc($grid-gutter-width/3);
+      -webkit-transition: width 0.4s ease-in-out;
+      transition: width 0.4s ease-in-out;
+      ~ .btn-search {
+        pointer-events: none;
+        cursor: default;
+        font-size: 20px !important;
+        color: $black;
+      }
+      &:focus {
+        width: 200px;
+        opacity: 1;
+        ~ .btn-search {
+          pointer-events: all !important;
+        }
+      }
+    }
+  }
+  .btn-navbar-btn,
+  .btn-navbar-btn:hover,
+  .btn-navbar-btn:focus,
+  .btn-navbar-btn:active,
+  .btn-navbar-btn.active,
+  .btn-navbar-btn.disabled,
+  .btn-navbar-btn[disabled] {
+    background-color: darken($mastheadBackgroundColor, 10%);
+    background-image: none;
+    border: none;
+    @include box-shadow(none);
+    text-shadow: none;
+    margin-top: 15px;
+    .icon-bar {
+      margin-right: 0;
+    }
+  }
+  .debug {
+    position: absolute;
+    top: 37px;
+    left: 10px;
+    color: rgba(255, 255, 255, 0.5);
+  }
 }
 
 @media (min-width: $screen-md-min) {
-    .masthead .navbar-collapse {
-        float: right;
-    }
+  .masthead .navbar-collapse {
+    float: right;
+  }
 }
 
 @media (max-width: $screen-sm-max) {
-    .navbar-toggle {
-        margin-right: 0;
+  .navbar-toggle {
+    margin-right: 0;
+  }
+  .masthead {
+    .section {
+      float: none;
+      .navbar-collapse {
+        margin-bottom: $gutterX;
+      }
     }
-    .masthead {
-        .section {
-            float: none;
-            .navbar-collapse {
-                margin-bottom: $gutterX;
-            }
-        }
-        .container {
-            padding-left: calc($grid-gutter-width/2);
-            padding-right: calc($grid-gutter-width/2);
-        }
-        .site-search {
-            display: none;
-        }
-
-
-        .logo-container {
-            background: rgba(54, 2, 51, 0.7);
-            position: absolute;
-            border-radius: 100%;
-            top: -80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 200px;
-            min-height: 200px;
-            .logo {
-                display: inline-block;
-                margin-top: 20px;
-                img {
-                    max-height: 100px;
-                }
-            }
-        }
-
-
+    .container {
+      padding-left: calc($grid-gutter-width/2);
+      padding-right: calc($grid-gutter-width/2);
     }
+    .site-search {
+      display: none;
+    }
+
+    .logo-container {
+      align-items: center;
+      justify-content: center;
+      margin: 0 10px;
+      .logo {
+        display: inline-block;
+        margin-top: 20px;
+        img {
+          max-height: 100px;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: $screen-xs-max) {
-    .masthead {
-        .navbar-collapse {
-            clear: both;
-            margin-left: 0;
-            margin-right: 0;
-        }
-
+  .masthead {
+    .navbar-collapse {
+      clear: both;
+      margin-left: 0;
+      margin-right: 0;
     }
+  }
 }
