@@ -148,17 +148,23 @@
   }
 
   .popular-dataset {
-    background-image: url("#{$imagePath}/popular-dataset-bg.png");
+    background-image: url("#{$imagePath}/most-popular-datasets.webp");
     background-repeat: no-repeat;
-    background-position: 0 30px;
-    background-color: #00162c;
+    background-color: #f2f1fe;
+    background-position: 50% 100%;
+    background-size: contain;
+    border-bottom-style: none;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
     .col-md-4 {
       &:nth-child(1) {
         .icon {
-          background: #bfd22b;
+          background: $brandPrimary;
         }
         .item {
-          border-color: #bfd22b;
+          border-color: $brandPrimary;
         }
       }
       &:nth-child(2) {
@@ -191,13 +197,14 @@
       h3 {
         font-size: 23px;
         text-transform: capitalize;
+        color: $black;
       }
     }
     .icon {
       position: absolute;
       top: -25px;
       left: 30px;
-      background: #bfd22b;
+      background: $brandPrimary;
       padding: 10px;
       border-radius: 50%;
       height: 50px;
@@ -240,7 +247,7 @@
       text-align: center;
       padding: 30px;
       a {
-        color: #fff;
+        color: $black;
         font-size: 23px;
         padding-bottom: 11px;
       }
