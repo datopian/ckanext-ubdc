@@ -162,11 +162,12 @@
     }
     // Small devices social icons
     &__social {
-      display: block;
+      display: none;
       text-align: center;
       padding: 0px 0px 20px 0;
       &__wrap {
-        margin-left: 9rem;
+        display: flex;
+        justify-content: center;
       }
       h4 {
         font-size: 1.375em;

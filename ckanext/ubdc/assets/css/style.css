@@ -11017,12 +11017,13 @@ h4 small {
     display: none;
   }
   .site-footer__social {
-    display: block;
+    display: none;
     text-align: center;
     padding: 0px 0px 20px 0;
   }
   .site-footer__social__wrap {
-    margin-left: 9rem;
+    display: flex;
+    justify-content: center;
   }
   .site-footer__social h4 {
     font-size: 1.375em;
