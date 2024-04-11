@@ -3,28 +3,27 @@ $imagePath: "../../../base/images";
 $spritePath: "#{$imagePath}/sprite-ckan-icons.png";
 $bgPath: "#{$imagePath}/bg.png";
 $FontAwesomePath: "../../../base/vendor/font-awesome/font";
-@import url('../../../base/fonts/stylesheet.css');
+@import url("../../../base/fonts/stylesheet.css");
 
 // Branding colors
-$brandPrimary: #F37021;
+$brandPrimary: #f37021;
 $black: #000000;
 $whiteBackground: #ffffff;
 $colorWhite: #ffffff;
 $transparent: "transparent";
 
 // Font Variables
-$font-size-xxlarge : 1.2em;
-$font-size-xlarge : 1.2em;
-$font-size-large : 1.375em;
-$font-size-medium : 16px;
-$font-size-small : 0.8em;
-$font-size-xsmall : 0.6em;
-$font-size-xxsmall : 0.4em;
-$font-size-xxxsmall : 0.2em;
-
+$font-size-xxlarge: 1.2em;
+$font-size-xlarge: 1.2em;
+$font-size-large: 1.375em;
+$font-size-medium: 16px;
+$font-size-small: 0.8em;
+$font-size-xsmall: 0.6em;
+$font-size-xxsmall: 0.4em;
+$font-size-xxxsmall: 0.2em;
 
 // Layout Variables
-$layoutFontFamily: 'Open Sans', sans-serif;
+$layoutFontFamily: "Open Sans", sans-serif;
 $layoutTextColor: #000;
 $layoutBoldColor: #000;
 $layoutLinkColor: $brandPrimary;
@@ -62,8 +61,8 @@ $mastheadBackgroundColor: $black;
 $mastheadBackgroundColorStart: #005d7a;
 $mastheadBackgroundColorEnd: #00536b;
 
-$navItemActiveTextColor: #FFF;
-$navItemActiveBackgroundColor: #647A82;
+$navItemActiveTextColor: #fff;
+$navItemActiveBackgroundColor: #647a82;
 $navItemActiveArrowSize: 6px;
 
 $pillTextColor: $navItemActiveTextColor;
@@ -72,8 +71,7 @@ $pillBackgroundColor: darken($navItemActiveBackgroundColor, 10%);
 $bannerTextColor: $mastheadTextColor;
 $bannerBackgroundColor: $mastheadBackgroundColor;
 
-
-$footerTextColor: #CCDEE3;
+$footerTextColor: #ccdee3;
 $footerLinkColor: $footerTextColor;
 
 $inputColor: $gray-base;
@@ -95,7 +93,7 @@ $errorBorder: #c6898b;
 $formInfoText: #707070;
 
 $stagesTextColor: #aeaeae;
-$stagesBackground: #EDEDED;
+$stagesBackground: #ededed;
 $stagesTransparentBackground: rgba(237, 237, 237, 0); // Used for arrows.
 $stagesActiveTextColor: #fff;
 $stagesActiveBackground: #8cc68a;
@@ -111,7 +109,6 @@ $stagesCounterCompleteTextColor: #c5e2c4;
 $stagesCounterCompleteBackground: #eef6ed;
 
 $codeTextColor: #000;
-
 
 // Datasets
 
@@ -137,12 +134,12 @@ $iconSpritePath: "../images/bootstrap-glyphicons-halflings.png";
 $iconWhiteSpritePath: "../images/bootstrap-glyphicons-halflings-white.png";
 
 // Activity Stream base colors
-$activityColorText: #FFFFFF;
+$activityColorText: #ffffff;
 $activityColorBlank: #999999;
-$activityColorNew: #69A67A;
-$activityColorNeutral: #767DCE;
-$activityColorModify: #767DCE;
-$activityColorDelete: #B95252;
+$activityColorNew: #69a67a;
+$activityColorNeutral: #767dce;
+$activityColorModify: #767dce;
+$activityColorDelete: #b95252;
 
 // Navigation
 $zindex-navbar: 1;
@@ -152,3 +149,7 @@ $dark-overlay-color: rgba(0, 0, 0, 0.04);
 $dark-green-bg-primary: #061b16;
 
 $aqua-bg-primary: #effefa;
+
+$blue-100: #1f69ff;
+$blue-200: #093bae;
+$blue-300: #07247e;

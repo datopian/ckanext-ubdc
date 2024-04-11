@@ -36,8 +36,11 @@
   @include border-radius(3px);
   .thumb {
     max-width: fit-content;
+    height: 15rem;
     img {
-
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
     }
   }
   .stats {
