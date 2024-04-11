@@ -137,7 +137,7 @@
           font-weight: 300;
         }
         &:last-child::after {
-          content: "";
+          content: " ";
           margin: 0;
         }
       }
@@ -146,10 +146,20 @@
       padding-top: 20px;
       display: flex;
       justify-content: space-between;
+      text-transform: capitalize;
     }
   }
 }
-
+.footer_link-block-head {
+    color: #09090b;
+    margin-top: 0;
+    margin-bottom: 1.5vw;
+    font-family: Inter, sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+}
 @media (max-width: $screen-sm-min) {
   .site-footer {
     all: unset;

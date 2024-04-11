@@ -44,6 +44,10 @@ def get_gtm_id():
     """Return the Google Tag Manager ID."""
     return tk.config.get("ckanext.ubdc.gtm_id", "")
 
+def get_newsletter_link():
+    """Return the Newsletter Link."""
+    return tk.config.get("ckanext.ubdc.newsletter_link", "")
+
 
 def get_cookie_control_config():
     cookie_control_config = {}

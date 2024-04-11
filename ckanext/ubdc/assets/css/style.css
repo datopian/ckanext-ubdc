@@ -10500,6 +10500,10 @@ h4 small {
   line-height: 1.5;
   display: flex;
 }
+.homepage .funding .funded_logo img {
+  object-fit: contain;
+  max-width: 11em;
+}
 .homepage .funding .wrap {
   padding-top: 3em;
   padding-bottom: 3em;
@@ -11003,13 +11007,25 @@ h4 small {
   font-weight: 300;
 }
 .site-footer__bottom ul li:last-child::after {
-  content: "";
+  content: " ";
   margin: 0;
 }
 .site-footer__bottom .attribution {
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
+  text-transform: capitalize;
+}
+
+.footer_link-block-head {
+  color: #09090b;
+  margin-top: 0;
+  margin-bottom: 1.5vw;
+  font-family: Inter, sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
 }
 
 @media (max-width: 768px) {
