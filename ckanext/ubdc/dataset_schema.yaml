@@ -23,11 +23,13 @@ dataset_fields:
 - field_name: notes
   label: Description
   form_snippet: markdown.html
+  display_snippet: markdown.html
   form_placeholder: eg. Some useful notes about the data
 
 - field_name: content
   label: Content
   form_snippet: markdown.html
+  display_snippet: markdown.html
   form_placeholder: eg. Some useful content about what does the dataset consists of (more tables, some specifics etc…)
 
 - field_name: subjects
@@ -66,6 +68,7 @@ dataset_fields:
 - field_name: method_of_collection
   label: Method of Collection
   form_snippet: markdown.html
+  display_snippet: markdown.html
 
 - field_name: collection_status
   label: Collection Status
@@ -87,6 +90,7 @@ dataset_fields:
 - field_name: license_specifics
   label: Licence Specifics
   form_snippet: markdown.html
+  display_snippet: markdown.html
   form_placeholder: eg. Some useful notes about the licence
 
 - field_name: owner_org
@@ -175,6 +179,7 @@ dataset_fields:
 
   - field_name: description
     form_snippet: markdown.html
+    display_snippet: markdown.html
     label: Description
 
   - field_name: type
@@ -221,6 +226,7 @@ resource_fields:
 - field_name: description
   label: Description
   form_snippet: markdown.html
+  display_snippet: markdown.html
   form_placeholder: Some useful notes about the data
 
 - field_name: format
