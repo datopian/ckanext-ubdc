@@ -30,7 +30,7 @@
             <p class="description">
               {{ h.markdown_extract(organization.description, 180) }}
             </p>
-            <p class="read-more">
+            <p class="read-more text-capitalize">
               {% link_for _('read more'), controller='organization', action='about', id=organization.name %}
             </p>
           {% endif %}
