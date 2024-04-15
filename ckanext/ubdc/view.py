@@ -45,6 +45,12 @@ resources = Blueprint(
     url_defaults={"package_type": "dataset"},
 )
 
+researchThemes = Blueprint(
+    "research-themes",
+    __name__,
+    url_prefix="/research-themes",
+    url_defaults={"group_type": "group", "is_organization": False},
+)
 
 @ubdc.route("/organization/")
 def org_redirect_root():
@@ -55,6 +61,14 @@ def org_redirect_root():
 def org_redirect(path):
     return redirect("/providers/{}".format(path))
 
+@ubdc.route("/group/")
+def group_redirect_root():
+    return redirect("/research-themes")
+
+
+@ubdc.route("/group/<path:path>")
+def group_redirect(path):
+    return redirect("/research-themes/{}".format(path))
 
 @ubdc.route("/dataset")
 @ubdc.route("/dataset/")
@@ -193,4 +207,5 @@ def get_blueprints():
     register_group_plugin_rules(provider)
     register_dataset_plugin_rules(datasets)
     register_resource_plugin_rules(resources)
-    return [ubdc, provider, datasets, resources]
+    register_group_plugin_rules(researchThemes)
+    return [ubdc, provider, datasets, resources, researchThemes]
