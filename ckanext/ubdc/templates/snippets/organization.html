@@ -30,7 +30,7 @@
             <p class="description">
               {{ h.markdown_extract(organization.description, 180) }}
             </p>
-            <p class="read-more">
+            <p class="read-more text-capitalize">
               {% link_for _('read more'), controller='organization', action='about', id=organization.name %}
             </p>
           {% endif %}
@@ -38,10 +38,10 @@
           {% if show_nums %}
             {% block nums %}
             <div class="nums">
-              <dl>
+              <!-- <dl>
                 <dt>{{ _('Followers') }}</dt>
                 <dd data-module="followers-counter" data-module-id="{{ organization.id }}" data-module-num_followers="{{ organization.num_followers }}">{{ h.SI_number_span(organization.num_followers) }}</dd>
-              </dl>
+              </dl> -->
               <dl>
                 <dt>{{ _('Datasets') }}</dt>
                 <dd>{{ h.SI_number_span(organization.package_count) }}</dd>

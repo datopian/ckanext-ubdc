@@ -10905,6 +10905,10 @@ h4 small {
   display: flex;
   color: #ccdee3;
 }
+.site-footer__links a.black {
+  color: black;
+  text-decoration: none;
+}
 .site-footer .social {
   display: none;
   float: right;
