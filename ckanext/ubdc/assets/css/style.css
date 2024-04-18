@@ -7499,9 +7499,9 @@ a.tag:hover {
   height: 15rem;
 }
 .media-item .thumb img, .module-item .thumb img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
+  height: 140px;
+  width: 235px;
+  object-fit: cover;
 }
 .media-item .stats, .module-item .stats {
   padding: 0px 10px;
