@@ -7303,6 +7303,7 @@ a.tag:hover {
   font-weight: bold;
   color: #093bae;
   font-size: 14px;
+  text-transform: capitalize;
 }
 .module .read-more .read-more-icon {
   padding-left: 1rem;

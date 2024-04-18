@@ -14,8 +14,7 @@ Example:
 {% set type = group.type or 'group' %}
 {% set url = h.url_for(type ~ '.read', id=group.name) %}
 {% block item %}
-{% if group.package_count > 0 %}
-<li class="media-item">
+<li class="media-item {{'hidden' if 'research-themes' in request.url and group.package_count == 0 }}">
     {% block item_inner %}
     {% block image %}
     <div class="col-md-3 m-auto p-5 thumb">
@@ -60,7 +59,6 @@ Example:
         {% endblock %}
     </div>
 </li>
-{% endif %}
 {% endblock %}
 {% if position is divisibleby 3 %}
 <li class="clearfix js-hide"></li>
