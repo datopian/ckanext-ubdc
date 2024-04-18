@@ -15,7 +15,7 @@
 {% block content_primary_nav %}
   {{ h.build_nav_icon(dataset_type ~ '.read', _('Dataset'), id=pkg.id if is_activity_archive else pkg.name, icon='') }}
   {{ h.build_nav_icon(dataset_type ~ '.groups', _('Groups'), id=pkg.id if is_activity_archive else pkg.name, icon='') }}
-  {{ h.build_nav_icon(dataset_type ~ '.activity', _('Activity Stream'), id=pkg.id if is_activity_archive else pkg.name, icon='') }}
+  <!-- {{ h.build_nav_icon(dataset_type ~ '.activity', _('Activity Stream'), id=pkg.id if is_activity_archive else pkg.name, icon='') }} -->
 {% endblock %}
 
 {% block package_info %}
@@ -25,3 +25,4 @@
 {% block package_social %}
     
 {% endblock %}
+

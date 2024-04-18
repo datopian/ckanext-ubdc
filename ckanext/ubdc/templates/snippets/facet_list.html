@@ -36,6 +36,9 @@
     Dictionary with search facets
     
     #}
+
+{% if 'research-themes' not in request.url %}
+
     {% block facet_list %}
         {% set hide_empty = hide_empty or false %}
         {% with items = items or h.get_facet_items_dict(name, search_facets) %}
@@ -90,3 +93,4 @@
         {% endif %}
         {% endwith %}
     {% endblock %}
+{% endif %}
