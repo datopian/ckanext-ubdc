@@ -3,15 +3,17 @@
    
     {% block package_notes %}
     {% set licensed=['notspecified','other-at','other-closed','other-nc'] %}
-    {% if pkg.license_id and pkg.license_id in licensed %}
-    <div class="access-request-container">
-        <a class="btn btn-primary" href="{{ h.url_for('ubdc.access_request') }}" title="{{ _('Form') }}">
-            <i class="fa fa-key"></i>
-            {{ _("Request data") }}
-        </a>
+    <div class="dataset-title">
+        <h1 class="heading">{{pkg.title}}</h1>
+        {% if pkg.license_id and pkg.license_id in licensed %}
+        <div class="access-request-container">
+            <a class="btn btn-primary" href="{{ h.url_for('ubdc.access_request') }}" title="{{ _('Form') }}">
+                <i class="fa fa-key"></i>
+                {{ _("Request data") }}
+            </a>
+        </div>
+        {% endif %}
     </div>
-    {% endif %}
-
     {% block package_resources %}
     {% snippet "package/snippets/resources_list.html", pkg=pkg, resources=pkg.resources, is_activity_archive=is_activity_archive %}
     {% endblock %}

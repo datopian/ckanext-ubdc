@@ -200,6 +200,9 @@
 }
 
 // Additional Info
+.additional-info-font {
+  font-family: "JetBrains Mono";
+}
 .additional-info td,
 .additional-info th {
   width: 50%;
@@ -416,4 +419,21 @@ td.diff_header {
 .purge-all {
   float: right;
   margin-bottom: 15px;
+}
+
+.resource_metadata {
+  margin: 0 0 10px 0;
+}
+
+.dataset-title {
+  display: flex;
+  justify-content: space-between;
+  h1 {
+    font-size: 26px;
+    margin: 0 0 10px 0;
+  }
+}
+
+.non-transparent-primary {
+  background-color: $brandPrimary !important;
 }
