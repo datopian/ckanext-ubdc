@@ -20,7 +20,7 @@
 
 <section id="dataset-resources" class="resources">
   {% if metadata_resources | length > 0 %}
-    <h2>{{ _('Data and Metadata') }}</h2>
+    <h2 class="resource_metadata">{{ _('Data and Metadata') }}</h2>
     {% block resource_list_metadata %}
       {% if metadata_resources %}
         {% set can_edit = can_edit or h.check_access('package_update', {'id': pkg.id }) %}
@@ -58,7 +58,7 @@
   {% endif %}
 
   {% if only_resources | length > 0 %}
-    <h2>{{ _('Other Resources') }}</h2>
+    <h2 class="resource_metadata">{{ _('Other Resources') }}</h2>
     {% block resource_list %}
       {% if only_resources %}
         {% set can_edit = can_edit or h.check_access('package_update', {'id': pkg.id }) %}

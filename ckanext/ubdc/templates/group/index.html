@@ -1,16 +1,19 @@
 {% ckan_extends %}
 
 {% block meta %}
-    {{ super() }}
-  <meta property="og:title" content="Research Themes - {{ g.site_title }}">
-  <meta property="og:description" content="Explore the core research themes at the Urban Big Data Centre, underpinned by our rich dataset collection. Our thematic focus areas drive forward urban research, addressing critical challenges and uncovering new opportunities in urban environments.">
-  <meta name="description" value="Explore the core research themes at the Urban Big Data Centre, underpinned by our rich dataset collection. Our thematic focus areas drive forward urban research, addressing critical challenges and uncovering new opportunities in urban environments.">
-  <meta name="og:image" content="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
-  <meta name="twitter:title" content="Research Themes - {{ g.site_title }}">
-  <meta name="twitter:description" content="Explore the core research themes at the Urban Big Data Centre, underpinned by our rich dataset collection. Our thematic focus areas drive forward urban research, addressing critical challenges and uncovering new opportunities in urban environments.">
-  <meta name="twitter:image" content="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
-  <meta name="twitter:card" content="summary_large_image">
-  {% endblock %}
+{{ super() }}
+<meta property="og:title" content="Research Themes - {{ g.site_title }}">
+<meta property="og:description"
+    content="Explore the core research themes at the Urban Big Data Centre, underpinned by our rich dataset collection. Our thematic focus areas drive forward urban research, addressing critical challenges and uncovering new opportunities in urban environments.">
+<meta name="description"
+    value="Explore the core research themes at the Urban Big Data Centre, underpinned by our rich dataset collection. Our thematic focus areas drive forward urban research, addressing critical challenges and uncovering new opportunities in urban environments.">
+<meta name="og:image" content="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
+<meta name="twitter:title" content="Research Themes - {{ g.site_title }}">
+<meta name="twitter:description"
+    content="Explore the core research themes at the Urban Big Data Centre, underpinned by our rich dataset collection. Our thematic focus areas drive forward urban research, addressing critical challenges and uncovering new opportunities in urban environments.">
+<meta name="twitter:image" content="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
+<meta name="twitter:card" content="summary_large_image">
+{% endblock %}
 
 {% block secondary %}
 {% endblock %}
@@ -19,6 +22,45 @@
 <div class="primary col-sm-12 col-xs-12" role="main">
     {% block primary_content %}
     {{super()}}
+
     {% endblock %}
 </div>
+{% endblock %}
+
+{% block primary_content_inner %}
+<h1 class="hide-heading">{{ _('Groups') }}</h1>
+
+{% block groups_search_form %}
+{% set count = namespace(value=0) %}
+{% for item in page.items %}
+{% if item.package_count > 0 %}
+{% set count.value = count.value + 1 %}
+{% endif %}
+{% endfor %}
+
+
+{% snippet 'snippets/search_form.html', form_id='group-search-form', type='group', query=q,
+sorting_selected=sort_by_selected, count=count.value, placeholder=_('Search groups...'), show_empty=request.params,
+no_bottom_border=true if page.items, sorting = [(_('Name Ascending'), 'title asc'), (_('Name Descending'), 'title
+desc')] %}
+
+{% block groups_list %}
+{% if page.items or request.params %}
+{% if page.items %}
+{% snippet "group/snippets/group_list.html", groups=page.items %}
+{% endif %}
+{% else %}
+<p class="empty">
+    {{ _('There are currently no groups for this site') }}.
+    {% if h.check_access('group_create') %}
+    {% link_for _('How about creating one?'), named_route=group_type+'.new' %}</a>.
+    {% endif %}
+</p>
+{% endif %}
+{% endblock %}
+{% block page_pagination %}
+{{ page.pager(q=q or '', sort=sort_by_selected or '') }}
+{% endblock %}
+
+{% endblock %}
 {% endblock %}

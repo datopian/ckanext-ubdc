@@ -2,11 +2,11 @@
 
 
 {% block resource_item_title %}
-	<a class="heading" href="{{ url }}" title="{{ res.name or res.description }}">
-		{{ h.resource_display_name(res) | truncate(70) }}<span class="format-label" property="dc:format"
-			data-format="{{ res.format.lower() or 'data' }}">{{ h.get_translated(res, 'format') }}</span>
-		{{ h.popular('views', res.tracking_summary.total, min=10) if res.tracking_summary }}
-	</a>
+<a class="heading" href="{{ url }}" title="{{ res.name or res.description }}">
+    {{ h.resource_display_name(res) | truncate(70) }}<span class="format-label" property="dc:format"
+        data-format="{{ res.format.lower() or 'data' }}">{{ h.get_translated(res, 'format') }}</span>
+    {{ h.popular('views', res.tracking_summary.total, min=10) if res.tracking_summary }}
+</a>
 {% endblock %}
 
 {% block resource_item_explore %}
@@ -30,7 +30,7 @@
         <i class="fa fa-bar-chart-o"></i>
         {{ _('Preview') }}
         {% else %}
-        <i class="fa fa-info-circle"></i>
+        <i class="fa fa-arrow-circle-o-right"></i>
         {{ _('More information') }}
     </a>
     {% endif %}
