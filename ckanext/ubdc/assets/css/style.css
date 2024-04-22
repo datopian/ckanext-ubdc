@@ -7503,7 +7503,7 @@ a.tag:hover {
   overflow: hidden;
 }
 .media-item .thumb img, .module-item .thumb img {
-  min-width: 100%;
+  width: 250px;
   min-height: 100%;
   overflow: hidden;
   object-fit: fill;
@@ -7518,7 +7518,7 @@ a.tag:hover {
   overflow: auto;
 }
 .media-item .thumb-org img, .module-item .thumb-org img {
-  min-width: 100%;
+  width: 250px;
   height: 100%;
   overflow: hidden;
   object-fit: fill;

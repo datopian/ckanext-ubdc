@@ -13,7 +13,7 @@ Example:
 #}
 {% set url = h.url_for(organization.type ~ '.read', id=organization.name) %}
 {% block item %}
-<li class="media-item">
+<li class="media-item {{'hidden' if 'providers' in request.url and organization.package_count == 0 }}">
     {% block item_inner %}
     {% block image %}
     <div class="col-md-3 m-auto p-5 thumb-org">
