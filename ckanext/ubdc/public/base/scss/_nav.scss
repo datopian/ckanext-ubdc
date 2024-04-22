@@ -37,10 +37,9 @@
   color: $navItemActiveTextColor;
   background-color: $brandPrimary;
   
-  // &:hover {
-  //     color: $black;
-  //     background-color: $navItemActiveBackgroundColor;
-  // }
+  &:hover {
+      background-color: $brandPrimary !important;
+  }
 }
 
 @media (min-width: $screen-sm-min) {

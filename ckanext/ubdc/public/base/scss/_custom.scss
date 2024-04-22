@@ -57,6 +57,9 @@ input[type=checkbox][name="consentName"]:focus {
         a:hover {
             background-color: transparent !important;
         }
+        .active_facets {
+            background-color: $brandPrimary !important;
+        }
     }
 }
 
