@@ -7171,6 +7171,9 @@ input[type=checkbox][name=consentName]:focus {
 .nav li a:hover {
   background-color: transparent !important;
 }
+.nav li .active_facets {
+  background-color: #f37021 !important;
+}
 
 .padding-global {
   padding-left: 2.5em;
@@ -7503,7 +7506,7 @@ a.tag:hover {
   overflow: hidden;
 }
 .media-item .thumb img, .module-item .thumb img {
-  min-width: 100%;
+  width: 250px;
   min-height: 100%;
   overflow: hidden;
   object-fit: fill;
@@ -7515,10 +7518,10 @@ a.tag:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: auto;
+  overflow: hidden;
 }
 .media-item .thumb-org img, .module-item .thumb-org img {
-  min-width: 100%;
+  width: 250px;
   height: 100%;
   overflow: hidden;
   object-fit: fill;
@@ -7734,6 +7737,10 @@ a.tag:hover {
   position: relative;
   color: #fff;
   background-color: #f37021;
+}
+.nav-item.active > a:hover,
+.nav-aside li.active a:hover {
+  background-color: #f37021 !important;
 }
 
 @media (min-width: 768px) {
