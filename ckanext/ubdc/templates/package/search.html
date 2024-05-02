@@ -11,3 +11,12 @@
   <meta name="twitter:image" content="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
   <meta name="twitter:card" content="summary_large_image">
   {% endblock %}
+{% block package_search_results_api %}
+    <section class="module">
+      <div class="module-content">
+        {% block package_search_results_api_inner %}
+       
+        {% endblock %}
+      </div>
+    </section>
+{% endblock %}
