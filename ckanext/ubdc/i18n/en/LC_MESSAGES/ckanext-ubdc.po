@@ -2573,7 +2573,7 @@ msgid "Account"
 msgstr ""
 
 #: ckan/templates/header.html:52 ckan/templates/user/logout_first.html:14
-msgid "Log in"
+msgid "Login"
 msgstr ""
 
 #: ckan/templates/header.html:54 ckan/templates/user/new.html:3
@@ -3011,7 +3011,7 @@ msgstr "Create a Research Themes"
 
 #: ckan/templates/group/new_group_form.html:17
 msgid "Update Group"
-msgstr "Update Reserach Theme"
+msgstr "Update Research Theme"
 
 #: ckan/templates/group/new_group_form.html:19
 msgid "Create Group"

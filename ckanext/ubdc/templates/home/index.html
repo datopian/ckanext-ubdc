@@ -1,16 +1,16 @@
 {% ckan_extends %}
-{% block title %}Home page{% endblock %}
+{% block title %}UBDC Data Catalogue{% endblock %}
 
 {% block meta %}
     {{ super() }}
-    <meta property="og:title" content="Home page - {{ g.site_title }}">
-  <meta property="og:description" content="Discover the Urban Big Data Centre's extensive data catalogue, your premier resource for urban research datasets. Explore a comprehensive collection of high-quality data, tailored to empower researchers, policymakers, and academics in their quest for insightful urban studies and innovative solutions.">
+    <meta property="og:title" value="UBDC Data Catalogue - {{ g.site_title }}">
+  <meta property="og:description" value="Discover the Urban Big Data Centre's extensive data catalogue, your premier resource for urban research datasets. Explore a comprehensive collection of high-quality data, tailored to empower researchers, policymakers, and academics in their quest for insightful urban studies and innovative solutions.">
   <meta name="description" value="Discover the Urban Big Data Centre's extensive data catalogue, your premier resource for urban research datasets. Explore a comprehensive collection of high-quality data, tailored to empower researchers, policymakers, and academics in their quest for insightful urban studies and innovative solutions." />
-  <meta name="og:image" content="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
-  <meta name="twitter:title" content="Home page - {{ g.site_title }}">
-  <meta name="twitter:description" content="Discover the Urban Big Data Centre's extensive data catalogue, your premier resource for urban research datasets. Explore a comprehensive collection of high-quality data, tailored to empower researchers, policymakers, and academics in their quest for insightful urban studies and innovative solutions.">
-  <meta name="twitter:image" content="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="og:image" value="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
+  <meta name="twitter:title" value="UBDC Data Catalogue - {{ g.site_title }}">
+  <meta name="twitter:description" value="Discover the Urban Big Data Centre's extensive data catalogue, your premier resource for urban research datasets. Explore a comprehensive collection of high-quality data, tailored to empower researchers, policymakers, and academics in their quest for insightful urban studies and innovative solutions.">
+  <meta name="twitter:image" value="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
+  <meta name="twitter:card" value="summary_large_image">
   {% endblock %}
 {% block primary_content %}
  {% snippet "home/snippets/hero.html"%}

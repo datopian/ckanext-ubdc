@@ -7494,7 +7494,7 @@ a.tag:hover {
   margin: 0;
   background-color: white;
   display: flex;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 3px;
 }
 .media-item .thumb, .module-item .thumb {
@@ -10082,7 +10082,7 @@ h4 small {
   padding: 15px;
 }
 .context-info .image {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .context-info .image img,
 .context-info .image a {
