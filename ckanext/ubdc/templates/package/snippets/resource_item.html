@@ -25,7 +25,8 @@
 </div>
 {% else %}
 <div class="resource-button">
-    <a class="btn btn-primary" href="{{ url }}">
+    <a class="btn btn-primary {% if res.has_views %}hidden{% endif %}" href="{{ url }}">
+
         {% if not is_activity_archive and res.has_views %}
         <i class="fa fa-bar-chart-o"></i>
         {{ _('Preview') }}

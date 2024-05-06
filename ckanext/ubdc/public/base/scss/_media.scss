@@ -32,7 +32,7 @@
   margin: 0;
   background-color: white;
   display: flex;
-  border: 1px solid #ccc;
+  border: none;
   @include border-radius(3px);
   .thumb {
     max-width: fit-content;
