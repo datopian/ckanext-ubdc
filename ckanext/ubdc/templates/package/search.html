@@ -2,14 +2,14 @@
 
 {% block meta %}
     {{ super() }}
-  <meta property="og:title" value="Dataset - {{ g.site_title }}">
-  <meta property="og:description" value="Dive into a vast array of urban datasets in the Urban Big Data Centre's catalogue. From demographics to transportation, our curated collection supports diverse research and analysis needs, facilitating groundbreaking studies in urban development and planning.">
+  <meta property="og:title" content="Dataset - {{ g.site_title }}">
+  <meta property="og:description" content="Dive into a vast array of urban datasets in the Urban Big Data Centre's catalogue. From demographics to transportation, our curated collection supports diverse research and analysis needs, facilitating groundbreaking studies in urban development and planning.">
   <meta name="description" value="Dive into a vast array of urban datasets in the Urban Big Data Centre's catalogue. From demographics to transportation, our curated collection supports diverse research and analysis needs, facilitating groundbreaking studies in urban development and planning.">
-  <meta name="og:image" value="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
-  <meta name="twitter:title" value="Dataset - {{ g.site_title }}">
-  <meta name="twitter:description" value="Dive into a vast array of urban datasets in the Urban Big Data Centre's catalogue. From demographics to transportation, our curated collection supports diverse research and analysis needs, facilitating groundbreaking studies in urban development and planning.">
-  <meta name="twitter:image" value="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
-  <meta name="twitter:card" value="summary_large_image">
+  <meta name="og:image" content="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
+  <meta name="twitter:title" content="Dataset - {{ g.site_title }}">
+  <meta name="twitter:description" content="Dive into a vast array of urban datasets in the Urban Big Data Centre's catalogue. From demographics to transportation, our curated collection supports diverse research and analysis needs, facilitating groundbreaking studies in urban development and planning.">
+  <meta name="twitter:image" content="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
+  <meta name="twitter:card" content="summary_large_image">
   {% endblock %}
 {% block package_search_results_api %}
     <section class="module">
