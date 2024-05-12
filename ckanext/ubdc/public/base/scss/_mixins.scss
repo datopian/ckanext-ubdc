@@ -149,7 +149,7 @@
   display: inline-block;
   margin-bottom: 4px;
   color: $black;
-  background-color: $tagBackgroundColor;
+  background-color: $transparent-bg;
   padding: 1px 10px;
   border: 1px solid darken($tagBackgroundColor, 10%);
   @include border-radius(100px);

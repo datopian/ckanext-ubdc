@@ -3,20 +3,20 @@
 
 {% block meta %}
 {{ super() }}
-<meta property="og:title" value="{{group_dict.display_name}} - Providers - {{ g.site_title }}">
+<meta property="og:title" content="{{group_dict.display_name}} - Providers - {{ g.site_title }}">
 <meta property="og:description"
-    value="Meet our trusted providers and data owners contributing to the Urban Big Data Centre's dataset catalogue. Our partnerships ensure access to reliable and up-to-date urban data, fostering collaborative research and comprehensive urban insights.">
+    content="Meet our trusted providers and data owners contributing to the Urban Big Data Centre's dataset catalogue. Our partnerships ensure access to reliable and up-to-date urban data, fostering collaborative research and comprehensive urban insights.">
 <meta name="description"
-    value="Meet our trusted providers and data owners contributing to the Urban Big Data Centre's dataset catalogue. Our partnerships ensure access to reliable and up-to-date urban data, fostering collaborative research and comprehensive urban insights.">
-<meta name="og:image" value="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
-<meta name="twitter:title" value="{{group_dict.display_name}} - Providers - {{ g.site_title }}">
+    content="Meet our trusted providers and data owners contributing to the Urban Big Data Centre's dataset catalogue. Our partnerships ensure access to reliable and up-to-date urban data, fostering collaborative research and comprehensive urban insights.">
+<meta name="og:image" content="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
+<meta name="twitter:title" content="{{group_dict.display_name}} - Providers - {{ g.site_title }}">
 <meta name="twitter:description"
-    value="Meet our trusted providers and data owners contributing to the Urban Big Data Centre's dataset catalogue. Our partnerships ensure access to reliable and up-to-date urban data, fostering collaborative research and comprehensive urban insights.">
-<meta name="twitter:image" value="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
-<meta name="twitter:card" value="summary_large_image">
+    content="Meet our trusted providers and data owners contributing to the Urban Big Data Centre's dataset catalogue. Our partnerships ensure access to reliable and up-to-date urban data, fostering collaborative research and comprehensive urban insights.">
+<meta name="twitter:image" content="{{ h.url_for_static_or_external('/base/images/banner.png') }}">
+<meta name="twitter:card" content="summary_large_image">
 {% endblock %}
 
 {% block content_primary_nav %}
-{{ h.build_nav_icon(group_type + '.read', _('Datasets'), id=group_dict.name, icon='sitemap') }}
-{{ h.build_nav_icon(group_type + '.about', _('About'), id=group_dict.name, icon='info-circle') }}
+{{ h.build_nav_icon(group_type + '.read', _('Datasets'), id=group_dict.name, icon='') }}
+{{ h.build_nav_icon(group_type + '.about', _('About'), id=group_dict.name, icon='') }}
 {% endblock %}

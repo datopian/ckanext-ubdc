@@ -2761,7 +2761,7 @@ msgstr ""
 
 #: ckan/templates/dataviewer/snippets/data_preview.html:18
 #: ckan/templates/package/snippets/resource_view.html:41
-msgid "Download resource"
+msgid "Go to Resource"
 msgstr ""
 
 #: ckan/templates/dataviewer/snippets/no_preview.html:3
@@ -3544,7 +3544,7 @@ msgstr ""
 
 #: ckan/templates/package/resource_read.html:42
 #: ckan/templates/package/snippets/resource_item.html:61
-msgid "Download Resource"
+msgid "Go to Resource"
 msgstr ""
 
 #: ckan/templates/package/resource_read.html:44

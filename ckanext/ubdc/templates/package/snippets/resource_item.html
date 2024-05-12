@@ -25,7 +25,7 @@
 </div>
 {% else %}
 <div class="resource-button">
-    <a class="btn btn-primary {% if res.has_views %}hidden{% endif %}" href="{{ url }}">
+    <a class="btn btn-primary {% if res.has_views %}hidden{% endif %}" href="{{ url }}" id="more_information_{{res.package_id}}_{{res.id}}">
 
         {% if not is_activity_archive and res.has_views %}
         <i class="fa fa-bar-chart-o"></i>
@@ -35,13 +35,13 @@
         {{ _('More information') }}
     </a>
     {% endif %}
-    <a class="btn btn-primary" href="{{ res.url }}" class="resource-url-analytics" rel="noreferrer">
+    <a class="btn btn-primary" href="{{ res.url }}" class="resource-url-analytics" rel="noreferrer" id="{% if res.has_views or res.url_type == 'upload' %}download_{{ res.package_id }}_{{ res.id }}{% else %}external_{{ res.package_id }}_{{ res.id }}{% endif %}">
         {% if res.has_views or res.url_type == 'upload' %}
         <i class="fa fa-arrow-circle-o-down"></i>
         {{ _('Download') }}
         {% else %}
         <i class="fa fa-arrow-circle-o-down"></i>
-        {{ _('Download Resource') }}
+        {{ _('Go to Resource') }}
         {% endif %}
     </a>
     {% if can_edit %}

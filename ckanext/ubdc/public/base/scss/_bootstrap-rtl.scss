@@ -6,7 +6,7 @@
 
 html {
   direction: rtl;
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: $font-family-sans-serif;
 }
 body,
 .tooltip,
@@ -14,7 +14,7 @@ body,
 .carousel-control .icon-prev,
 .carousel-control .icon-next {
   direction: rtl;
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: $font-family-sans-serif;
   font-size: 14px;
 }
 .glyphicon-align-left:before {

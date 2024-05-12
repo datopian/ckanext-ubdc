@@ -187,7 +187,7 @@
 // Tag List
 .tag-list {
   @include list-unstyled;
-  padding: 10px 10px 5px 10px;
+  padding: 15px 0px 15px 0px;
 }
 
 .tag-list li {
@@ -379,7 +379,7 @@
 
 /* diff styles */
 table.diff {
-  font-family: Courier;
+  font-family: $font-family-sans-serif;
   border: medium;
 }
 .diff_header {
@@ -430,7 +430,7 @@ td.diff_header {
   justify-content: space-between;
   h1 {
     font-size: 26px;
-    margin: 0 0 10px 0;
+    margin: 0 0 0px 0;
   }
 }
 
