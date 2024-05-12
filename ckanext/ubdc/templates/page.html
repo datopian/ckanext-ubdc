@@ -1,5 +1,14 @@
 {% ckan_extends %}
 
+{% block meta %}
+  {{ super() }}
+    <!-- specifying a webpage icon for web clip -->
+    <link rel="apple-touch-icon" href="base/images/ckan.ico" />
+    <link rel="apple-touch-icon" sizes="76x76" href="base/images/ckan.ico" />
+    <link rel="apple-touch-icon" sizes="120x120" href="base/images/ckan.ico" />
+    <link rel="apple-touch-icon" sizes="152x152" href="base/images/ckan.ico" />
+{% endblock %}
+
 {% block skip %}
     <!-- Google Tag Manager (noscript) -->
     <noscript>

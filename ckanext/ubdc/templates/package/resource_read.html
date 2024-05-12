@@ -15,7 +15,7 @@
             {% elif res.resource_type == 'api' %}
             <i class="fa fa-key"></i> {{ _('API Endpoint') }}
             {% elif not res.has_views and not res.url_type == 'upload' %}
-            <i class="fa fa-arrow-circle-o-down"></i> {{ _('Download Resource') }}
+            <i class="fa fa-arrow-circle-o-down"></i> {{ _('Go to Resource') }}
             {% else %}
             <i class="fa fa-arrow-circle-o-down"></i> {{ _('Download') }}
             {% endif %}

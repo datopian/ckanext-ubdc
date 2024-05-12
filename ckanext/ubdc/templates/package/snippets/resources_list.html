@@ -19,6 +19,9 @@
 {% endfor %}
 
 <section id="dataset-resources" class="resources">
+  {% block package_tags %}
+    {% snippet "package/snippets/tags.html", tags=pkg.tags %}
+  {% endblock %}
   {% if metadata_resources | length > 0 %}
     <h2 class="resource_metadata">{{ _('Data and Metadata') }}</h2>
     {% block resource_list_metadata %}
