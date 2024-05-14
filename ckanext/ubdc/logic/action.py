@@ -22,7 +22,7 @@ def _access_request_notification(request_id):
     body_html = f"""
     <p>Dear Admin,</p>
     <p>A new submission from the Access Our Services form has been received.</p>
-    <p>Please check <a href='{site_url}/data-service/access-request/view/{request_id}'>here</a> to action the request.</p>
+    <p>Please check on {site_url}/data-service/access-request/view/{request_id} to action the request.</p>
     <p>The data request was submitted on {datetime_now}.</p>
     
     <p></p>
