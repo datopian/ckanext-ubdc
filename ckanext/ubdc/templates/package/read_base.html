@@ -17,6 +17,24 @@
   {{ h.build_nav_icon(dataset_type ~ '.groups', _('Groups'), id=pkg.id if is_activity_archive else pkg.name, icon='') }}
   <!-- {{ h.build_nav_icon(dataset_type ~ '.activity', _('Activity Stream'), id=pkg.id if is_activity_archive else pkg.name, icon='') }} -->
 {% endblock %}
+{{ h.build_nav_icon(dataset_type ~ '.read', _('Dataset'), id=pkg.id if is_activity_archive else pkg.name, icon='') }}
+
+
+{% block content_action %}
+  {% if not is_activity_archive %}
+    {% if h.check_access('package_update', {'id':pkg.id }) %}
+      {% if pkg.num_resources > 0 %}
+      <a href='{{ url_for("ubdc.delete_all_resources", id=pkg.id ) }}' class="btn btn-danger" data-module="confirm-action"
+        data-module-content="Are you sure you want to all resource for the dataset? This action is irreversible">
+        <span class="fa fa-trash"></span>
+        Delete All
+      </a>
+      {% endif %}
+
+      {% link_for _('Manage'), named_route=pkg.type ~ '.edit', id=pkg.name, class_='btn btn-default', icon='wrench' %}
+    {% endif %}
+  {% endif %}
+{% endblock %}
 
 {% block package_info %}
 <!-- Need to hide -->
