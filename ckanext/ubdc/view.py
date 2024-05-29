@@ -14,6 +14,7 @@ from ckan.views.resource import (
 import ckan.lib.navl.dictization_functions as dict_fns
 import ckan.lib.captcha as captcha
 
+
 tuplize_dict = logic.tuplize_dict
 clean_dict = logic.clean_dict
 parse_params = logic.parse_params
@@ -188,6 +189,23 @@ def access_request_delete(id):
     tk.h.flash_success("Access request deleted")
     return tk.redirect_to("ubdc.access_request_list")
 
+def delete_all_resources(id):
+    context = {"model": model, "user": tk.c.user, "auth_user_obj": tk.c.userobj}
+    data_dict = {
+        "id": id
+    }
+    try:
+        package = tk.get_action("package_show")(context, data_dict)
+        for resource in package.get('resources'):
+            resource_delete_dict = {
+                "id": resource.get('id')
+            }
+            tk.get_action("resource_delete")(context, resource_delete_dict)
+    except logic.NotAuthorized:
+        tk.abort(403, tk._("Not authorized to see this page"))
+    except logic.ValidationError as e:
+        tk.abort(404, e.error_dict["message"])
+    return tk.redirect_to(f'/datasets/{id}')
 
 ubdc.add_url_rule("/data-service/access-request/view", view_func=access_request_list)
 
@@ -200,6 +218,12 @@ ubdc.add_url_rule(
     "/data-service/access-request/view/<id>/delete",
     methods=["POST"],
     view_func=access_request_delete,
+)
+
+ubdc.add_url_rule(
+    "/datasets/<id>/resource_delete_all",
+    methods=["POST"],
+    view_func=delete_all_resources,
 )
 
 
