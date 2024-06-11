@@ -1,17 +1,20 @@
 <section class="hero">
-    <div class="container">
-        <div class="wrap">
-            <form class="module-content search-form" method="get" action="{% url_for 'dataset.search' %}">
-                <div class="search-input form-group search-giant">
-                    <input aria-label="{% block header_site_search_label %}{{ _('Search datasets') }}{% endblock %}"
-                        id="field-main-search" type="text" class="form-control" name="q" value="" autocomplete="off"
-                        placeholder="Search dataset" />
-                    <button type="submit" aria-labelledby="search-label">
-                        <i class="fa fa-search"></i>
-                        <span class="sr-only" id="search-label">{{ _('Search') }}</span>
-                    </button>
-                </div>
-            </form>
+    <div class="container-fluid full-width no-padding">
+        <div class="col-md-6 d-flex align-items-center hero-content no-padding text-left ">
+            <div class="hero-font">
+                <h1 class="hero-h1">
+                    <p class="no-margin">UBDC</p>
+                    <p class="no-margin">Data Catalogue</p>
+                </h1>
+                <p class="hero-text">Unlock the potential of a wide range of key datasets to empower and inform your
+                    research with free
+                    access to our comprehensive data catalogue.</p>
+                <a href="/datasets" class="btn btn-orange-shade">
+                    <span>Explore Datasets</span><span class="p-left"><i class="fa fa-arrow-right"></i></span></a>
+            </div>
+        </div>
+        <div class="col-md-6 p-0 no-padding">
+            <img src="/base/images/hero.png" alt="UBDC Hero Image" class="img-fluid-hero full-width">
         </div>
     </div>
 </section>
