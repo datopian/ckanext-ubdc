@@ -50,6 +50,7 @@ class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
             "request_data_access_show": action.request_data_access_show,
             "request_data_access_update": action.request_data_access_update,
             "request_data_access_delete": action.request_data_access_delete,
+            "package_search": action.package_search
         }
 
     # IPackageController
