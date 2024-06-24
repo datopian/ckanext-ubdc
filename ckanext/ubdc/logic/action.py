@@ -149,7 +149,7 @@ def request_data_access_show(context, data_dict):
 @p.toolkit.chained_action
 @tk.side_effect_free
 def package_search(up_func, context, data_dict):
-    if data_dict.get('q'):
+    if data_dict.get('q') and 'id' not in data_dict.get('q'):
         data_dict['q'] = f"{data_dict.get('q')} OR title_ngram: {data_dict.get('q')}~"
     log.info(data_dict)
     result = up_func(context, data_dict)
