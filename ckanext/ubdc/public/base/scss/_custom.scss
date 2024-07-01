@@ -83,3 +83,214 @@ input[type=checkbox][name="consentName"]:focus {
 .img-fluid-hero {
     height: 550px
 }
+
+
+.section_small-hero {
+    background-color: #f2f1fe;
+    border: 1px solid #dfe1e7;
+    border-bottom-style: none;
+    position: relative;
+    overflow: hidden;
+
+    &.padding-global {
+        padding-left: 2.5em;
+        padding-right: 2.5em;
+    }
+}
+
+.container-small {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    width: 100%;
+    max-width: 48em;
+}
+
+.padding-section-medium {
+    &.bigger {
+        padding-top: 6em;
+        padding-bottom: 6em;
+        position: relative;
+    }
+}
+
+.text-align-center {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.margin-right {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+}
+
+.hero_head {
+    letter-spacing: -0.2vw;
+    margin-top: 0;
+    margin-bottom: 1vw;
+    font-size: 4em;
+    font-weight: 700;
+    line-height: 1.125;
+}
+
+.margin-custom1 {
+    margin: 1.5rem;
+}
+
+.hero_bg-img {
+    &.left {
+        width: 20em;
+        height: 10em;
+        top: auto;
+        bottom: 0%;
+        left: 0%;
+        right: auto;
+        position: absolute; 
+    }
+
+    &.right {
+        width: 24.5781em;
+        height: 10.19em;
+        top: auto;
+        bottom: 0%;
+        left: auto;
+        right: 0%;
+        position: absolute; 
+    }
+
+    &.default {
+        width: 23.4404em;
+        height: 16.8373em;
+        position: absolute;
+    }
+}
+
+.section_small-hero {
+    background-color: $light-gray;
+    border: 1px solid #dfe1e7;
+    border-bottom-style: none;
+    position: relative;
+    overflow: hidden;
+
+    &.padding-global {
+        padding-left: 2.5em;
+        padding-right: 2.5em;
+    }
+}
+
+.container-small {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    width: 100%;
+    max-width: 48em;
+}
+
+.padding-section-medium {
+    padding-top: 5em;
+    padding-bottom: 5em;
+    position: relative;
+}
+
+.rich-text-block-2 {
+    font-size: 1em;
+    line-height: 2.4em;
+    font-weight: 300;
+    h2 {
+        margin-top: 2vw;
+        margin-bottom: 1vw;
+        font-size: 2.3em;
+        line-height: 1.125em;
+    }
+}
+
+.text-color-dark-green {
+    color: var(--dark-green);
+    strong {
+        font-weight: 700;
+    }
+}
+
+#cookies-table {
+    float: left;
+    width: 100%;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        tr:nth-of-type(odd) {
+            background: $light-gray;
+        }
+
+        th {
+            background: $dark-green;
+            color: white;
+            font-weight: bold;
+            padding: 0.375em;
+            border: 0.125em solid $medium-gray;
+            text-align: left;
+        }
+
+        td,
+        th {
+            padding: 0.375em;
+            border: 0.125em solid $medium-gray;
+            text-align: left;
+        }
+    }
+
+    @media all and (max-width: 767px) {
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+            display: block;
+        }
+
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        tr {
+            border-left: 0.125em solid $medium-gray;
+            border-right: 0.125em solid $medium-gray;
+            border-bottom: 0.125em solid $medium-gray;
+
+            &:nth-of-type(1) {
+                border-top: 0.125em solid $medium-gray;
+            }
+        }
+
+        td {
+            border: none;
+            border-bottom: 0.125em solid $lighter-gray;
+            position: relative;
+            padding-left: 50%;
+
+            &:before {
+                position: absolute;
+                top: 0.375em;
+                left: 0.375em;
+                width: 45%;
+                padding-right: 0.625em;
+                white-space: nowrap;
+            }
+
+            &:nth-of-type(1):before {
+                content: "Cookie";
+            }
+
+            &:nth-of-type(2):before {
+                content: "Purpose";
+            }
+
+            &:nth-of-type(3):before {
+                content: "More information";
+            }
+        }
+    }
+}

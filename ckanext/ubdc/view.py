@@ -207,7 +207,12 @@ def delete_all_resources(id):
         tk.abort(404, e.error_dict["message"])
     return tk.redirect_to(f'/datasets/{id}')
 
+def cookie_policy():
+    return tk.render("cookie/index.html")
+
 ubdc.add_url_rule("/data-service/access-request/view", view_func=access_request_list)
+
+ubdc.add_url_rule("/cookie-policy", view_func=cookie_policy)
 
 
 ubdc.add_url_rule(
