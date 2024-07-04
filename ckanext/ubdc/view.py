@@ -14,7 +14,6 @@ from ckan.views.resource import (
 import ckan.lib.navl.dictization_functions as dict_fns
 import ckan.lib.captcha as captcha
 
-
 tuplize_dict = logic.tuplize_dict
 clean_dict = logic.clean_dict
 parse_params = logic.parse_params
@@ -23,6 +22,14 @@ parse_params = logic.parse_params
 log = logging.getLogger(__name__)
 
 ubdc = Blueprint("ubdc", __name__)
+
+def get_path(path, query_type, toolkit):
+    original_query = toolkit.request.query_string.decode("utf-8")
+    if original_query:
+        target_url = "/" + query_type + "/" + path + '?' + original_query
+    else:
+        target_url = "/" + query_type + "/"  + path
+    return target_url
 
 # Redirect organization pages to provider pages
 provider = Blueprint(
@@ -60,7 +67,8 @@ def org_redirect_root():
 
 @ubdc.route("/organization/<path:path>")
 def org_redirect(path):
-    return redirect("/providers/{}".format(path))
+    url = get_path(path, 'providers', tk)
+    return redirect(url)
 
 @ubdc.route("/group/")
 def group_redirect_root():
@@ -69,7 +77,8 @@ def group_redirect_root():
 
 @ubdc.route("/group/<path:path>")
 def group_redirect(path):
-    return redirect("/research-themes/{}".format(path))
+    url = get_path(path, 'research-themes', tk)
+    return redirect(url)
 
 @ubdc.route("/dataset")
 @ubdc.route("/dataset/")
@@ -84,7 +93,8 @@ def dataset_redirect_root():
 
 @ubdc.route("/dataset/<path:path>")
 def dataset_redirect(path):
-    return redirect("/datasets/{}".format(path))
+    url = get_path(path, 'datasets', tk)
+    return redirect(url)
 
 
 class AccessRequestController(MethodView):
