@@ -7384,6 +7384,10 @@ input[type=checkbox][name=consentName]:focus {
   }
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .tag {
   display: inline-block;
   margin-bottom: 4px;
