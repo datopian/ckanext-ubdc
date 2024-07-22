@@ -299,3 +299,7 @@ input[type=checkbox][name="consentName"]:focus {
 .cursor-pointer {
     cursor: pointer;
 }
+.link-selected:hover{
+    color: #bd4e0a;
+    text-decoration: underline;
+}
