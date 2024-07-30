@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{%- block page -%}
+
+{%- block header %}
+{% include "header.html" %}
+{% endblock -%}
+
+{%- block content %}
+{% block maintag %}<div class="main">{% endblock %}
+    <div id="content" class="container-fluid full-width no-padding">
+        {% block main_content %}
+        {% block primary %}
+        <div class="primary col-md-12 col-xs-12" role="main">
+            {% snippet "cookie/snippets/hero.html"%}
+            {% snippet "cookie/snippets/content.html"%}
+        </div>
+        {% endblock %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock -%}
+
+{%- block footer %}
+{% include "footer.html" %}
+{% endblock -%}
+{%- endblock -%}
+
+{%- block scripts %}
+{% asset 'base/main' %}
+{% asset 'base/ckan' %}
+{{ super() }}
+{% endblock -%}

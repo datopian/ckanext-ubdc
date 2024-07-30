@@ -212,7 +212,7 @@ $notificationsBg: #c9403a;
     input {
       width: 40px;
       opacity: 0;
-      padding: calc($grid-gutter-width/6) calc($grid-gutter-width/3);
+      padding: 10px;
       -webkit-transition: width 0.4s ease-in-out;
       transition: width 0.4s ease-in-out;
       ~ .btn-search {
@@ -220,6 +220,7 @@ $notificationsBg: #c9403a;
         cursor: default;
         font-size: 20px !important;
         color: $black;
+        top: 40%;
       }
       &:focus {
         width: 200px;

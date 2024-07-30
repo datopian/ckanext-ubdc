@@ -2,6 +2,7 @@ import ast
 import datetime
 import logging
 import ckan.plugins.toolkit as tk
+import ckan.plugins as p
 from ckan.lib.navl.dictization_functions import validate
 import ckan.lib.uploader as uploader
 from ckan.lib.mailer import mail_recipient
@@ -143,3 +144,13 @@ def request_data_access_show(context, data_dict):
 
     data_dict = RequestDataAccess.get_by_id(data_dict["id"])
     return data_dict.as_dict()
+
+
+@p.toolkit.chained_action
+@tk.side_effect_free
+def package_search(up_func, context, data_dict):
+    if data_dict.get('q') and 'id' not in data_dict.get('q'):
+        data_dict['q'] = f"{data_dict.get('q')} OR title_ngram: {data_dict.get('q')}~1"
+    log.info(data_dict)
+    result = up_func(context, data_dict)
+    return result

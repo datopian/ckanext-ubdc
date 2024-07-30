@@ -7194,6 +7194,205 @@ input[type=checkbox][name=consentName]:focus {
   height: 550px;
 }
 
+.section_small-hero {
+  background-color: #f2f1fe;
+  border: 1px solid #dfe1e7;
+  border-bottom-style: none;
+  position: relative;
+  overflow: hidden;
+}
+.section_small-hero.padding-global {
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+}
+
+.container-small {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  width: 100%;
+  max-width: 48em;
+}
+
+.padding-section-medium.bigger {
+  padding-top: 6em;
+  padding-bottom: 6em;
+  position: relative;
+}
+
+.text-align-center {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.margin-right {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+}
+
+.hero_head {
+  letter-spacing: -0.2vw;
+  margin-top: 0;
+  margin-bottom: 1vw;
+  font-size: 4em;
+  font-weight: 700;
+  line-height: 1.125;
+}
+
+.margin-custom1 {
+  margin: 1.5rem;
+}
+
+.hero_bg-img.left {
+  width: 20em;
+  height: 10em;
+  top: auto;
+  bottom: 0%;
+  left: 0%;
+  right: auto;
+  position: absolute;
+}
+.hero_bg-img.right {
+  width: 24.5781em;
+  height: 10.19em;
+  top: auto;
+  bottom: 0%;
+  left: auto;
+  right: 0%;
+  position: absolute;
+}
+.hero_bg-img.default {
+  width: 23.4404em;
+  height: 16.8373em;
+  position: absolute;
+}
+
+.section_small-hero {
+  background-color: #f2f2f2;
+  border: 1px solid #dfe1e7;
+  border-bottom-style: none;
+  position: relative;
+  overflow: hidden;
+}
+.section_small-hero.padding-global {
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+}
+
+.container-small {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  width: 100%;
+  max-width: 48em;
+}
+
+.padding-section-medium {
+  padding-top: 5em;
+  padding-bottom: 5em;
+  position: relative;
+}
+
+.rich-text-block-2 {
+  font-size: 1em;
+  line-height: 2.4em;
+  font-weight: 300;
+}
+.rich-text-block-2 h2 {
+  display: inline-block;
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+  font-size: 2.3em;
+  line-height: 1.125em;
+}
+
+.text-color-dark-green {
+  color: var(--dark-green);
+}
+.text-color-dark-green strong {
+  font-weight: 700;
+}
+
+#cookies-table {
+  float: left;
+  width: 100%;
+}
+#cookies-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#cookies-table table tr:nth-of-type(odd) {
+  background: #f2f2f2;
+}
+#cookies-table table th {
+  background: #184e44;
+  color: white;
+  font-weight: bold;
+  padding: 0.375em;
+  border: 0.125em solid #ccc;
+  text-align: left;
+}
+#cookies-table table td,
+#cookies-table table th {
+  padding: 0.375em;
+  border: 0.125em solid #ccc;
+  text-align: left;
+}
+@media all and (max-width: 767px) {
+  #cookies-table table,
+  #cookies-table thead,
+  #cookies-table tbody,
+  #cookies-table th,
+  #cookies-table td,
+  #cookies-table tr {
+    display: block;
+  }
+  #cookies-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  #cookies-table tr {
+    border-left: 0.125em solid #ccc;
+    border-right: 0.125em solid #ccc;
+    border-bottom: 0.125em solid #ccc;
+  }
+  #cookies-table tr:nth-of-type(1) {
+    border-top: 0.125em solid #ccc;
+  }
+  #cookies-table td {
+    border: none;
+    border-bottom: 0.125em solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+  #cookies-table td:before {
+    position: absolute;
+    top: 0.375em;
+    left: 0.375em;
+    width: 45%;
+    padding-right: 0.625em;
+    white-space: nowrap;
+  }
+  #cookies-table td:nth-of-type(1):before {
+    content: "Cookie";
+  }
+  #cookies-table td:nth-of-type(2):before {
+    content: "Purpose";
+  }
+  #cookies-table td:nth-of-type(3):before {
+    content: "More information";
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.link-selected:hover {
+  color: #bd4e0a;
+  text-decoration: underline;
+}
+
 .tag {
   display: inline-block;
   margin-bottom: 4px;
@@ -10209,7 +10408,7 @@ h4 small {
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  border: 1px solid #DFE1E7;
+  border: 1px solid #dfe1e7;
 }
 .homepage .hero .wrap {
   display: flex;
@@ -10705,6 +10904,18 @@ h4 small {
   background: #c2410c;
 }
 
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: searchfield-cancel-button;
+  position: relative;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background: url(/base/images/close.svg) no-repeat 50% 50%;
+  background-size: contain;
+}
+
 .account-masthead {
   min-height: 30px;
   color: #fff;
@@ -10902,7 +11113,7 @@ h4 small {
 .masthead .site-search input {
   width: 40px;
   opacity: 0;
-  padding: 5px 10px;
+  padding: 10px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
@@ -10911,6 +11122,7 @@ h4 small {
   cursor: default;
   font-size: 20px !important;
   color: #000000;
+  top: 40%;
 }
 .masthead .site-search input:focus {
   width: 200px;
