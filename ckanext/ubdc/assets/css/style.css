@@ -10904,8 +10904,7 @@ h4 small {
   background: #c2410c;
 }
 
-input[type=search]::-webkit-search-cancel-button,
-input[type=search]::-webkit-search-decoration {
+input[type=search]::-webkit-search-cancel-button {
   -webkit-appearance: searchfield-cancel-button;
   position: relative;
   right: 20px;
