@@ -12,7 +12,8 @@ log = logging.getLogger(__name__)
 from cachetools import cached
 from cachetools import TTLCache
 
-cache_time=tk.config.get('ckanext.stats.cache_time', 120)
+cache_time = tk.config.get("ckanext.stats.cache_time", 120)
+
 
 @cached(cache=TTLCache(maxsize=1024, ttl=cache_time))
 def popular_datasets(limit=3):
@@ -23,6 +24,15 @@ def popular_datasets(limit=3):
         model_dictize.package_dictize(dataset[0], context) for dataset in packages
     ]
     return datasets
+
+
+@cached(cache=TTLCache(maxsize=1024, ttl=cache_time))
+def latest_datasets(limit=3):
+    """Return a list of the most popular datasets."""
+    context = {"model": model, "session": model.Session}
+    data_dict = {"sort": "metadata_created desc", "rows": limit}
+    packages = get_action("package_search")(context, data_dict)
+    return packages.get("results", [])
 
 
 @cached(cache=TTLCache(maxsize=1024, ttl=cache_time))
@@ -43,6 +53,7 @@ def tags_count():
 def get_gtm_id():
     """Return the Google Tag Manager ID."""
     return tk.config.get("ckanext.ubdc.gtm_id", "")
+
 
 def get_newsletter_link():
     """Return the Newsletter Link."""
@@ -114,4 +125,3 @@ def get_data_providers():
         group_list = h.get_featured_organizations(limit)
 
     return group_list
-
