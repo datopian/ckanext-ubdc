@@ -121,7 +121,7 @@
     background-color: #effefa;
     background-position: 50% 100%;
     background-size: contain;
-    border-bottom-style: none;
+    border-bottom: 1px solid #dfe1e7;
     flex-direction: column;
     justify-content: center;
     height: 300px;
@@ -285,6 +285,7 @@
   }
 
   .latest-dataset {
+    border-bottom: 1px solid #dfe1e7;
     .full-height {
       height: 520px;
       align-items: center;
@@ -313,6 +314,7 @@
       font-weight: 400;
       font-size: 14px;
       text-transform: capitalize;
+			border: none;
       margin-top: 3rem;
       padding: 12px 20px;
       
@@ -330,6 +332,19 @@
       padding-top: 0;
       padding-bottom: 0;
     }
+
+		.right-popular-dataset {
+	  	background-image: url("#{$imagePath}/popular-right.png"), url("#{$imagePath}/popular-left.png");
+      background-position: left bottom, right bottom;
+      background-repeat: no-repeat, no-repeat;
+      background-size: auto, auto;
+      background-color: $popular-dataset;
+      border-bottom-style: none;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 0;
+      padding-bottom: 0;
+		}
     .panel {
       height: 104px;
       margin: 20px;
@@ -360,6 +375,7 @@
             font-size: 16px;
             font-weight: 700;
             color: #000000;
+            cursor: default;
           }
         }
       }
@@ -369,6 +385,8 @@
       }
     }
   }
+
+
   .themes {
     .title {
       display: flex;
@@ -686,4 +704,8 @@ input[type="search"]::-webkit-search-cancel-button {
   border-radius: 10px;
   background: url(/base/images/close.svg) no-repeat 50% 50%;
   background-size: contain;
+}
+
+.bg-blue-400 {
+	background: $blue-400 !important;
 }
