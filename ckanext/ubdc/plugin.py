@@ -71,7 +71,8 @@ class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
             "get_cookie_control_config": helpers.get_cookie_control_config,
             "get_field_to_question": helpers.get_field_to_question,
             "get_data_providers": helpers.get_data_providers,
-            "get_newsletter_link": helpers.get_newsletter_link
+            "get_newsletter_link": helpers.get_newsletter_link,
+            "get_featured_groups": helpers.get_featured_groups,
         }
 
     # IValidators

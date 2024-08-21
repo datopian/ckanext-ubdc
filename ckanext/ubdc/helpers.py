@@ -125,3 +125,22 @@ def get_data_providers():
         group_list = h.get_featured_organizations(limit)
 
     return group_list
+
+
+@cached(cache=TTLCache(maxsize=1024, ttl=86400))
+def get_featured_groups(size=10):
+    # Get the data provider only when they have the image to show on homepage
+    group_list = []
+    try:
+
+        context = {"model": model, "session": model.Session}
+        group_list = get_action("group_list")(
+            context, {"all_fields": True, "limit": size}
+        )
+    except:
+        # Fallback to get_featured_organizations which already exists
+        group_list = []
+        limit = tk.config.get("organization_list_size_homepage", 50)
+        group_list = h.get_featured_organizations(limit)
+
+    return group_list
