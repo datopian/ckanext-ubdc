@@ -26,8 +26,8 @@
                   <div class="media-body">
                     <h4 class="media-heading">
                       {% set title = dataset.title %} {% set trimmed_text =
-                      title|trim %} {% if trimmed_text|length > 20 %} {{
-                      trimmed_text[:20] ~ "..." }} {% else %} {{ trimmed_text }}
+                      title|trim %} {% if trimmed_text|length >= 28 %} {{
+                      trimmed_text[:28] ~ "..." }} {% else %} {{ trimmed_text }}
                       {% endif %}
                     </h4>
                     <a

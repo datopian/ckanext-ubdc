@@ -10562,6 +10562,9 @@ h4 small {
   font-weight: 700;
   color: #000000;
   cursor: default;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .homepage .theme .panel .media-body {
   text-align: left;
@@ -10814,6 +10817,9 @@ h4 small {
   font-weight: 700;
   color: #000000;
   cursor: default;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .homepage .latest-dataset .panel .media-body {
   text-align: left;
