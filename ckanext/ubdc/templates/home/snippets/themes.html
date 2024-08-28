@@ -34,8 +34,8 @@
                               <h4 class="media-heading">
                                 {% set title = theme.title %}
                                 {% set trimmed_text = title|trim %}
-                                {% if trimmed_text|length > 28 %}
-                                    {{ trimmed_text[:28] ~ "..." }}
+                                {% if trimmed_text|length > 25 %}
+                                    {{ trimmed_text[:25] ~ "..." }}
                                 {% else %}
                                     {{ trimmed_text }}
                                 {% endif %}
