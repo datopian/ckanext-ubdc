@@ -12,6 +12,7 @@ from ckan.common import _
 from collections import OrderedDict
 
 
+
 class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IConfigurable)
