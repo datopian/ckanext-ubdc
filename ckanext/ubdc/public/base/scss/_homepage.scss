@@ -4,7 +4,7 @@
     padding: 15px 30px;
   }
   .hero {
-    min-height: 505px;
+    min-height: 480px;
     height: $hero-height;
     background: transparent;
     background-repeat: no-repeat;
@@ -32,6 +32,14 @@
         }
         border: 0;
       }
+    }
+    .dataset-explore-btn {
+      background-color: $orange-shade;
+      font-weight: 400;
+      font-size: 16px;
+      text-transform: capitalize;
+      margin-top: 3rem;
+      padding: 12px 20px;
     }
   }
 
@@ -107,36 +115,130 @@
     }
   }
 
+  .theme {
+    background-image: url("#{$imagePath}/research-left.png"), url("#{$imagePath}/research-right.png");
+    background-position: left bottom, right bottom;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 18%;
+    background-color: #ffffff;
+    border-bottom-style: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem;
+    border-bottom: 1px solid #dfe1e7;
+
+    .wrap .row {
+        margin-bottom: 20px;
+    }
+
+    .block {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem 8rem;
+    }
+
+    .panel {
+      height: 100px;
+      margin: 1.5rem 0rem;
+      border-radius: 12px;
+      .panel-body {
+        padding: 0.5rem;
+        .media {
+          padding: 10px;
+          .media-left {
+            img {
+              height: 70px;
+            }
+          }
+          .media-body {
+            text-align: left;
+            padding-left: 0.5rem;
+            position: relative;
+            .explore-btn {
+              border: 1px solid #c1c7d0;
+              position: absolute;
+              bottom: 0;
+              font-weight: 400;
+              border-radius: 8px;
+              padding: 5px 10px;
+              font-size: 14px;
+              text-transform: capitalize;
+              &:hover {
+                background-color: transparent;
+              }
+            }
+          }
+          .media-heading {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000000;
+            cursor: default;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+      .media-body {
+        text-align: left;
+        padding-left: 1rem;
+      }
+    }
+    .explore-btn {
+        margin-top: 10px; /* Space above the button */
+    }
+}
+
   .stats {
-    background: #fff;
-    padding: 60px 0px;
+    background: url("#{$imagePath}/stats.png");
+    background-repeat: no-repeat;
+    background-color: #effefa;
+    background-position: 50% 100%;
+    background-size: contain;
+    border-bottom: 1px solid #dfe1e7;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
 
     .wrap .row {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      height: 35vh;
     }
     .stat-number {
-      font-size: 42px;
-      font-weight: 100;
+      font-size: 44px;
+      font-weight: 500;
       margin: 0;
       color: #000000;
+      line-height: 32px;
     }
     .stat-label {
       text-transform: capitalize;
-      font-size: 16px;
-      font-weight: 100;
+      font-size: 24px;
+      font-weight: 200;
+      line-height: 32px;
+      padding-top: 1rem;
     }
 
     .title {
       border-right: 1px solid #cccccc;
       padding-right: 20px;
+      
       h4 {
         font-weight: 700;
         font-size: 16px;
         padding: 0;
         margin: 0;
         text-align: right;
+      }
+      h3 {
+        font-weight: 700;
+        font-size: 24px;
+        padding: 0;
+        margin: 0;
+        text-align: right;
+        display: block;
       }
       span {
         font-weight: 100;
@@ -255,6 +357,113 @@
       }
     }
   }
+
+  .latest-dataset {
+    border-bottom: 1px solid #dfe1e7;
+    .full-height {
+      height: 520px;
+      align-items: center;
+    }
+
+    .fix-size-dataset-card {
+      padding: 3rem;
+    }
+
+    .dataset-card-height {
+      height: 520px;
+      display: flex;
+      align-items: center;
+      
+    }
+
+    .dataset-tagline {
+      font-size: 16px;
+    }
+    h1 {
+      font-size: xxx-large;
+    }
+
+    .dataset-explore-btn {
+      background-color: $orange-shade;
+      font-weight: 400;
+      font-size: 14px;
+      text-transform: capitalize;
+			border: none;
+      margin-top: 3rem;
+      padding: 12px 20px;
+      
+    }
+
+    .left {
+      background-image: url("#{$imagePath}/latest-right.png"), url("#{$imagePath}/latest-left.png");
+      background-position: left bottom, right bottom;
+      background-repeat: no-repeat, no-repeat;
+      background-size: auto, auto;
+      background-color: #fff7ed;
+      border-bottom-style: none;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+	.right-popular-dataset {
+	  background-image: url("#{$imagePath}/popular-right.png"), url("#{$imagePath}/popular-left.png");
+      background-position: left bottom, right bottom;
+      background-repeat: no-repeat, no-repeat;
+      background-size: auto, auto;
+      background-color: $popular-dataset;
+      border-bottom-style: none;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 0;
+      padding-bottom: 0;
+		}
+    .panel {
+      height: 104px;
+      margin: 20px;
+      border-radius: 12px;
+      .panel-body {
+        padding: 0;
+        .media {
+          padding: 10px;
+          .media-body {
+            text-align: left;
+            padding-left: 1rem;
+            position: relative;
+            .explore-btn {
+              border: 1px solid #c1c7d0;
+              position: absolute;
+              bottom: 0;
+              font-weight: 400;
+              border-radius: 8px;
+              padding: 5px 10px;
+              font-size: 16px;
+              text-transform: capitalize;
+              &:hover {
+                background-color: transparent;
+              }
+            }
+          }
+          .media-heading {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000000;
+            cursor: default;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+      .media-body {
+        text-align: left;
+        padding-left: 1rem;
+      }
+    }
+  }
+
+
   .themes {
     .title {
       display: flex;
@@ -535,7 +744,7 @@
 }
 
 .hero-h1 {
-  font-size: 64px;
+  font-size: 56px;
 }
 
 .hero-font {
@@ -572,4 +781,8 @@ input[type="search"]::-webkit-search-cancel-button {
   border-radius: 10px;
   background: url(/base/images/close.svg) no-repeat 50% 50%;
   background-size: contain;
+}
+
+.bg-blue-400 {
+	background: $blue-400 !important;
 }

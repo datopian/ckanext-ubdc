@@ -81,7 +81,7 @@ input[type=checkbox][name="consentName"]:focus {
 }
 
 .img-fluid-hero {
-    height: 550px
+    height: $hero-height;
 }
 
 
@@ -302,4 +302,8 @@ input[type=checkbox][name="consentName"]:focus {
 .link-selected:hover{
     color: #bd4e0a;
     text-decoration: underline;
+}
+
+.btn-blue {
+    background-color: $blue-400;
 }
