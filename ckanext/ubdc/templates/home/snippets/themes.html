@@ -16,19 +16,7 @@
                         <div class="panel-body">
                           <div class="media">
                             <div class="media-left">
-                              {% if loop.index == 1 %}
-                              <img src="/base/images/icons/bus.png" alt="Bus" />
-                              {% elif loop.index == 2 %}
-                              <img src="/base/images/icons/home.png" alt="Home" />
-                              {% elif loop.index == 3 %}
-                              <img src="/base/images/icons/bag.png" alt="Bag" />
-                              {% elif loop.index == 4 %}
-                              <img src="/base/images/icons/leaf.png" alt="Leaf" />
-                              {% elif loop.index == 5 %}
-                              <img src="/base/images/icons/leaf.png" alt="Leaf" />
-                              {% elif loop.index == 6 %}
-                              <img src="/base/images/icons/leaf.png" alt="Leaf" />
-                              {% endif %}
+                                <img src="/base/images/icons/{{ theme.name }}.png" alt="{{theme.name}}" />
                             </div>
                             <div class="media-body">
                               <h4 class="media-heading">
