@@ -1,57 +1,43 @@
-<section class="themes hidden">
+<section class="theme">
     <div class="container">
         <div class="wrap">
+            <!-- Centered Heading -->
             <div class="row">
-                <div class="col-md-12">
-                    <div class="title">
-                        <h3>- {{ _('Research Themes') }} - </h3>
-                    </div>
+                <div class="col-12 text-center">
+                    <h1>Research Themes</h1>
                 </div>
             </div>
-            <div class="row">
-                {% set themes = h.get_featured_groups(6) %}
-                {% for theme in themes %}
-                {% set url = h.url_for('group' ~ '.read', id=theme.name) %}
 
-                <div class="col-md-4 col">
-                    <div class="item">
-                        {% if loop.index < 4 %} <div class="media">
-                            <div class="count">{{theme.package_count}}</div>
-                            <div class="media-body media-right">
-                                <h4 class="media-heading">{{ theme.title }}</h4>
-                                <p>
-                                    {{ theme.description | truncate(80) }}
-                                </p>
-                                <a href="{{url}}" class="btn btn-primary">SEE DATASETS</a>
+            <!-- Dataset Cards -->
+            <div class="row block">
+                {% for theme in h.get_featured_groups(5) %}
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                          <div class="media">
+                            <div class="media-left">
+                                <img src="/base/images/icons/{{ theme.name }}.png" alt="{{theme.name}}" />
                             </div>
-                            <div class="media-right media-middle">
-                                <img class="ml-3"
-                                    src="{{theme.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}"
-                                    alt="Generic placeholder image">
+                            <div class="media-body">
+                              <h4 class="media-heading">
+                                {% set title = theme.title %}
+                                {% set trimmed_text = title|trim %}
+                                {% if trimmed_text|length > 22 %}
+                                    {{ trimmed_text[:22] ~ "..." }}
+                                {% else %}
+                                    {{ trimmed_text }}
+                                {% endif %}
+                              </h4>
+                              <a href="/research-themes/{{ theme.name }}" class="btn btn-default btn-sm explore-btn">
+                                Explore Research Theme <span class="arrow">→</span>
+                              </a>
                             </div>
-                    </div>
-                    {% else %}
-                    <div class="media">
-                        <div class="count">{{theme.package_count}} Datasets</div>
-                        <div class="media-left media-middle">
-                            <img class="ml-3"
-                                src="{{theme.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}"
-                                alt="Generic placeholder image">
-                        </div>
-                        <div class="media-body media-left">
-                            <h4 class="media-heading">{{ theme.title }}</h4>
-                            <p>
-                                {{ theme.description | truncate(80) }}
-                            </p>
-                            <a href="{{ url }}" class="btn btn-primary">SEE DATASETS</a>
+                          </div>
                         </div>
                     </div>
-                    {% endif %}
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
-        <p class="more"><a href="/group">See more →</a> </p>
-    </div>
     </div>
 </section>

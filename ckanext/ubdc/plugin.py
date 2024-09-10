@@ -12,6 +12,7 @@ from ckan.common import _
 from collections import OrderedDict
 
 
+
 class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IConfigurable)
@@ -64,13 +65,15 @@ class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
     def get_helpers(self):
         return {
             "popular_datasets": helpers.popular_datasets,
+            "latest_datasets": helpers.latest_datasets,
             "resources_count": helpers.resources_count,
             "tags_count": helpers.tags_count,
             "get_gtm_id": helpers.get_gtm_id,
             "get_cookie_control_config": helpers.get_cookie_control_config,
             "get_field_to_question": helpers.get_field_to_question,
             "get_data_providers": helpers.get_data_providers,
-            "get_newsletter_link": helpers.get_newsletter_link
+            "get_newsletter_link": helpers.get_newsletter_link,
+            "get_featured_groups": helpers.get_featured_groups,
         }
 
     # IValidators

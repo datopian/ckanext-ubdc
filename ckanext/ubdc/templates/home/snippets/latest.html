@@ -1,53 +1,32 @@
 <section class="latest-dataset">
   <div class="container-fluid">
     <div class="row">
- <!-- Left Section -->
-      <div class="col-md-6 col-sm-12 text-center">
-        <div class="row dataset-card-height">
-          <div
-            class="col-md-8 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12"
-          >
-            <div class="d-flex flex-column text-left">
-              <h1>Most Popular Datasets</h1>
-              <p class="dataset-tagline">
-               View the datasets which have the highest number of visits by data users.
-              </p>
-              <a href="/datasets">
-                <button class="btn btn-primary dataset-explore-btn bg-blue-400">
-                  Explore Datasets
-                  <span class="p-left"><i class="fa fa-arrow-right"></i></span>
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Right Section -->
-      <div class="col-md-6 col-sm-12 text-center right-popular-dataset">
+      <!-- Left Section -->
+      <div class="col-md-6 col-sm-12 text-center left">
         <div class="row full-height">
           <div
             class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 fix-size-dataset-card"
           >
-            {% for dataset in h.popular_datasets(4) %}
+            {% for dataset in h.latest_datasets(4) %}
 
             <div class="panel panel-default">
               <div class="panel-body">
                 <div class="media">
                   <div class="media-left">
                     {% if loop.index == 1 %}
-                    <img src="/base/images/icons/bus-blue.png" alt="Bus" />
+                    <img src="/base/images/icons/bus.png" alt="Bus" />
                     {% elif loop.index == 2 %}
-                    <img src="/base/images/icons/home-blue.png" alt="Home" />
+                    <img src="/base/images/icons/home.png" alt="Home" />
                     {% elif loop.index == 3 %}
-                    <img src="/base/images/icons/bag-blue.png" alt="Bag" />
+                    <img src="/base/images/icons/bag.png" alt="Bag" />
                     {% elif loop.index == 4 %}
-                    <img src="/base/images/icons/leaf-blue.png" alt="Leaf" />
+                    <img src="/base/images/icons/leaf.png" alt="Leaf" />
                     {% endif %}
                   </div>
                   <div class="media-body">
                     <h4 class="media-heading">
                       {% set title = dataset.title %} {% set trimmed_text =
-                      title|trim %} {% if trimmed_text|length > 28 %} {{
+                      title|trim %} {% if trimmed_text|length >= 28 %} {{
                       trimmed_text[:28] ~ "..." }} {% else %} {{ trimmed_text }}
                       {% endif %}
                     </h4>
@@ -66,8 +45,28 @@
         </div>
       </div>
 
-     
+      <!-- Right Section -->
+      <div class="col-md-6 col-sm-12 text-center">
+        <div class="row dataset-card-height">
+          <div
+            class="col-md-8 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12"
+          >
+            <div class="d-flex flex-column text-left">
+              <h1>Latest Datasets</h1>
+              <p class="dataset-tagline">
+                Discover the latest high quality datasets recently added to
+                UBDC's data catalogue.
+              </p>
+              <a href="/datasets">
+                <button class="btn btn-primary dataset-explore-btn">
+                  Explore Datasets
+                  <span class="p-left"><i class="fa fa-arrow-right"></i></span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-

@@ -1,13 +1,40 @@
 {% extends "page.html" %}
 {% import "macros/form.html" as form %}
-{% set wish_list = [ "BGS' Accessing Subsurface Knowledge (ASK) Data", "Cycling Scotland Data", "Goad Plan Experian
-Data", "Glasgow Valuation Roll Data", "Huq Data", "iMCD GPS Data", "iMCD Household Survey Data", "iMCD Lifelogging
-Data", "iMCD Travel Diary Data", "iMCD Twitter Data", "LiDAR Data", "Lothian Valuation Roll Data", "Met Office Forecasts
-Data", "Met Office Hourly Observations Data", "Mobility metrics for Glasgow City Region", "Nestoria Property Data",
-"Nightlight Data", "Public Transport Accessibility Indicators Data 2022", "Public Transport Availability Indicators
-Data", "Registers of Scotland Data", "Springboard's Footfall Data", "Strava (Glasgow) Data", "Strava (Manchester) Data",
-"Strava (Sheffield) Data", "Strava (Scotland) Data", "Strava (Tyne & Wear) Data", "SUDS / Urban Indicators Data",
-"Tamoco Data", "Zoopla Property Data" ]%}
+{% set wish_list = [ 
+
+        "Adzuna Data",
+        "Adzuna Teaching Data",
+        "BGS' Accessing Subsurface Knowledge (ASK) Data",
+        "Cycling Scotland Data",
+        "Glasgow Valuation Roll Data",
+        "Goad Plan Experian Data",
+        "Huq Data",
+        "iMCD GPS Data",
+        "iMCD Household Survey Data",
+        "iMCD Lifelogging Data",
+        "iMCD Travel Diary Data",
+        "iMCD Twitter Data",
+        "LiDAR Data",
+        "Lothian Valuation Roll Data",
+        "Met Office Forecasts Data",
+        "Met Office Hourly Observations Data",
+        "Mobility metrics for Glasgow City Region",
+        "Nestoria Property Data",
+        "Nightlight Data",
+        "Public Transport Accessibility Indicators Data 2022",
+        "Public Transport Availability Indicators Data",
+        "Registers of Scotland Data",
+        "Springboard's Footfall Data",
+        "Strava (Glasgow) Data",
+        "Strava (Manchester) Data",
+        "Strava (Scotland) Data",
+        "Strava (Sheffield) Data",
+        "Strava (Tyne & Wear) Data",
+        "SUDS / Urban Indicators Data",
+        "Tamoco Data",
+        "Zoopla Property Data"
+
+]%}
 {% block subtitle %}{{ _('Register') }}{% endblock %}
 
 {% block breadcrumb_content %}

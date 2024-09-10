@@ -7191,7 +7191,7 @@ input[type=checkbox][name=consentName]:focus {
 }
 
 .img-fluid-hero {
-  height: 550px;
+  height: 500px;
 }
 
 .section_small-hero {
@@ -7391,6 +7391,10 @@ input[type=checkbox][name=consentName]:focus {
 .link-selected:hover {
   color: #bd4e0a;
   text-decoration: underline;
+}
+
+.btn-blue {
+  background-color: #6534DF;
 }
 
 .tag {
@@ -10397,8 +10401,8 @@ h4 small {
   padding: 15px 30px;
 }
 .homepage .hero {
-  min-height: 505px;
-  height: 550px;
+  min-height: 480px;
+  height: 500px;
   background: transparent;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -10425,6 +10429,14 @@ h4 small {
   padding: 28px 15px;
   display: flex;
   align-items: center;
+}
+.homepage .hero .dataset-explore-btn {
+  background-color: #c2410c;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: capitalize;
+  margin-top: 3rem;
+  padding: 12px 20px;
 }
 .homepage .newsletter {
   background-image: url("../../../base/images/newsletter.webp");
@@ -10493,25 +10505,104 @@ h4 small {
 .homepage .newsletter .wrap div p {
   font-weight: 300;
 }
+.homepage .theme {
+  background-image: url("../../../base/images/research-left.png"), url("../../../base/images/research-right.png");
+  background-position: left bottom, right bottom;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 18%;
+  background-color: #ffffff;
+  border-bottom-style: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem;
+  border-bottom: 1px solid #dfe1e7;
+}
+.homepage .theme .wrap .row {
+  margin-bottom: 20px;
+}
+.homepage .theme .block {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 8rem;
+}
+.homepage .theme .panel {
+  height: 100px;
+  margin: 1.5rem 0rem;
+  border-radius: 12px;
+}
+.homepage .theme .panel .panel-body {
+  padding: 0.5rem;
+}
+.homepage .theme .panel .panel-body .media {
+  padding: 10px;
+}
+.homepage .theme .panel .panel-body .media .media-left img {
+  height: 70px;
+}
+.homepage .theme .panel .panel-body .media .media-body {
+  text-align: left;
+  padding-left: 0.5rem;
+  position: relative;
+}
+.homepage .theme .panel .panel-body .media .media-body .explore-btn {
+  border: 1px solid #c1c7d0;
+  position: absolute;
+  bottom: 0;
+  font-weight: 400;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.homepage .theme .panel .panel-body .media .media-body .explore-btn:hover {
+  background-color: transparent;
+}
+.homepage .theme .panel .panel-body .media .media-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  cursor: default;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.homepage .theme .panel .media-body {
+  text-align: left;
+  padding-left: 1rem;
+}
+.homepage .theme .explore-btn {
+  margin-top: 10px; /* Space above the button */
+}
 .homepage .stats {
-  background: #fff;
-  padding: 60px 0px;
+  background: url("../../../base/images/stats.png");
+  background-repeat: no-repeat;
+  background-color: #effefa;
+  background-position: 50% 100%;
+  background-size: contain;
+  border-bottom: 1px solid #dfe1e7;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
 }
 .homepage .stats .wrap .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 35vh;
 }
 .homepage .stats .stat-number {
-  font-size: 42px;
-  font-weight: 100;
+  font-size: 44px;
+  font-weight: 500;
   margin: 0;
   color: #000000;
+  line-height: 32px;
 }
 .homepage .stats .stat-label {
   text-transform: capitalize;
-  font-size: 16px;
-  font-weight: 100;
+  font-size: 24px;
+  font-weight: 200;
+  line-height: 32px;
+  padding-top: 1rem;
 }
 .homepage .stats .title {
   border-right: 1px solid #cccccc;
@@ -10523,6 +10614,14 @@ h4 small {
   padding: 0;
   margin: 0;
   text-align: right;
+}
+.homepage .stats .title h3 {
+  font-weight: 700;
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+  display: block;
 }
 .homepage .stats .title span {
   font-weight: 100;
@@ -10629,6 +10728,102 @@ h4 small {
   color: #000000;
   font-size: 23px;
   padding-bottom: 11px;
+}
+.homepage .latest-dataset {
+  border-bottom: 1px solid #dfe1e7;
+}
+.homepage .latest-dataset .full-height {
+  height: 520px;
+  align-items: center;
+}
+.homepage .latest-dataset .fix-size-dataset-card {
+  padding: 3rem;
+}
+.homepage .latest-dataset .dataset-card-height {
+  height: 520px;
+  display: flex;
+  align-items: center;
+}
+.homepage .latest-dataset .dataset-tagline {
+  font-size: 16px;
+}
+.homepage .latest-dataset h1 {
+  font-size: xxx-large;
+}
+.homepage .latest-dataset .dataset-explore-btn {
+  background-color: #c2410c;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: capitalize;
+  border: none;
+  margin-top: 3rem;
+  padding: 12px 20px;
+}
+.homepage .latest-dataset .left {
+  background-image: url("../../../base/images/latest-right.png"), url("../../../base/images/latest-left.png");
+  background-position: left bottom, right bottom;
+  background-repeat: no-repeat, no-repeat;
+  background-size: auto, auto;
+  background-color: #fff7ed;
+  border-bottom-style: none;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.homepage .latest-dataset .right-popular-dataset {
+  background-image: url("../../../base/images/popular-right.png"), url("../../../base/images/popular-left.png");
+  background-position: left bottom, right bottom;
+  background-repeat: no-repeat, no-repeat;
+  background-size: auto, auto;
+  background-color: #f2f1fe;
+  border-bottom-style: none;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.homepage .latest-dataset .panel {
+  height: 104px;
+  margin: 20px;
+  border-radius: 12px;
+}
+.homepage .latest-dataset .panel .panel-body {
+  padding: 0;
+}
+.homepage .latest-dataset .panel .panel-body .media {
+  padding: 10px;
+}
+.homepage .latest-dataset .panel .panel-body .media .media-body {
+  text-align: left;
+  padding-left: 1rem;
+  position: relative;
+}
+.homepage .latest-dataset .panel .panel-body .media .media-body .explore-btn {
+  border: 1px solid #c1c7d0;
+  position: absolute;
+  bottom: 0;
+  font-weight: 400;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.homepage .latest-dataset .panel .panel-body .media .media-body .explore-btn:hover {
+  background-color: transparent;
+}
+.homepage .latest-dataset .panel .panel-body .media .media-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  cursor: default;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.homepage .latest-dataset .panel .media-body {
+  text-align: left;
+  padding-left: 1rem;
 }
 .homepage .themes .title {
   display: flex;
@@ -10871,19 +11066,19 @@ h4 small {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 550px;
+  height: 500px;
   text-align: center;
 }
 
 .hero-h1 {
-  font-size: 64px;
+  font-size: 56px;
 }
 
 .hero-font {
   width: 520px;
   margin: 0 auto;
   text-align: left;
-  color: #0d0d12;
+  color: #04040f;
 }
 
 .hero-text {
@@ -10913,6 +11108,10 @@ input[type=search]::-webkit-search-cancel-button {
   border-radius: 10px;
   background: url(/base/images/close.svg) no-repeat 50% 50%;
   background-size: contain;
+}
+
+.bg-blue-400 {
+  background: #6534DF !important;
 }
 
 .account-masthead {
