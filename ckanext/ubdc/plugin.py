@@ -74,6 +74,7 @@ class UbdcPlugin(plugins.SingletonPlugin, DefaultTranslation):
             "get_data_providers": helpers.get_data_providers,
             "get_newsletter_link": helpers.get_newsletter_link,
             "get_featured_groups": helpers.get_featured_groups,
+            "explore_our_content": helpers.explore_our_content,
         }
 
     # IValidators
