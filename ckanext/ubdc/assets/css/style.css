@@ -11114,6 +11114,50 @@ input[type=search]::-webkit-search-cancel-button {
   background: #6534DF !important;
 }
 
+.explore-content {
+  border-bottom: 1px solid #dfe1e7;
+  padding-bottom: 8rem;
+}
+.explore-content .lead {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #36394a;
+}
+.explore-content .wrap {
+  width: 90%;
+  margin: auto;
+}
+.explore-content .explore-card {
+  height: 460px;
+  border: 1px solid #dfe1e7;
+  border-radius: 12px;
+  padding: 1rem;
+}
+.explore-content .card-img-top-wrapper {
+  height: 190px;
+  overflow: hidden;
+}
+.explore-content .card-img-top-wrapper img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.explore-content .card-text {
+  font-size: 1.5rem;
+  color: #666D80;
+}
+.explore-content .btn-readmore {
+  background-color: transparent;
+  border: 1px solid #dfe1e7;
+  color: #0d0812;
+  text-transform: capitalize;
+  padding: 1rem;
+  position: absolute;
+  font-size: 1.25rem;
+  bottom: 1.5rem;
+}
+
 .account-masthead {
   min-height: 30px;
   color: #fff;

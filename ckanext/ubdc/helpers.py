@@ -144,3 +144,41 @@ def get_featured_groups(size=10):
         group_list = h.get_featured_organizations(limit)
 
     return group_list
+
+
+def explore_our_content():
+    data = {
+        "heading": "Explore Our Content",
+        "tagline": "Keep informed with the latest updates from UBDC",
+        "cards": [
+            {
+                "image": {
+                    "src": "/base/images/explore/explore-content-1.jpeg",
+                    "alt": "News",
+                },
+                "title": "News",
+                "text": "From our latest research publications to insightful, thought-provoking blogs, keep informed and engaged with the latest updates from UBDC.",
+                "link": "https://www.ubdc.ac.uk/news",
+            },
+            {
+                "image": {
+                    "src": "/base/images/explore/explore-content-2.jpeg",
+                    "alt": "Events",
+                },
+                "title": "Events",
+                "text": "We run a rich and varied calendar of public and stakeholder events providing information on our services, delivering training, and sharing outcomes from our research.",
+                "link": "https://www.ubdc.ac.uk/events",
+            },
+            {
+                "image": {
+                    "src": "/base/images/explore/explore-content-3.jpeg",
+                    "alt": "Impact Stories",
+                },
+                "title": "Impact Stories",
+                "text": "With international researchers, a worldwide alumni, and extensive use of our valued data collections, UBDC has global reach and influence. A selection of case studies illustrates our varied impact.",
+                "link": "https://www.ubdc.ac.uk/impact",
+            },
+        ],
+    }
+
+    return data
