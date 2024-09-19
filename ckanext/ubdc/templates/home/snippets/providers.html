@@ -1,25 +1,38 @@
 <section class="providers">
     <div class="container">
-        <h2>- Data Providers -</h2>
         <div class="wrap">
+
+            <!-- Centered Heading -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1> Data Providers </h1>
+                </div>
+            </div>
+
             {% set count = namespace(value=0) %}
             {% set providers = h.get_data_providers() %}
             <div class="logo-grid">
                 {% for provider in providers %}
-                    {% if provider.image_display_url %}
-                        {% set url = h.url_for('organization' ~ '.read', id=provider.name) %}
-                        {% if count.value < 6 %}
-                            <div class="logo-grid__item">
-                                <a href="{{ url }}">
-                                    <img src="{{ provider.image_display_url }}" alt="{{ provider.name }}" width="150" height="85">
-                                </a>
-                            </div>
-                        {% endif %}
-                        {% set count.value = count.value + 1 %}
-                    {% endif %}
-                {% endfor %}
+                {% if provider.image_display_url %}
+                {% set url = h.url_for('organization' ~ '.read', id=provider.name) %}
+                {% if count.value < 6 %} <div class="logo-grid__item">
+                    <a href="{{ url }}">
+                        <img src="{{ provider.image_display_url }}" alt="{{ provider.name }}" width="150" height="85">
+                    </a>
             </div>
-            <p class="more"><a href="/organization">Explore all data providers →</a></p>
+            {% endif %}
+            {% set count.value = count.value + 1 %}
+            {% endif %}
+            {% endfor %}
         </div>
+        <p class="more">
+            <a href="/organization"></a>
+            <button class="btn btn-primary dataset-explore-btn small-button">
+                Explore all data providers
+                <span class="arrow">→</span>
+            </button>
+            </a>
+        </p>
+    </div>
     </div>
 </section>

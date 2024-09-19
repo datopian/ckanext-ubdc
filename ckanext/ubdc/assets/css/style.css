@@ -10400,6 +10400,16 @@ h4 small {
 .homepage .btn {
   padding: 15px 30px;
 }
+.homepage .small-button {
+  padding: 12px 20px 12px 24px;
+  font-size: 14px;
+  background-color: #c2410c;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
 .homepage .hero {
   min-height: 480px;
   height: 500px;
@@ -10893,6 +10903,9 @@ h4 small {
 .homepage .providers {
   background: #fff;
 }
+.homepage .providers .wrap {
+  margin: 3rem 0;
+}
 .homepage .providers h2 {
   color: #000000;
   text-align: center;
@@ -10905,6 +10918,7 @@ h4 small {
   flex-wrap: wrap;
   align-items: center;
   align-content: center;
+  padding: 4rem;
 }
 .homepage .providers .logo-grid__item {
   padding: 15px;
@@ -11145,7 +11159,7 @@ input[type=search]::-webkit-search-cancel-button {
 }
 .explore-content .card-text {
   font-size: 1.5rem;
-  color: #666D80;
+  color: #666d80;
 }
 .explore-content .btn-readmore {
   background-color: transparent;
