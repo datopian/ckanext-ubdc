@@ -3,6 +3,19 @@
   .btn {
     padding: 15px 30px;
   }
+  .small-button {
+    padding: 12px 20px 12px 24px;
+    font-size: 14px;
+    background-color: #c2410c;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: capitalize;
+  }
+  //   .small-button:hover {
+  //     opacity: 0.9;
+  //   }
   .hero {
     min-height: 480px;
     height: $hero-height;
@@ -541,6 +554,9 @@
 
   .providers {
     background: #fff;
+    .wrap {
+      margin: 3rem 0;
+    }
     h2 {
       color: #000000;
       text-align: center;
@@ -553,6 +569,7 @@
       flex-wrap: wrap;
       align-items: center;
       align-content: center;
+      padding: 4rem;
       &__item {
         padding: 15px;
         width: 180px;
@@ -571,9 +588,9 @@
       text-align: center;
       padding: 30px;
       a {
-        color: #000000;
-        font-size: 23px;
-        padding-bottom: 11px;
+        color: #fff;
+        // font-size: 23px;
+        // padding-bottom: 11px;
       }
     }
   }
@@ -806,7 +823,8 @@ input[type="search"]::-webkit-search-cancel-button {
     padding: 1rem;
   }
   .card-img-top-wrapper {
-    height: 190px; overflow: hidden;
+    height: 190px;
+    overflow: hidden;
     img {
       width: 100%;
       height: 200px;
@@ -816,7 +834,7 @@ input[type="search"]::-webkit-search-cancel-button {
   }
   .card-text {
     font-size: 1.5rem;
-    color: #666D80;
+    color: #666d80;
   }
   .btn-readmore {
     background-color: transparent;
