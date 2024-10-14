@@ -34,15 +34,7 @@
               <div class="panel-body">
                 <div class="media">
                   <div class="media-left">
-                    {% if loop.index == 1 %}
-                    <img src="/base/images/icons/bus-blue.png" alt="Bus" />
-                    {% elif loop.index == 2 %}
-                    <img src="/base/images/icons/home-blue.png" alt="Home" />
-                    {% elif loop.index == 3 %}
-                    <img src="/base/images/icons/bag-blue.png" alt="Bag" />
-                    {% elif loop.index == 4 %}
-                    <img src="/base/images/icons/leaf-blue.png" alt="Leaf" />
-                    {% endif %}
+                    <img src="/base/images/datasets/{{dataset.name}}-blue.png" alt="{{dataset.name}}" />
                   </div>
                   <div class="media-body">
                     <h4 class="media-heading">
